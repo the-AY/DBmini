@@ -7,4 +7,5 @@ PNR number, they will get the fresh prepared food in the upcoming station rather
 from different time by noting down their PNR and figuring out the upcoming station
 
 Quick resources:-
-<a href="https://www.mysqltutorial.org/mysql-nodejs/connect/> How to connect database using node .js </a>
+How to connect database using nodejs </br>
+https://www.mysqltutorial.org/mysql-nodejs/connect/  </br>
