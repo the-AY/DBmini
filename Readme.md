@@ -9,3 +9,4 @@ from different time by noting down their PNR and figuring out the upcoming stati
 Quick resources:-
 How to connect database using nodejs </br>
 https://www.mysqltutorial.org/mysql-nodejs/connect/  </br>
+https://www.w3schools.com/nodejs/nodejs_mysql.asp </br>
