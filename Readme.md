@@ -10,3 +10,34 @@ Quick resources:-
 How to connect database using nodejs </br>
 https://www.mysqltutorial.org/mysql-nodejs/connect/  </br>
 https://www.w3schools.com/nodejs/nodejs_mysql.asp </br>
+
+Resource folder:-
+
+
+Food offered 
+
+Breakfast 
+idli vada
+masala dosa
+
+Lunch 
+south indian thali
+north indian thali
+curd rice
+
+Dinner 
+special thali
+south indian thali
+north indian thali
+
+Snacks
+onion pokoda
+Samosa
+
+Desert
+Gulab Jamun
+
+beverages
+Tea 
+Coffee
+
