@@ -17,7 +17,7 @@ Resource folder:-(use sahydri mail):-<br>
 web data :-<br> 
 
 <a href ="https://github.com/the-AY/DBmini/blob/main/webdata.md">Webdata</a><br>
-Plans:-<br>
+Plans:-
 <a href =" https://github.com/the-AY/DBmini/blob/main/plans.txt">Plans</a>
 <br>
 
