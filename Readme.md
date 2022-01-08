@@ -14,9 +14,9 @@ https://www.w3schools.com/nodejs/nodejs_mysql.asp </br>
 Resource folder:-(use sahydri mail):-<br>
 
 <a href ="https://drive.google.com/drive/folders/1HF8W_IEa7YNauZ5Ij4X-0xpG8GPaZdce?usp=sharing"> Google drive link</a><br>
-web data :- <a herf ="https://github.com/the-AY/DBmini/blob/main/webdata.md"> Web_data</a><br>
+web data :- <a herf ="https://github.com/the-AY/DBmini/blob/main/webdata.md">Webdata</a><br>
 Food offered <br>
-Plans:-<a href =" https://github.com/the-AY/DBmini/blob/main/plans.txt"> Plans </a>
+Plans:-<a href =" https://github.com/the-AY/DBmini/blob/main/plans.txt">Plans</a>
 <br>
 
 
