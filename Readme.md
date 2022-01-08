@@ -15,7 +15,8 @@ Resource folder:-(use sahydri mail):-<br>
 
 <a href ="https://drive.google.com/drive/folders/1HF8W_IEa7YNauZ5Ij4X-0xpG8GPaZdce?usp=sharing"> Google drive link</a><br>
 web data :-<br> 
-<a herf ="https://github.com/the-AY/DBmini/blob/main/webdata.md">Webdata</a><br>
+
+<a href ="https://github.com/the-AY/DBmini/blob/main/webdata.md">Webdata</a><br>
 Plans:-<br>
 <a href =" https://github.com/the-AY/DBmini/blob/main/plans.txt">Plans</a>
 <br>
