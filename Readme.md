@@ -11,7 +11,7 @@ How to connect database using nodejs </br>
 https://www.mysqltutorial.org/mysql-nodejs/connect/  </br>
 https://www.w3schools.com/nodejs/nodejs_mysql.asp </br>
 
-Resource folder:-
+Resource folder:-(use sahydri mail)
 
 
 Food offered 
