@@ -11,12 +11,14 @@ How to connect database using nodejs </br>
 https://www.mysqltutorial.org/mysql-nodejs/connect/  </br>
 https://www.w3schools.com/nodejs/nodejs_mysql.asp </br>
 
-Resource folder:-(use sahydri mail):-
+Resource folder:-(use sahydri mail):-<br>
 
-<a hred ="https://drive.google.com/drive/folders/1HF8W_IEa7YNauZ5Ij4X-0xpG8GPaZdce?usp=sharing"> Google drive link</a>
+<a href ="https://drive.google.com/drive/folders/1HF8W_IEa7YNauZ5Ij4X-0xpG8GPaZdce?usp=sharing"> Google drive link</a><br>
+web data :- <a herf ="https://github.com/the-AY/DBmini/blob/main/webdata.md"> Web_data</a><br>
+Food offered <br>
+Plans:-<a href =" https://github.com/the-AY/DBmini/blob/main/plans.txt"> Plans </a>
+<br>
 
-
-Food offered 
 
 Breakfast 
 idli vada
