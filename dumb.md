@@ -12,3 +12,24 @@ Drop down menu:-
   <br><br>
   <input type="submit" value="Submit">
 </form>
+
+
+alert function:-
+<html>
+   <head>   
+      <script type = "text/javascript">
+            function fun() {
+
+
+               alert ("This is an alert dialog box");
+            }
+      </script>     
+   </head>
+   
+   <body>
+      <p> Click the following button to see the effect </p>      
+      <form>
+         <input type = "button" value = "Click me" onclick = "fun();" />
+      </form>     
+   </body>
+</html>
