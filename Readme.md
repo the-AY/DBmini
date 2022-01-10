@@ -21,6 +21,29 @@ Plans:-
 <a href =" https://github.com/the-AY/DBmini/blob/main/plans.md">Plans</a>
 <br>
 
+main page index.html
+
+booking :-
+normal train ticket
+ticketbook.html
+postal book:-
+postalbook.html
+food order:-
+foodbook.html
+
+login:-
+login.html
+create new account:-
+newac.html
+
+home:-index.html
+trains:-Traininfo.html
+contactus:-contactus.html
+
+
+Error page :- 404style.css
+
+
 Food offered <br>
 Breakfast 
 idli vada
@@ -46,4 +69,5 @@ Gulab Jamun
 beverages
 Tea 
 Coffee
+
 
