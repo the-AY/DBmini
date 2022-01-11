@@ -1,5 +1,4 @@
-Drop down menu:-
-
+# Drop down menu:-
 
 <form action="/action_page.php">
   <label for="cars">Choose a car:</label>
@@ -14,7 +13,7 @@ Drop down menu:-
 </form>
 
 
-alert function:-
+# alert function:-
 <html>
    <head>   
       <script type = "text/javascript">
@@ -23,7 +22,7 @@ alert function:-
 
                alert ("This is an alert dialog box");
             }
-      </script>     
+            </script>     
    </head>
    
    <body>
