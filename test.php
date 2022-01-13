@@ -1,7 +1,4 @@
-currently testing;- <a href=" "> file</a>
-testing status:- NONE
-return to main file <a href="index.html">  # Home file #</a>
-    <?php
+<?php
     function OpenCon()
      {
      $dbhost = "localhost";
@@ -18,4 +15,4 @@ return to main file <a href="index.html">  # Home file #</a>
      $conn -> close();
      }
        
-    ?>
+?>
