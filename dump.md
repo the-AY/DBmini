@@ -56,7 +56,7 @@
  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
 
- # 
+ # php code for connection 
      <?php
     function OpenCon()
      {
