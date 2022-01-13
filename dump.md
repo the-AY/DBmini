@@ -52,5 +52,26 @@
           </div>
         </div>
       </header>
-# css file path link
+ # css file path link
  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+
+ # php code for connection 
+     <?php
+    function OpenCon()
+     {
+     $dbhost = "localhost";
+     $dbuser = "root";
+     $dbpass = "1234";
+     $db = "example";
+     $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
+     
+     return $conn;
+     }
+     
+    function CloseCon($conn)
+     {
+     $conn -> close();
+     }
+       
+    ?> 
