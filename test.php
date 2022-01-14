@@ -59,9 +59,5 @@ if(mysqli_query($con,$sql2)){
 else{
   echo "<script>alert('Oops! something went wrong')</script>";
 }
-
 }
-
-
-
 ?>
