@@ -18,14 +18,16 @@
         <a class="mr-5 hover:text-gray-900" href="pnrstart.html">PNR Status</a>
       </nav>
       <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
+
       <span class="ml-3 text-xl">Railway Management System</span>
       </a>
       <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
-        <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="login.html">login
+        <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="login.html">login</a>
         </button>
       </div>
     </div>
   </header>
+  <span class="ml-3 text-xl">Food Menu</span>
 
     <section class="text-gray-600 body-font">
         <div class="container px-5 py-24 mx-auto">
@@ -114,8 +116,45 @@
         </div>
       </section>
       <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
-        <button class="inline-flex items-center bg-gray-100 border-0 py-2 px-5 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="foodcart.html">Summit
+      <form action="/action_page.php">
+        <label for="Fid">Select Food:</label>
+        <select name="quantity" id="quantity">
+          <option value="F01">Masala Dosa</option>
+          <option value="F02">Idli vada</option>
+          <option value="F03">South Indian Thali</option>
+          <option value="F04">North Indian Thali</option>
+          <option value="F05">Onion Pokoda </option>
+          <option value="F06">Samosa</option>
+          <option value="F07">Gulab Jamun</option>
+          <option value="F08">Tea</option>
+        </select>
+        <br><br>
+
+      <form action="/action_page.php">
+        <label for="quantity">Quantity:</label>
+        <select name="quantity" id="quantity">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+
+        </select>
+        <br><br>
+      
+      </div>
+
+      <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
+        <button>
+      <input type="Submit" value="Submit"  class="inline-flex items-center bg-gray-100 border-0 py-2 px-5 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" >
         </button>
+        </div>
+      </form>
       </div>
 
 </body>

@@ -21,7 +21,7 @@
       <span class="ml-3 text-xl">Railway Management System</span>
       </a>
       <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
-        <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="login.html">login
+        <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="login.html">login</a>
         </button>
       </div>
     </div>
@@ -39,14 +39,20 @@
           <input type="text" id="pnrno" name="pnrno" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
         </div>
         <div class="relative mb-4">
+
+          <form action="/action_page.php">
           <label for="password" class="leading-7 text-sm text-gray-600">Email</label>
           <input type="email" id="email" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
         </div>
-        <button class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Get Status </button><br>
-        
+        <button>
+          <input type="Submit" value="Get Status" name ="getstatus" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+        </button><br>
+      </form>
+
         //send pnr number  to the database to verify the user with pnr+cid and redirect to
         <a href="pnrdisplay.html">PNR DISPLAY PAGE REDIRECTION</a>
         <p class="text-xs text-gray-500 mt-3"></p>
+       
       </div>
     </div>
   </section>
