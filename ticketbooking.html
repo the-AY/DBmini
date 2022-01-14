@@ -22,13 +22,13 @@
             <a class="mr-5 hover:text-gray-900" href="contactus.html">Contact us</a> </a>
             <a class="mr-5 hover:text-gray-900" href="aboutus.html" >About us</a>
             <a class="mr-5 hover:text-gray-900" href="pnrstart.html">PNR Status</a>
-            <a class="mr-5 hover:text-gray-900" href="ticketbook.html">BACK</a>
+            <a class="mr-5 hover:text-gray-900" href="ticket.html">BACK</a>
           </nav>
           <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
           <span class="ml-3 text-xl">Railway Management System</span>
           </a>
           <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
-            <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="">login</a>
+            <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="ticket.html">Back</a>
             </button>
           </div>
         </div>
@@ -61,15 +61,34 @@
                           <input type="text" placeholder="ID"
                               class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
               </div>
-              <div class="mt-4">
-                  <label class="block"><label>
-                          <input type="" placeholder="Password"
-                              class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
-              </div>
 
               
-              <div class="mb-3 xl:w-96">
-                  <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700"
+                  <div class="mt-4">
+                  <label class="block">Enter the preferred coach type</label>
+                  <select class="form-select form-select-lg mt-4
+                    appearance-none
+                    block
+                    w-full
+                    px-4
+                    py-2
+                    text-xl
+                    font-normal
+                    text-gray-700
+                    bg-white bg-clip-padding bg-no-repeat
+                    border border-solid border-gray-300
+                    rounded
+                    transition
+                    ease-in-out
+                    m-0
+                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label=".form-select-lg example">
+                      <option selected>Open this select menu</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                  </select>
+              
+              <div class="mt-4">
+                  <label for="exampleText0" class="form-label inline-block mt-4 text-gray-700"
                     >Select the source </label
                   >
                   <select class="form-select appearance-none
@@ -86,7 +105,7 @@
                     transition
                     ease-in-out
                     m-0
-                    focus:text-gray-100 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example">
+                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example">
                       <option selected>Source</option>
                       <option value="1">One</option>
                       <option value="2">Two</option>
@@ -98,8 +117,8 @@
                 
               </div>
 
-              <div class="mb-3 xl:w-96">
-                <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700"
+              <div class="mt-4">
+                <label for="exampleText0" class="form-label inline-block mt-4 text-gray-700"
                   >Select the Destination </label
                 >
                 <select class="form-select appearance-none
@@ -128,8 +147,6 @@
               
             </div>
             
-              
-              <span class="text-xs text-red-400">Password must be same!</span>
               <div class="flex">
                   <button class="w-full px-6 py-2 mt-4 text-white bg-blue-600 rounded-lg hover:bg-blue-900">Book Ticket</button>
               </div>
