@@ -4,3 +4,5 @@
 <a href ="https://www.geeksforgeeks.org/how-to-insert-form-data-into-database-using-php/" > Insert data to database</a><br>
 <a href="https://picresize.com/">To resize the data </a><br>
 <a href="https://bulkresizephotos.com/en"> Bulk resize the images</a><br>
+<a href="https://tailblocks.cc/">front end snippets 1(tailwind templates)</a>
+<a href="https://tailwind-elements.com/docs/standard/components/buttons/">front end snippets 2(tailewind elements)</a>
