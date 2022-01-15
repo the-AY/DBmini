@@ -42,6 +42,37 @@ contactus:-contactus.html
 
 
 Error page :- 404style.css
+beverages
+Tea 
+Coffee
+# PNR(details/status/ticket booking)
+Create ticket table details needed:-
+train number ,
+train name
+Boarding date
+from 
+to
+class
+
+
+admin only
+slno 
+booking status (edit /update)
+current status(berth no/seat no)
+
+normal user;-
+login.html
+index.html
+ticket.html
+postalbook.html
+foodbook.html
+
+Admin console:-
+login.html
+indexadmin.html
+admin_ticket.html
+admin_postal.html
+admin_foofbook.html
 
 
 Food offered <br>
@@ -66,20 +97,3 @@ Samosa
 Desert
 Gulab Jamun
 
-beverages
-Tea 
-Coffee
-# PNR(details/status/ticket booking)
-Create ticket table details needed:-
-train number ,
-train name
-Boarding date
-from 
-to
-class
-
-
-admin only
-slno 
-booking status (edit /update)
-current status(berth no/seat no)
