@@ -69,5 +69,18 @@ Gulab Jamun
 beverages
 Tea 
 Coffee
+# PNR(details/status/ticket booking)
+Create ticket table details needed:-
+train number ,
+train name
+Boarding date
+from 
+to
+reserved upto
+boarding at 
+class
 
-
+admin only
+slno 
+booking status (edit /update)
+current status(berth no/seat no)
