@@ -76,9 +76,8 @@ train name
 Boarding date
 from 
 to
-reserved upto
-boarding at 
 class
+
 
 admin only
 slno 
