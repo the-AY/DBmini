@@ -11,26 +11,27 @@
 <?php
 
 include "config.php";
-
-
-$host = "localhost";
-$user ="root";
-$pwd = "";
-$db ="dbmini";
-$connect = mysqli_connect($host,$user,$pwd,$db);
 session_start();
-if(isset($_POST['Submit'])){
-    $C_ID = $_POST[''];
+if(isset($_POST['C_ID'])){
+    $C_ID = $_POST['C_ID'];
     $F_IDNAME=$_POST['Item'];
     $QUANTITY = $_POST['quantity'];
     $PRICE = $_POST[$P];
     $sql="INSERT INTO `food` (`F_IDNAME`, `PRICE`, `C_ID`, `QTY`)  VALUES 
     ('$F_IDNAME', '$PRICE', '$C_ID', '$QUANTITY')";
-    
-    $connect->query($sql);
-
-    $connect->close();
+    $result=mysqli_query($connect,$sql);
+    if($result)
+    {
+    echo "<script>alert('inserted successfully');</script>";
+     header("Location:foodbook.php");
+    die;
+    }
+    else
+    {
+    echo "not";
+    }
 }
+  
 ?>
 
 <body>
@@ -142,7 +143,7 @@ if(isset($_POST['Submit'])){
 
       </section>
       <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
-      <form action="/action_page.php">
+      <form action="foodbook.php" method="post">
         <label for="Fid">Item:</label>
         <select name="Item" id="Item">
           <option <?php $P="0" ?> value="None">None</option>
@@ -180,4 +181,4 @@ if(isset($_POST['Submit'])){
       </form>
       
 </body>
-</html> cfx
+</html> 
