@@ -40,36 +40,6 @@
           <th>Action</th>
         </tr>
        
-        <?php
-        include "config.php";
-      
-        $sql= "Select * from `food`;";
-      
-        $result= mysqli_query($connect,$sql);
-      
-        if($result){
-            while($row=mysqli_fetch_assoc($result))
-            {
-              
-              $F_IDNAME=$row['Items'];
-              $=$row['Items'];
-              $QTY=$row['Quantity'];
-              $PRICE=$row[' '];
-              
-              
-              echo '<tr>
-              <td>'.$F_IDNAME.'</td>
-              <td>'.$PRICE.'</td>
-              <td>'.$C_ID.'</td>
-              <td>'.$QTY.'</td>
-              <td>
-                      <button ><a href="update_customer.php?C_ID='.$C_ID.'">Update</a></button>
-                      <button ><a href="deletefood.php">Delete</a></button>
-          </td>
-          </tr>';
-      
-            }
-          }   
-        ?>
+     
       </table>
       <br><br><br><br><br><br><br>
