@@ -46,20 +46,20 @@ include("config.php");
       
       if($result)
       {
-      while($row=mysqli_fetch_assoc($result))
-      {
+     
+    
          header("location: index.html");
       }
       else
-      {
+    {
       header("location: login.html");
-      } 
+    }
    }
-}
+
 ?>
      <form  method = "post">
-                  <label>UserName  :</label><input type = "text" name = "USERNAME" class = "box"/><br /><br />
-                  <label>Password  :</label><input type = "password" name = "PASSWORD" class = "box" /><br/><br />
+                  <label>UserName  :</label><input type = "text" name = "USERNAME" id = "USERNAME" class = "box"/><br /><br />
+                  <label>Password  :</label><input type = "password" name = "PASSWORD"  nid= "PASSWORD"class = "box" /><br/><br />
                   <input type = "submit" value = " Submit "/><br />
                </form>
    html display error
