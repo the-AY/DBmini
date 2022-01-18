@@ -145,7 +145,7 @@ if(isset($_POST['C_ID'])){
       <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
       <form action="foodbook.php" method="post">
         <label for="Fid">Item:</label>
-        <select name="Item" id="Item">
+        <select name="Item" id="Item">6
           <option <?php $P="0" ?> value="None">None</option>
           <option <?php $P="50" ?> value="F01-Masala Dosa">Masala Dosa</option>
           <option <?php $P="55" ?> value="F02-Idli vada">Idli vada</option>
