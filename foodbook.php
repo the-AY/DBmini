@@ -29,7 +29,7 @@ if(isset($_POST['C_ID'])){
     else
     {
    
-  >  
+  ?>  
   <span class="ml-3 text-xl">Food Menu</span>
     <section class="text-gray-600 body-font">
         <div class="container px-5 py-24 mx-auto">
