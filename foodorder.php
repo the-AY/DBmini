@@ -28,7 +28,8 @@ if(isset($_POST['C_ID'])){
     }
     else
     {
-   
+      INSERT INTO `food` (`C_ID`, `F_ID`, `T_NO`, `SEAT_NO`, `ITEMS`, `QUANTITY`) VALUES 
+      ('$C_ID', '$', '$', '$', '$', '$') 
   ?>  
   <span class="ml-3 text-xl">Food Menu</span>
     <section class="text-gray-600 body-font">

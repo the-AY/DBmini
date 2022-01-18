@@ -53,8 +53,8 @@
             {
               
               $F_IDNAME=$row['Items'];
-              $=$row['Items'];
               $QTY=$row['Quantity'];
+              $C_ID=$row['C_ID'];
               $PRICE=$row[' '];
               
               
