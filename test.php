@@ -1,12 +1,7 @@
 <?php
 
-$server= "localhost";
-$username="root";
-$password="";
-$dbname="test";
+include "config.php";
 
-
-$conn = mysqli_connect($server,$username,$password,$dbname);
 
 if(isset($_POST['submit'])) {
 
@@ -15,16 +10,18 @@ if(isset($_POST['submit'])) {
 	$age=$_POST['age'];
 	$contact=$_POST['contact'];
 
-	$query="INSERT INTO TEST(`NAME`,`EMAIL`,`AGE`,`CONTACT`) VALUES ('$name','$email','$age','$contact')";
+	$query="INSERT INTO FORM(`NAME`,`EMAIL`,`AGE`,`CONTACT`) VALUES ('$name','$email','$age','$contact')";
 
 	$run=mysqli_query($conn,$query) or die("connection failed");
 
 	if($run) {
 		echo "sucessful";
+		
+		
 	}
 	else {
 		echo "unsuccessful";
+		
 	}
 }
 ?>
-// 
