@@ -1,4 +1,5 @@
 <?php
+$insert=false;
 
 $servername = "localhost";
 $username = "root";
@@ -7,27 +8,29 @@ $dbname = "dbmini";
 
 
 //create connection 
-$conn= new mysqli($servername,$username,$password);
+$conn=mysqli_connect($servername,$username,$password,$dbname);
 
 if ($conn->connect_error) {
     die("connection failed :". $conn->connect_error);
 }
 
-else {
+
     ECHO "CONNECT SUCCESSFULLY";
-}
+
+if(isset($_POST['submit'])) {
+
 
 //get the input details from ticketbooking
 $name = $_POST['name'];
 $c_id= $_POST['c_id'];
 $coach_type=$_POST['coach_type'];
-$src=['$src'];
-$dest=['$dest'];
+$src=$_POST['$src'];
+$dest=$_POST['$dest'];
 
 //assign the coach type to its coach no
 $coach_no;
 
-switch ($coach_no) {
+switch ($coach_type) {
 
     case "sleeper":
         $coach_no="SL101";
@@ -51,15 +54,29 @@ switch ($coach_no) {
 }
 
 //insert into sql code
-$insert = "INSERT INTO `TICKET` (`C_ID`, `C_NAME`, `COACH_NO`, `SRC`, `DEST`) VALUES ('c_id', 'name', 'coach_no', 'src', 'dest')";
+$sql = "INSERT INTO `TICKET`(`C_ID`, `C_NAME`, `COACH_NO`, `SRC`, `DEST`)VALUES('c_id', 'name', 'coach_no', 'src', 'dest')";
 
-//insert into sql table
-$rs =mysqli_query($conn, $insert);
+if($conn->query($sql)==true) {
+    $insert=true;
 
-
-if($rs) {
-    echo "Record inserted successfully";
+}
+else{
+    echo "ERROR: $sql <br> $conn->error";
 }
 
+// //insert into sql table
+// $rs = mysqli_query($conn, $sql);
+
+
+// if($rs) {
+//     echo "Record inserted successfully";
+// }
+// else {
+//     echo " unsuxessful";
+// }
 $conn->close();
+}
+else {
+    echo "error";
+}
 ?>
