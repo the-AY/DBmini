@@ -10,7 +10,7 @@
         $name = $_POST['name'];
         $c_id= $_POST['c_id'];
         $coach_type=$_POST['coach_type'];
-        $src=$_POST['$src'];
+        $source=$_POST['$src'];
         $dest=$_POST['$dest'];
         $ti_type="ticket";
         $pname1=$_POST['pname1'];
