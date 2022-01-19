@@ -52,14 +52,14 @@
             while($row=mysqli_fetch_assoc($result))
             {
               
-              $F_IDNAME=$row['Items'];
-              $QTY=$row['Quantity'];
+              $F_ID=$row['Items'];
+              $QTY=$row['quantity'];
               $C_ID=$row['C_ID'];
               $PRICE=$row[' '];
               
               
               echo '<tr>
-              <td>'.$F_IDNAME.'</td>
+              <td>'.$F_ID.'</td>
               <td>'.$PRICE.'</td>
               <td>'.$C_ID.'</td>
               <td>'.$QTY.'</td>

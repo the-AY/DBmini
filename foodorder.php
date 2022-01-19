@@ -17,19 +17,21 @@ if(isset($_POST['C_ID'])){
     $F_IDNAME=$_POST['Item'];
     $QUANTITY = $_POST['quantity'];
     $PRICE = $_POST[$P];
-    $sql="INSERT INTO `food` (`F_IDNAME`, `PRICE`, `C_ID`, `QTY`)  VALUES 
-    ('$F_IDNAME', '$PRICE', '$C_ID', '$QUANTITY')";
+    $sql="INSERT INTO `food` (`C_ID`, `F_ID`, `T_NO`, `SEAT_NO`, `ITEMS`, `QUANTITY`) VALUES 
+    ('$C_ID', '$F_IDNAME', '$', '$', '$', '$QUANTITY'";
     $result=mysqli_query($connect,$sql);
     if($result)
     {
     echo "<script>alert('inserted successfully');</script>";
-     header("Location:foodbook.php");
+     header("Location:foodorder.php");
     die;
     }
     else
     {
-      INSERT INTO `food` (`C_ID`, `F_ID`, `T_NO`, `SEAT_NO`, `ITEMS`, `QUANTITY`) VALUES 
-      ('$C_ID', '$', '$', '$', '$', '$') 
+      header("Location:foodorder.php");
+    }
+  }
+    
   ?>  
   <span class="ml-3 text-xl">Food Menu</span>
     <section class="text-gray-600 body-font">
@@ -120,7 +122,7 @@ if(isset($_POST['C_ID'])){
 
       </section>
       <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
-      <form action="foodbook.php" method="post">
+      <form action="foodorder.php" method="post">
         <label for="Fid">Item:</label>
         <select name="Item" id="Item">6
           <optio value="None">None</option>
