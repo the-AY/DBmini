@@ -34,8 +34,7 @@ if(isset($_POST['C_ID'])){
     $F_IDNAME=$_POST['Item'];
     $QUANTITY = $_POST['quantity'];
     $PRICE = $_POST[$P];
-    $sql="INSERT INTO `food` (`C_ID`, `F_ID`, `T_NO`, `SEAT_NO`, `ITEMS`, `QUANTITY`) VALUES 
-    ('$C_ID', '$F_IDNAME', '$', '$', '$', '$QUANTITY'";
+    $sql="INSERT INTO `food` (`C_ID`, `ITEMS`, `QUANTITY`, `PRICE`, `F_ID`) VALUES ('', '', '', '', '') ";
     $result=mysqli_query($connect,$sql);
     if($result)
     {
@@ -142,7 +141,7 @@ if(isset($_POST['C_ID'])){
       <form action="foodorder.php" method="post">
         <label for="Fid">Item:</label>
         <select name="Item" id="Item">6
-          <optio value="None">None</option>
+          <option value="None">None</option>
           <option value="F01-Masala Dosa">Masala Dosa</option>
           <option value="F02-Idli vada">Idli vada</option>
           <option  value="F03-South Indian Thali">South Indian Thali</option>
