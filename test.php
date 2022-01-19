@@ -1,12 +1,7 @@
 <?php
 
-$server= "localhost";
-$username="root";
-$password="root";
-$dbname="test";
+include "config.php";
 
-
-$conn = mysqli_connect($server,$username,$password,$dbname);
 
 if(isset($_POST['submit'])) {
 
@@ -21,10 +16,12 @@ if(isset($_POST['submit'])) {
 
 	if($run) {
 		echo "sucessful";
+		
+		
 	}
 	else {
 		echo "unsuccessful";
+		
 	}
 }
 ?>
-// 
