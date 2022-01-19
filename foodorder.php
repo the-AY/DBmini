@@ -34,7 +34,7 @@ if(isset($_POST['C_ID'])){
     $F_IDNAME=$_POST['Item'];
     $QUANTITY = $_POST['quantity'];
     $PRICE = $_POST[$P];
-    $sql="INSERT INTO `food` (`C_ID`, `ITEMS`, `QUANTITY`, `PRICE`, `F_ID`) VALUES ('', '', '', '', '') ";
+    $sql="INSERT INTO `food` (`C_ID`, `ITEMS`, `QUANTITY`, `PRICE`, `F_ID`) VALUES ('$C_ID', '$F_IDNAME', '$QUANTITY', '$P', '') ";
     $result=mysqli_query($connect,$sql);
     if($result)
     {
