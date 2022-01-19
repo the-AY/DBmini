@@ -9,11 +9,7 @@
     <link href="style.css" rel="stylesheet">
     <title>Food Order Admin</title>
 </head>
-?php
 
-include "config.php";
-
-?>
 <body>
     <header class="text-gray-600 body-font">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -45,7 +41,37 @@ include "config.php";
           <th>Status</th>
           <th>Action</th>
         </tr>
-       
+        <?php
+        include "config.php";
+      
+        $sql= "Select * from `food`;";
+      
+        $result= mysqli_query($connect,$sql);
+      
+        if($result){
+            while($row=mysqli_fetch_assoc($result))
+            {
+              
+              $F_ID=$row['Items'];
+              $QTY=$row['quantity'];
+              $C_ID=$row['C_ID'];
+              $PRICE=$row[' '];
+              
+              
+              echo '<tr>
+              <td>'.$F_ID.'</td>
+              <td>'.$PRICE.'</td>
+              <td>'.$C_ID.'</td>
+              <td>'.$QTY.'</td>
+              <td>
+                      <button ><a href="update_customer.php?C_ID='.$C_ID.'">Update</a></button>
+                      <button ><a href="deletefood.php">Delete</a></button>
+          </td>
+          </tr>';
+      
+            }
+          }   
+        ?>
          
       </table>
       <br><br><br><br><br><br><br>
