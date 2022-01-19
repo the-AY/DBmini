@@ -34,15 +34,14 @@
             case "AC chair car":
                 $coach_no= "CC101";
                 break;
-            case "second seater":
-                $coach_no= "2S101";
-                break;
             case "AC two tier":
                 $coach_no= "2A101";
                 break;
             case "second seater":
                 $coach_no= "2S101";
                 break;
+            default : echo "invalid option";
+            break;
 
             }
 
@@ -55,7 +54,7 @@
         $query2="INSERT INTO TICKET_HOLDER(`TIH_NAME`,`AGE`,`ADDRESS`) VALUES ('$pname1','$age1','$address1')";
         $query3="INSERT INTO TICKET_HOLDER(`TIH_NAME`,`AGE`,`ADDRESS`) VALUES ('$pname2','$age2','$address2')";
 
-        $run=mysqli_query($conn,$query,$query2,$query3) or die("connection failed");
+        $run=mysqli_query($conn,$query) or die("connection failed");
 
         if($run) {
             echo "sucessfully inserted";
