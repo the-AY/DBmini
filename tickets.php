@@ -8,37 +8,51 @@
         
         //get the input details from ticketbooking
         $name = $_POST['name'];
+
         $c_id= $_POST['c_id'];
+
         $coach_type=$_POST['coach_type'];
+
         $source=$_POST['$src'];
+
         $dest=$_POST['$dest'];
+
         $ti_type="ticket";
+
         $pname1=$_POST['pname1'];
+
         $pname2=$_POST['pname2'];
+
         $age1=$_POST['age1'];
+
         $age2=$_POST['age2'];
+
         $address1=$_POST['address1'];
+
         $address2=$_POST['address2'];
+        
+
+        
 
         //assign the coach type to its coach no
         $coach_no;
 
         switch ($coach_type) {
 
-            case "sleeper":
+            case 1:
                 $coach_no="SL101";
                 break;
-            case "first class":
+            case 2:
                 $coach_no= "1A101";
                 break;
-            case "AC chair car":
+            case 3:
                 $coach_no= "CC101";
                 break;
-            case "AC two tier":
-                $coach_no= "2A101";
-                break;
-            case "second seater":
+            case 4:
                 $coach_no= "2S101";
+                break;
+            case 5:
+                $coach_no= "2A101" ;
                 break;
             default : echo "invalid option";
             break;
@@ -55,6 +69,8 @@
         $query3="INSERT INTO TICKET_HOLDER(`TIH_NAME`,`AGE`,`ADDRESS`) VALUES ('$pname2','$age2','$address2')";
 
         $run=mysqli_query($conn,$query) or die("connection failed");
+        $run2=mysqli_query($conn,$query2) or die("connection failed");
+        $run3=mysqli_query($conn,$query3) or die("connection failed");
 
         if($run) {
             echo "sucessfully inserted";
