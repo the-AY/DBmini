@@ -98,7 +98,7 @@ if(isset($_POST['submit'])) {
               <input type="password" id="password" name="password" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
             </div>
             <button type="submit" value="submit" name="submit" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Create a account </button>
-           <a href="login.html">Return to login</a>
+           <a href="login.php">Return to login</a>
             //send credentials to the database to create a new account to the user
             <p class="text-xs text-gray-500 mt-3"></p>
           </div>

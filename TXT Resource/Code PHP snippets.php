@@ -116,3 +116,45 @@ Logout.php
    echo 'You have cleaned session';
    header('Refresh: 2; URL = login.php');
 ?>
+
+
+
+<?php
+$user = "root";
+Shost="localhost";
+$pwd = ""; 
+$db = "dbmini"; 
+$conn = mysqli_connect($host, $user, $pwd, $db);
+ echo "Error Connecting the Database ";
+if(!$conn)
+{
+}
+if(isset($_POST['login']))
+{ 
+$username = $_POST['username']; 
+$password = $_POST['password'];
+$result-mysqli_query($conn, $sql); $check=mysqli_fetch_array($result);
+if(isset($check))
+$sql="SELECT * FROM "customer` WHERE `C_ID="$user" and "PASSWORD` = '$password';";
+{ 
+   header('Location: index.php');
+}
+else
+{
+echo "<script>alert("Incorrect username or password")</script>";
+}
+}
+
+<?php
+
+if($current!=0)
+{
+$current= $dbcurrent;
+
+$newcurrent=$dbcurrent-$QTYticket;
+
+$sql="$newcurrent  "
+
+}
+else
+display "alert train is full no more booking allowed"

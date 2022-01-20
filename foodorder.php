@@ -29,13 +29,13 @@
 
 include "config.php";
 session_start();
-if(isset($_POST['C_ID'])){
+if(isset($_POST['Submit'])){
     $C_ID = $_POST['C_ID'];
     $F_IDNAME=$_POST['Item'];
     $QUANTITY = $_POST['quantity'];
-    $PRICE = $_POST[$P];
-    $sql="INSERT INTO `food` (`C_ID`, `ITEMS`, `QUANTITY`, `PRICE`, `F_ID`) VALUES ('', '', '', '', '') ";
-    $result=mysqli_query($connect,$sql);
+    $PRICE = $_POST[''];
+    $sql="INSERT INTO `food` (`C_ID`, `ITEMS`, `QUANTITY`, `PRICE`, `F_ID`) VALUES ('$C_ID', '$F_IDNAME', '$QUANTITY', '', '') ";
+    $result=mysqli_query($conn,$sql);
     if($result)
     {
     echo "<script>alert('inserted successfully');</script>";
@@ -46,8 +46,7 @@ if(isset($_POST['C_ID'])){
     {
       header("Location:foodorder.php");
     }
-  }
-    
+  } 
   ?>  
   <span class="ml-3 text-xl">Food Menu</span>
     <section class="text-gray-600 body-font">
@@ -149,7 +148,7 @@ if(isset($_POST['C_ID'])){
           <option value="F05-Onion Pokoda">Onion Pokoda </option>
           <option value="F06-Samosa">Samosa</option>
           <option value="F07-Gulab Jamun">Gulab Jamun</option>
-          <option value="F08-">Tea</option>
+          <option value="F08-TEA">Tea</option>
         </select>
         <br><br>
        

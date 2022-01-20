@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 19, 2022 at 07:51 AM
+-- Generation Time: Jan 20, 2022 at 05:17 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.14
 
@@ -52,7 +52,7 @@ CREATE TABLE `customer` (
   `AGE` int(11) DEFAULT NULL,
   `ADDRESS` varchar(30) DEFAULT NULL,
   `GENDER` varchar(6) DEFAULT NULL,
-  `CONTACT` int(11) DEFAULT NULL,
+  `CONTACT` varchar(11) DEFAULT NULL,
   `PASSWORD` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -61,7 +61,7 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`C_ID`, `C_NAME`, `AGE`, `ADDRESS`, `GENDER`, `CONTACT`, `PASSWORD`) VALUES
-('asda', 'sda', 12, 'AS', 'M', 2147483647, 'ASD');
+('test', 'test', 12, 'mangalore', 'male', '9876543210', 'test');
 
 -- --------------------------------------------------------
 
@@ -76,6 +76,14 @@ CREATE TABLE `food` (
   `PRICE` int(5) NOT NULL,
   `F_ID` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `food`
+--
+
+INSERT INTO `food` (`C_ID`, `ITEMS`, `QUANTITY`, `PRICE`, `F_ID`) VALUES
+('', 'F01-Masala Dosa', 2, 0, ''),
+('', 'F06-Samosa', 5, 0, '');
 
 -- --------------------------------------------------------
 
@@ -139,6 +147,13 @@ CREATE TABLE `ticket` (
   `PRICE` int(11) NOT NULL,
   `C_ID` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ticket`
+--
+
+INSERT INTO `ticket` (`TI_TYPE`, `PNR`, `SRC`, `DEST`, `C_NAME`, `COACH_NO`, `SEAT_NO`, `PRICE`, `C_ID`) VALUES
+('postal', '', 'mangalore', 'delhi', 'test', '', '', 0, 'test');
 
 -- --------------------------------------------------------
 
