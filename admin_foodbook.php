@@ -46,14 +46,14 @@
       
         $sql= "Select * from `food`;";
       
-        $result= mysqli_query($connect,$sql);
+        $result= mysqli_query($conn,$sql);
       
         if($result){
             while($row=mysqli_fetch_assoc($result))
             {
               
-              $F_ID=$row['Items'];
-              $QTY=$row['quantity'];
+              $F_ID=$row['F_IDNAME'];
+              $QTY=$row['QUANTITY'];
               $C_ID=$row['C_ID'];
               $PRICE=$row[' '];
               

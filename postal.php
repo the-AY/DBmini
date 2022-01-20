@@ -13,7 +13,7 @@ if(isset($_POST['submit'])) {
     $c_id=$_POST['c_id'];
     $src=$_POST['src'];
     $dest=$_POST['dest'];
-    $ti_type="postal";
+    $ti_type="POSTAL";
     
 
     //queries

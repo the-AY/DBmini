@@ -17,7 +17,7 @@
 
         $dest=$_POST['dest'];
 
-        $ti_type="ticket";
+        $ti_type="TICKET";
 
         $pname1=$_POST['pname1'];
 
