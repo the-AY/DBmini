@@ -13,9 +13,9 @@
 
         $coach_type=$_POST['coach_type'];
 
-        $source=$_POST['$src'];
+        $src=$_POST['src'];
 
-        $dest=$_POST['$dest'];
+        $dest=$_POST['dest'];
 
         $ti_type="ticket";
 
@@ -61,17 +61,15 @@
 
             //all the queries
             //inserting into ticket table
-        $query="INSERT INTO TICKET(`NAME`,`C_ID`,`COACH_NO`,`SRC`,`DEST`) VALUES ('$name','$c_id','$coach_no','$src','$dest')";
-            
+        $query="INSERT INTO TICKET(`C_NAME`,`C_ID`,`COACH_NO`,`SRC`,`DEST`) VALUES ('$name','$c_id','$coach_no','$src','$dest')";
+        
         //inserting into ticket_holder table
 
         $query2="INSERT INTO TICKET_HOLDER(`TIH_NAME`,`AGE`,`ADDRESS`) VALUES ('$pname1','$age1','$address1')";
-        $query3="INSERT INTO TICKET_HOLDER(`TIH_NAME`,`AGE`,`ADDRESS`) VALUES ('$pname2','$age2','$address2')";
+        // $query3="INSERT INTO TICKET_HOLDER(`TIH_NAME`,`AGE`,`ADDRESS`) VALUES ('$pname2','$age2','$address2')";
 
-        $run=mysqli_query($conn,$query) or die("connection failed");
-        $run2=mysqli_query($conn,$query2) or die("connection failed");
-        $run3=mysqli_query($conn,$query3) or die("connection failed");
-
+        $run=mysqli_query($conn,$query,$query2) or die("connection failed");
+        
         if($run) {
             echo "sucessfully inserted";
             
