@@ -9,17 +9,39 @@
     <link href="style.css" rel="stylesheet">
     <title>Railway Management Admin console</title>
 </head>
-?php
+<?php
+$user = "root";
+$host="localhost";
+$pwd = ""; 
+$db = "dbmini"; 
+$conn = mysqli_connect($host, $user, $pwd, $db);
 
-include "config.php";
-
+if(!$conn)
+{
+  echo "Error Connecting the Database ";
+}
+if(isset($_POST['login']))
+{ 
+$username = $_POST['username']; 
+$password = $_POST['password'];
+$sql="SELECT * FROM `admin` WHERE `username`='$username' and `password` = '$password';";
+$result=mysqli_query($conn, $sql); 
+$check=mysqli_fetch_array($result);
+if(isset($check))
+{ 
+   header('Location:index.html');
+}
+else
+{
+echo "<script>alert('Incorrect Username or password try again')</script>";
+}
+}
 ?>
 <body>
     <header class="text-gray-600 body-font">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
             <a class="mr-5 hover:text-gray-900" href="indexadmin.html">Home</a>
-            
             <a class="mr-5 hover:text-gray-900" href="admin_ticket.html">Travel Ticket </a>
             <a class="mr-5 hover:text-gray-900" href="admin_postalbook.html">Postal Ticket</a>
             <a class="mr-5 hover:text-gray-900" href="admin_foodbook.html">Food Order</a>
@@ -48,9 +70,9 @@ include "config.php";
           <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Login</h2>
           <div class="relative mb-4">
   
-            <form action="/action_page.php">
+            <form action="loginadmin.php" method="POST">
             <label for="full-name" class="leading-7 text-sm text-gray-600">User Name</label>
-            <input type="email" id="email" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            <input type="username" id="username" name="username" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
           </div>
           <div class="relative mb-4">
             <label for="password" class="leading-7 text-sm text-gray-600">Password</label>

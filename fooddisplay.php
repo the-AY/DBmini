@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     <title> Food on Rails</title>
 </head>
 
@@ -23,7 +24,7 @@
         <span class="ml-3 text-xl">Railway Management System</span>
         </a>
         <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
-          <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="login.html">login</a>
+          <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="login.php">login</a>
           </button>
         </div>
       </div>
@@ -32,8 +33,6 @@
     <table id="DisplayTable">
         <tr>
           <th>Food_id</th>
-          <th>Train Number</th>
-          <th>Seat_no</th>
           <th>Items</th>
           <th>Quantity</th>
           <th>Status</th>
