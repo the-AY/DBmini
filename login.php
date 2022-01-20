@@ -23,7 +23,7 @@ if(isset($_POST['login']))
 $username = $_POST['username']; 
 $password = $_POST['password'];
 $sql="SELECT * FROM `customer` WHERE `C_ID`='$username' and `PASSWORD` = '$password';";
-$result-mysqli_query($conn, $sql); 
+$result=mysqli_query($conn, $sql); 
 $check=mysqli_fetch_array($result);
 if(isset($check))
 { 
@@ -68,7 +68,8 @@ echo "<script>alert('Incorrect Username or password')</script>";
         <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Login</h2>
         <div class="relative mb-4">
 
-          <form action="login.php">
+          <form action="login.php" method="post">
+
           <label for="full-name" class="leading-7 text-sm text-gray-600">Username</label>
           <input type="username" id="username" name="username" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
         </div>
@@ -81,8 +82,8 @@ echo "<script>alert('Incorrect Username or password')</script>";
           <input type="Submit" value="login" name="login" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"> 
         </button>
       </form>
-        <a href="newac.php" > Create new account</a>
-        <a href="loginadmin.html" > Admin Login</a>
+        <a href="newac.php"> Create new account</a>
+        <a href="loginadmin.php"> Admin Login</a>
         //send credentials to the database to verify the user
         <p class="text-xs text-gray-500 mt-3"></p>
       

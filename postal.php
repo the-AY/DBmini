@@ -14,12 +14,12 @@ if(isset($_POST['submit'])) {
     $src=$_POST['src'];
     $dest=$_POST['dest'];
     $ti_type="postal";
-
+    
 
     //queries
     //insert into ticket table
-    $query="INSERT INTO TICKET(`NAME`,`C_ID`,`TI_TYPE`,`SRC`,`DEST`) VALUES ('$name','$c_id','$ti_type','$src','$dest')";
-
+    $query="INSERT INTO TICKET(`C_NAME`,`C_ID`,`TI_TYPE`,`SRC`,`DEST`) VALUES ('$name','$c_id','$ti_type','$src','$dest')";
+    
     $run=mysqli_query($conn,$query) or die("connection failed");
 
 

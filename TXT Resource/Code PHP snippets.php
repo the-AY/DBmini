@@ -144,3 +144,17 @@ else
 echo "<script>alert("Incorrect username or password")</script>";
 }
 }
+
+<?php
+
+if($current!=0)
+{
+$current= $dbcurrent;
+
+$newcurrent=$dbcurrent-$QTYticket;
+
+$sql="$newcurrent  "
+
+}
+else
+display "alert train is full no more booking allowed"
