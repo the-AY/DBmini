@@ -39,7 +39,9 @@
            </tr>
            <?php
            include "config.php";
-           $sql="SELECT A.*,B.* FROM TICKET A JOIN TICKET_HOLDER B WHERE A.TI_TYPE='TRAVEL";
+           if(isset($_POST['submit'])) {
+           $username=$_POST['username'];
+           $sql="SELECT A.*,B.* FROM TICKET A JOIN TICKET_HOLDER B WHERE A.TI_TYPE='TRAVEL' AND C_ID=$username";
            $result=$conn->query($sql);
 
            if($result->num_rows>0) {
@@ -51,7 +53,10 @@
                 echo "no results";
             }
             $conn->close();
-
+        }
+        else {
+            echo "error";
+        }
            ?>
        </table> 
         <script src="" async defer></script>

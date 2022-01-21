@@ -37,7 +37,9 @@
            </tr>
            <?php
            include "config.php";
-           $sql="SELECT * FROM TICKET WHERE TI_TYPE='POSTAL' ";
+           if(isset($_POST['submit'])) {
+           $username=$_POST['username'];
+           $sql="SELECT * FROM TICKET WHERE TI_TYPE='POSTAL' AND C_ID=$username ";
            $result=$conn->query($sql);
 
            if($result->num_rows>0) {
@@ -49,7 +51,10 @@
                 echo "no results";
             }
             $conn->close();
-
+        }
+        else {
+            echo "error";
+        }
            ?>
        </table> 
         <script src="" async defer></script>
