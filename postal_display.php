@@ -42,7 +42,7 @@
 
            if($result->num_rows>0) {
                while ($row =$result->fetch_assoc()) {
-                   echo "<tr><td>" . $row[" PNR"] . "</td><td>" . $row["C_NAME"] . $row["TIH_NAME"] . "</td><td>" . $row["ADDRESS"] . "</td><td>" . $row["PRICE"] . "</td><td>" . $row["SRC"] . "</td><td>" . $row["DEST"] . "</td></tr>";
+                   echo "<tr><td>" . $row["PNR"] . "</td><td>" . $row["C_NAME"] . " </td><td>" . $row["PRICE"] . "</td><td>" . $row["SRC"] . "</td><td>" . $row["DEST"] . "</td></tr>";
                }
             }
             else {
