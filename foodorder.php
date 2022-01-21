@@ -19,7 +19,7 @@
           <span class="ml-3 text-xl">Railway Management System</span>
           </a>
           <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
-            <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="pnrstart.html">PNR Status</a>
+            <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="login.php">login</a>
             </button>
           </div>
         </div>
@@ -30,10 +30,9 @@
 include "config.php";
 session_start();
 if(isset($_POST['Submit'])){
-    $C_ID = $_POST['C_ID'];
-    $F_IDNAME=$_POST['Item'];
+    $C_ID = $_POST['username'];
+    $F_IDNAME=$_POST['item'];
     $QUANTITY = $_POST['quantity'];
-    $PRICE = $_POST[''];
     $sql="INSERT INTO `food` (`C_ID`, `ITEMS`, `QUANTITY`, `PRICE`, `F_ID`) VALUES ('$C_ID', '$F_IDNAME', '$QUANTITY', '', '') ";
     $result=mysqli_query($conn,$sql);
     if($result)
@@ -137,9 +136,15 @@ if(isset($_POST['Submit'])){
 
       </section>
       <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
+
       <form action="foodorder.php" method="post">
+
+      <div class="relative mb-4">
+          <label for="username" class="leading-7 text-sm text-gray-600">Username</label>
+          <input type="username" id="username" name="username" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
         <label for="Fid">Item:</label>
-        <select name="Item" id="Item">6
+        <select name="item" id="item">
           <option value="None">None</option>
           <option value="F01-Masala Dosa">Masala Dosa</option>
           <option value="F02-Idli vada">Idli vada</option>

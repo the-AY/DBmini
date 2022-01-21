@@ -31,7 +31,7 @@ if(isset($check))
 }
 else
 {
-echo "<script>alert('Incorrect Username or password')</script>";
+echo "<script>alert('Incorrect Username or password try again')</script>";
 }
 }
 ?>

@@ -24,7 +24,7 @@
           <span class="ml-3 text-xl">Railway Management Admin Console</span>
           </a>
           <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
-            <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="loginadmin.html">Admin Login</a>
+            <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="loginadmin.php">Admin Login</a>
             </button>
           </div>
         </div>
@@ -33,11 +33,9 @@
         
       <table id="DisplayTable">
         <tr>
-          <th>Food_id</th>
-          <th>Train Number</th>
-          <th>Seat_no</th>
-          <th>Items</th>
+          <th>Food_id/items</th>
           <th>Quantity</th>
+          <th>Customer name</th>
           <th>Status</th>
           <th>Action</th>
         </tr>
@@ -51,20 +49,18 @@
         if($result){
             while($row=mysqli_fetch_assoc($result))
             {
-              
-              $F_ID=$row['F_IDNAME'];
-              $QTY=$row['QUANTITY'];
-              $C_ID=$row['C_ID'];
-              $PRICE=$row[' '];
+              $ITEMS=$row['item'];
+              $QUANTITY=$row['quantity'];
+              $username=$row['C_ID'];
               
               
               echo '<tr>
-              <td>'.$F_ID.'</td>
-              <td>'.$PRICE.'</td>
-              <td>'.$C_ID.'</td>
-              <td>'.$QTY.'</td>
+              <td>'.$ITEMS.'</td>
+              <td>'.$QUANTITY.'</td>
+              <td>'.$username.'</td>
+           
+
               <td>
-                      <button ><a href="update_customer.php?C_ID='.$C_ID.'">Update</a></button>
                       <button ><a href="deletefood.php">Delete</a></button>
           </td>
           </tr>';
