@@ -10,7 +10,7 @@
 <header class="text-gray-600 body-font">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
-            <a class="mr-5 hover:text-gray-900" href="index.html">Home</a>
+            <a class="mr-5 hover:text-gray-900" href="home.html">Home</a>
             <a class="mr-5 hover:text-gray-900" href="err"> Trains </a>
             <a class="mr-5 hover:text-gray-900" href="contactus.html">Contact us</a> </a>
             <a class="hover:text-gray-900" href="aboutus.html" >About us</a>
@@ -29,11 +29,13 @@
 
 include "config.php";
 session_start();
+$username = $_SESSION["username"];
+
 if(isset($_POST['Submit'])){
-    $C_ID = $_POST['username'];
+  //  $C_ID = $_POST['username'];
     $F_IDNAME=$_POST['item'];
     $QUANTITY = $_POST['quantity'];
-    $sql="INSERT INTO `food` (`C_ID`, `ITEMS`, `QUANTITY`, `PRICE`, `F_ID`) VALUES ('$C_ID', '$F_IDNAME', '$QUANTITY', '', '') ";
+    $sql="INSERT INTO `food` (`C_ID`, `ITEMS`, `QUANTITY`, `PRICE`, `F_ID`) VALUES ('$username', '$F_IDNAME', '$QUANTITY', '', '') ";
     $result=mysqli_query($conn,$sql);
     if($result)
     {
@@ -46,6 +48,32 @@ if(isset($_POST['Submit'])){
       header("Location:foodorder.php");
     }
   } 
+  $price;
+
+  switch ($) {
+
+      case 1:
+          $price="SL101";
+          $F_ID="";
+
+          break;
+      case 2:
+          $price= "1A101";
+          break;
+      case 3:
+          $price = "CC101";
+          break;
+      case 4:
+          $price= "2S101";
+          break;
+      case 5:
+          $price= "2A101" ;
+          break;
+      default : echo "invalid option";
+      break;
+
+      }
+
   ?>  
   <span class="ml-3 text-xl">Food Menu</span>
     <section class="text-gray-600 body-font">
@@ -139,10 +167,10 @@ if(isset($_POST['Submit'])){
 
       <form action="foodorder.php" method="post">
 
-      <div class="relative mb-4">
-          <label for="username" class="leading-7 text-sm text-gray-600">Username</label>
-          <input type="username" id="username" name="username" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-        </div>
+      <!-- <div class="relative mb-4"> -->
+          <!-- <label for="username" class="leading-7 text-sm text-gray-600">Username</label> -->
+          <!-- <input type="username" id="username" name="username" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"> -->
+        <!-- </div> -->
         <label for="Fid">Item:</label>
         <select name="item" id="item">
           <option value="None">None</option>

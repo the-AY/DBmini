@@ -13,7 +13,7 @@ $host="localhost";
 $pwd = ""; 
 $db = "dbmini"; 
 $conn = mysqli_connect($host, $user, $pwd, $db);
-
+session_start();
 if(!$conn)
 {
   echo "Error Connecting the Database ";
@@ -22,6 +22,7 @@ if(isset($_POST['login']))
 { 
 $username = $_POST['username']; 
 $password = $_POST['password'];
+$_SESSION["username"] = $username;
 $sql="SELECT * FROM `customer` WHERE `C_ID`='$username' and `PASSWORD` = '$password';";
 $result=mysqli_query($conn, $sql); 
 $check=mysqli_fetch_array($result);
@@ -40,7 +41,7 @@ echo "<script>alert('Incorrect Username or password try again')</script>";
   <header class="text-gray-600 body-font">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
       <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
-        <a class="mr-5 hover:text-gray-900" href="index.html">Home</a>
+        <a class="mr-5 hover:text-gray-900" href="home.html">Home</a>
         <a class="mr-5 hover:text-gray-900" href="https://www.railyatri.in/train-ticket?utm_source=ET277dweb&gclid=EAIaIQobChMI8ZHZt7yu9QIV1wkrCh2OFw96EAAYASAAEgLFRfD_BwE"> Trains </a>
         <a class="mr-5 hover:text-gray-900" href="contactus.html">Contact us</a> 
         <a class="mr-5 hover:text-gray-900" href="aboutus.html" >About us</a>
