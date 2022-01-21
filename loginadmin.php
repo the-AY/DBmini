@@ -51,7 +51,7 @@ echo "<script>alert('Incorrect Username or password try again')</script>";
           <span class="ml-3 text-xl">Railway Management Admin Console</span>
           </a>
           <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
-            <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="loginadmin.html">Login Admin </a>
+            <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="homeadmin.html">Login Admin </a>
             </button>
           </div>
         </div>
