@@ -28,7 +28,7 @@ $result=mysqli_query($conn, $sql);
 $check=mysqli_fetch_array($result);
 if(isset($check))
 { 
-   header('Location:index.html');
+   header('Location:home.html');
 }
 else
 {

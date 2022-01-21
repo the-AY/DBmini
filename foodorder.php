@@ -48,27 +48,55 @@ if(isset($_POST['Submit'])){
       header("Location:foodorder.php");
     }
   } 
-  $price;
+  $option=$_POST['option'];
 
-  switch ($) {
+  switch ($option) {
 
       case 1:
-          $price="SL101";
-          $F_ID="";
-
+          $price="0";
+          $F_ID ="NONE";
+          $ITEMS ="0";
           break;
       case 2:
-          $price= "1A101";
+          $price="50";
+          $F_ID ="F001";
+          $ITEMS ="Masala Dosa";
           break;
       case 3:
-          $price = "CC101";
+          $price="55";
+          $F_ID ="F002";
+          $ITEMS ="Idli Vada";
           break;
       case 4:
-          $price= "2S101";
+          $price="100";
+          $F_ID ="F003";
+          $ITEMS ="South Indian";
           break;
       case 5:
-          $price= "2A101" ;
+          $price="100";
+          $F_ID ="F004";
+          $ITEMS ="North Indian";
           break;
+      case 6:
+          $price="40";
+          $F_ID ="F005";
+          $ITEMS ="Onion Pokoda";
+          break;
+      case 7:
+            $price="20";
+            $F_ID ="F006";
+            $ITEMS ="Samosa";
+            break;
+      case 8:
+            $price="30";
+            $F_ID ="F007";
+            $ITEMS ="Gulab Jamun";
+            break;
+      case 9:
+              $price="15";
+              $F_ID ="F008";
+              $ITEMS ="TEA";
+              break;
       default : echo "invalid option";
       break;
 
@@ -172,16 +200,16 @@ if(isset($_POST['Submit'])){
           <!-- <input type="username" id="username" name="username" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"> -->
         <!-- </div> -->
         <label for="Fid">Item:</label>
-        <select name="item" id="item">
-          <option value="None">None</option>
-          <option value="F01-Masala Dosa">Masala Dosa</option>
-          <option value="F02-Idli vada">Idli vada</option>
-          <option  value="F03-South Indian Thali">South Indian Thali</option>
-          <option value="F04-North Indian Thali">North Indian Thali</option>
-          <option value="F05-Onion Pokoda">Onion Pokoda </option>
-          <option value="F06-Samosa">Samosa</option>
-          <option value="F07-Gulab Jamun">Gulab Jamun</option>
-          <option value="F08-TEA">Tea</option>
+        <select name="option" id="option">
+          <option value="1">None</option>
+          <option value="2">Masala Dosa</option>
+          <option value="3">Idli vada</option>
+          <option value="4">South Indian Thali</option>
+          <option value="5">North Indian Thali</option>
+          <option value="6">Onion Pokoda </option>
+          <option value="7">Samosa</option>
+          <option value="8">Gulab Jamun</option>
+          <option value="9">Tea</option>
         </select>
         <br><br>
        
