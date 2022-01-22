@@ -92,6 +92,7 @@ if(isset($_POST['Submit']))
       if($result)
       {
       echo "<script>alert('inserted successfully');</script>";
+      echo "ordered sucessfully";
        header("Location:foodorder.php");
       die;
       }

@@ -36,9 +36,46 @@
           <th>Items</th>
           <th>Quantity</th>
           <th>Status</th>
-          <th>Action</th>
+         
         </tr>
        
      
       </table>
       <br><br><br><br><br><br><br>
+      <?php
+        include "config.php";
+        session_start();
+        $username = $_SESSION["username"];
+        $sql= "Select * from `food` WHERE  `C_ID`=$username ;";
+      
+        $result= mysqli_query($conn,$sql);
+      
+        if($result){
+            while($row=mysqli_fetch_assoc($result))
+            {
+              $ITEMS=$row['ITEMS'];
+              $QUANTITY=$row['QUANTITY'];
+              $username=$row['C_ID'];
+              
+              
+              echo '<tr>
+              <td>'.$ITEMS.'</td>
+              <td>'.$QUANTITY.'</td>
+              <td>'.$username.'</td>
+           
+
+              <td>
+                      <button ><a href="deletefood.php">Delete</a></button>
+          </td>
+          </tr>';
+      
+            }
+          }   
+        ?>
+         
+      </table>
+      <br><br><br><br><br><br><br>
+     
+     
+</body>
+</html>
