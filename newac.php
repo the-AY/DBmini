@@ -31,10 +31,10 @@ if(isset($_POST['submit'])) {
 	$run=mysqli_query($conn,$query) or die("connection failed");
 
 	if($run) {
-		echo "sucessfully Inserted";	
+		echo "sucessfully Inserted Go to LOGIN PAGE";	
 	}
 	else {
-		echo "unsuccessful Please try again";
+		echo "unsuccessful creation Please try again";
 		
 	}
 }
@@ -86,10 +86,12 @@ if(isset($_POST['submit'])) {
                 <label for="full-name" class="leading-7 text-sm text-gray-600">Address</label>
                 <input type="text" id="address" name="address" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
               </div>
-              <div class="relative mb-4">
-                <label for="full-name" class="leading-7 text-sm text-gray-600">Gender</label>
-                <input type="text" id="gender" name="gender" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-              </div>
+              <label for="gender">Gender</label>
+                  <select name="gender" id="gender">
+               <option value="MALE">MALE</option>
+               <option value="FEMALE">FEMALE</option>
+             </select>
+        <br><br>
               <div class="relative mb-4">
                 <label for="full-name" class="leading-7 text-sm text-gray-600">Phone Number</label>
                 <input type="phone" id="contact" name="contact" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
