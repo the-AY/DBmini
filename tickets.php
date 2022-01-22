@@ -65,10 +65,10 @@
         
         //inserting into ticket_holder table
 
-        $query2="INSERT INTO TICKET_HOLDER(`TIH_NAME`,`AGE`,`ADDRESS`) VALUES ('$pname1','$age1','$address1')";
-        // $query3="INSERT INTO TICKET_HOLDER(`TIH_NAME`,`AGE`,`ADDRESS`) VALUES ('$pname2','$age2','$address2')";
+        $query .="INSERT INTO TICKET_HOLDER(`TIH_NAME`,`AGE`,`ADDRESS`) VALUES ('$pname1','$age1','$address1')";
+        $query .="INSERT INTO TICKET_HOLDER(`TIH_NAME`,`AGE`,`ADDRESS`) VALUES ('$pname2','$age2','$address2')";
 
-        $run=mysqli_query($conn,$query,$query2) or die("connection failed");
+        $run=mysqli_multi_query($conn,$query) or die("connection failed");
         
         if($run) {
             echo "sucessfully inserted";
