@@ -35,7 +35,7 @@ if(isset($_POST['Submit'])){
   //  $C_ID = $_POST['username'];
     $F_IDNAME=$_POST['item'];
     $QUANTITY = $_POST['quantity'];
-    $sql="INSERT INTO `food` (`C_ID`, `ITEMS`, `QUANTITY`, `PRICE`, `F_ID`) VALUES ('$username', '$F_IDNAME', '$QUANTITY', '', '') ";
+    $sql="INSERT INTO `food` (`C_ID`, `ITEMS`, `QUANTITY`, `PRICE`, `F_ID`) VALUES ('$username', '$ITEMS', '$QUANTITY', '$price', '$F_ID') ";
     $result=mysqli_query($conn,$sql);
     if($result)
     {
@@ -53,47 +53,47 @@ if(isset($_POST['Submit'])){
   switch ($option) {
 
       case 1:
-          $price="0";
+          $price=0;
           $F_ID ="NONE";
           $ITEMS ="0";
           break;
       case 2:
-          $price="50";
+          $price=50;
           $F_ID ="F001";
           $ITEMS ="Masala Dosa";
           break;
       case 3:
-          $price="55";
+          $price=55;
           $F_ID ="F002";
           $ITEMS ="Idli Vada";
           break;
       case 4:
-          $price="100";
+          $price=100;
           $F_ID ="F003";
           $ITEMS ="South Indian";
           break;
       case 5:
-          $price="100";
+          $price=100;
           $F_ID ="F004";
           $ITEMS ="North Indian";
           break;
       case 6:
-          $price="40";
+          $price=4;
           $F_ID ="F005";
           $ITEMS ="Onion Pokoda";
           break;
       case 7:
-            $price="20";
+            $price=20;
             $F_ID ="F006";
             $ITEMS ="Samosa";
             break;
       case 8:
-            $price="30";
+            $price=30;
             $F_ID ="F007";
             $ITEMS ="Gulab Jamun";
             break;
       case 9:
-              $price="15";
+              $price=15;
               $F_ID ="F008";
               $ITEMS ="TEA";
               break;
@@ -199,7 +199,7 @@ if(isset($_POST['Submit'])){
           <!-- <label for="username" class="leading-7 text-sm text-gray-600">Username</label> -->
           <!-- <input type="username" id="username" name="username" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"> -->
         <!-- </div> -->
-        <label for="Fid">Item:</label>
+        <label for="option">Item:</label>
         <select name="option" id="option">
           <option value="1">None</option>
           <option value="2">Masala Dosa</option>
@@ -213,7 +213,7 @@ if(isset($_POST['Submit'])){
         </select>
         <br><br>
        
-          <label for="Fid">Quantity:</label>
+          <label for="quantity">Quantity:</label>
           <select name="quantity" id="quantity">
             <option value="None">0</option>
             <option value="1">1</option> 
