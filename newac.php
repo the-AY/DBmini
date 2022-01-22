@@ -18,16 +18,15 @@ $db ="dbmini";
 $conn = mysqli_connect($host,$user,$pwd,$db);
 
 if(isset($_POST['submit'])) {
-
-	$C_ID=$_POST['username'];
+  $USERNAME=$_POST['username'];
 	$C_NAME=$_POST['name'];
 	$AGE=$_POST['age'];
 	$ADDRESS=$_POST['address'];
   $GENDER=$_POST['gender'];
   $CONTACT=$_POST['contact'];
   $PASSWORD=$_POST['password'];
-	$query="INSERT INTO customer (`C_ID`, `C_NAME`, `AGE`, `ADDRESS`, `GENDER`, `CONTACT`, `PASSWORD`) VALUES ('$C_ID', '$C_NAME', '$AGE', '$ADDRESS', '$GENDER', '$CONTACT', '$PASSWORD') ";
-
+  
+	$query="INSERT INTO `customer` (`C_ID`, `C_NAME`, `AGE`, `ADDRESS`, `GENDER`, `CONTACT`, `PASSWORD`, `USERNAME`) VALUES ('', '$C_NAME', '$AGE', '$ADDRESS', '$GENDER', '$CONTACT', '$PASSWORD',$USERNAME')"; 
 	$run=mysqli_query($conn,$query) or die("connection failed");
 
 	if($run) {
