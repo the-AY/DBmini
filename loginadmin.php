@@ -15,7 +15,7 @@ $host="localhost";
 $pwd = ""; 
 $db = "dbmini"; 
 $conn = mysqli_connect($host, $user, $pwd, $db);
-
+session_start();
 if(!$conn)
 {
   echo "Error Connecting the Database ";

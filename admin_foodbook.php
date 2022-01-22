@@ -41,7 +41,8 @@
         </tr>
         <?php
         include "config.php";
-      
+        session_start();
+        $adusername = $_SESSION["username"];
         $sql= "Select * from `food`;";
       
         $result= mysqli_query($conn,$sql);
