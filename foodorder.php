@@ -48,7 +48,7 @@ if(isset($_POST['Submit'])){
       header("Location:foodorder.php");
     }
   } 
-  $option=$_POST['option'];
+  $option=['option'];
 
   switch ($option) {
 
