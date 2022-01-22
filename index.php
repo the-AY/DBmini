@@ -85,7 +85,6 @@ echo "<script>alert('Incorrect Username or password try again')</script>";
       </form>
         <a href="newac.php"> Create new account</a>
         <a href="loginadmin.php"> Admin Login</a>
-        //send credentials to the database to verify the user
         <p class="text-xs text-gray-500 mt-3"></p>
       
       </div>

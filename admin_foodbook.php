@@ -14,7 +14,7 @@
     <header class="text-gray-600 body-font">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
             <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
-                <a class="mr-5 hover:text-gray-900" href="indexadmin.html">Home</a>
+                <a class="mr-5 hover:text-gray-900" href="homeadmin.html">Home</a>
                 <a class="mr-5 hover:text-gray-900" href="admin_ticket.html">Travel Ticket </a>
                 <a class="mr-5 hover:text-gray-900" href="admin_postalbook.html">Postal Ticket</a>
                 <a class="mr-5 hover:text-gray-900" href="admin_foodbook.html">Food Order</a>
@@ -24,7 +24,7 @@
           <span class="ml-3 text-xl">Railway Management Admin Console</span>
           </a>
           <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
-            <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="loginadmin.php">Admin Login</a>
+            <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="logout.php" Admin Logout</a>
             </button>
           </div>
         </div>
@@ -41,7 +41,8 @@
         </tr>
         <?php
         include "config.php";
-      
+        session_start();
+        $adusername = $_SESSION["username"];
         $sql= "Select * from `food`;";
       
         $result= mysqli_query($conn,$sql);
@@ -49,8 +50,8 @@
         if($result){
             while($row=mysqli_fetch_assoc($result))
             {
-              $ITEMS=$row['item'];
-              $QUANTITY=$row['quantity'];
+              $ITEMS=$row['ITEMS'];
+              $QUANTITY=$row['QUANTITY'];
               $username=$row['C_ID'];
               
               

@@ -31,10 +31,10 @@ if(isset($_POST['submit'])) {
 	$run=mysqli_query($conn,$query) or die("connection failed");
 
 	if($run) {
-		echo "sucessfully Inserted";	
+		echo "sucessfully Inserted Go to LOGIN PAGE";	
 	}
 	else {
-		echo "unsuccessful Please try again";
+		echo "unsuccessful creation Please try again";
 		
 	}
 }
@@ -44,7 +44,8 @@ if(isset($_POST['submit'])) {
   <header class="text-gray-600 body-font">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
       <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
-        <a class="mr-5 hover:text-gray-900" href="index.html">Home</a>
+        <a class="mr-5 hover:text-gray-900" href="home
+        .html">Home</a>
         <a class="mr-5 hover:text-gray-900" href="https://www.railyatri.in/train-ticket?utm_source=ET277dweb&gclid=EAIaIQobChMI8ZHZt7yu9QIV1wkrCh2OFw96EAAYASAAEgLFRfD_BwE"> Trains </a>
         <a class="mr-5 hover:text-gray-900" href="contactus.html">Contact us</a> </a>
         <a class="mr-5 hover:text-gray-900" href="aboutus.html" >About us</a>
@@ -85,10 +86,12 @@ if(isset($_POST['submit'])) {
                 <label for="full-name" class="leading-7 text-sm text-gray-600">Address</label>
                 <input type="text" id="address" name="address" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
               </div>
-              <div class="relative mb-4">
-                <label for="full-name" class="leading-7 text-sm text-gray-600">Gender</label>
-                <input type="text" id="gender" name="gender" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-              </div>
+              <label for="gender">Gender</label>
+                  <select name="gender" id="gender">
+               <option value="MALE">MALE</option>
+               <option value="FEMALE">FEMALE</option>
+             </select>
+        <br><br>
               <div class="relative mb-4">
                 <label for="full-name" class="leading-7 text-sm text-gray-600">Phone Number</label>
                 <input type="phone" id="contact" name="contact" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">

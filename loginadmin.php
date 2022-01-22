@@ -15,7 +15,7 @@ $host="localhost";
 $pwd = ""; 
 $db = "dbmini"; 
 $conn = mysqli_connect($host, $user, $pwd, $db);
-
+session_start();
 if(!$conn)
 {
   echo "Error Connecting the Database ";
@@ -29,7 +29,7 @@ $result=mysqli_query($conn, $sql);
 $check=mysqli_fetch_array($result);
 if(isset($check))
 { 
-   header('Location:index.html');
+   header('Location:homeadmin.html');
 }
 else
 {
@@ -41,7 +41,7 @@ echo "<script>alert('Incorrect Username or password try again')</script>";
     <header class="text-gray-600 body-font">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
-            <a class="mr-5 hover:text-gray-900" href="indexadmin.html">Home</a>
+            <a class="mr-5 hover:text-gray-900" href="homeadmin.html">Home</a>
             <a class="mr-5 hover:text-gray-900" href="admin_ticket.html">Travel Ticket </a>
             <a class="mr-5 hover:text-gray-900" href="admin_postalbook.html">Postal Ticket</a>
             <a class="mr-5 hover:text-gray-900" href="admin_foodbook.html">Food Order</a>
@@ -51,7 +51,7 @@ echo "<script>alert('Incorrect Username or password try again')</script>";
           <span class="ml-3 text-xl">Railway Management Admin Console</span>
           </a>
           <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
-            <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="loginadmin.html">Login Admin </a>
+            <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="homeadmin.html">Login Admin </a>
             </button>
           </div>
         </div>
