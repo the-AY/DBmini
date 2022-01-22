@@ -79,6 +79,15 @@ main file :- index.php (LOGIN)
 admin login:- loginadmin.php
 create new account :- newacbackup.php
 
+!USER(NORMAL)
 ticket->
 postal->
 food-> foodbooking.html-> foodorder.php |fooddisplay.php
+
+
+!USER(ADMIN)
+
+
+ticket->
+postal->
+food-> .html-> fooddisplay.php
