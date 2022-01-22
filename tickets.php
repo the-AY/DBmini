@@ -11,8 +11,8 @@
         //get the input details from ticketbooking
         $name = $_POST['name'];
 
-        // $c_id= $_POST['c_id'];
-        // $c_id= $_POST['username'];
+        $c_id= $_POST['c_id'];
+   
 
         $coach_type=$_POST['coach_type'];
 
