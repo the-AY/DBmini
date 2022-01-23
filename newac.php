@@ -31,10 +31,13 @@ if(isset($_POST['submit'])) {
 	$run=mysqli_query($conn,$query) or die("connection failed");
 
 	if($run) {
-		echo "sucessfully Inserted Go to LOGIN PAGE";	
+		echo "successfully Inserted  Redirecting to LOGIN PAGE";	
+    header('Refresh: 2; URL = index.php');
 	}
 	else {
-		echo "unsuccessful creation Please try again";
+		echo "unsuccessful account creation Please try again Redirecting to ACCOUNT CREATION PAGE";
+    header('Refresh: 2; URL = newac.php');
+
 		
 	}
 }
@@ -61,7 +64,7 @@ if(isset($_POST['submit'])) {
     </div>
   </header>
   
-  <form action="newacbackup.php" method="post">
+  <form action="newac.php" method="post">
     <section class="text-gray-600 body-font">
         <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
           <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">

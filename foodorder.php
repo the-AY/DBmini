@@ -19,7 +19,7 @@
           <span class="ml-3 text-xl">Railway Management System</span>
           </a>
           <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
-            <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="login.php">login</a>
+            <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="logout.php">Logout</a>
             </button>
           </div>
         </div>
@@ -93,7 +93,7 @@ if(isset($_POST['Submit']))
       {
       echo "<script>alert('inserted successfully');</script>";
       echo "ordered sucessfully";
-       header("Location:foodorder.php");
+      header('Refresh: 2; URL = foodorder.php');
       die;
       }
       else

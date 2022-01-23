@@ -69,7 +69,7 @@ echo "<script>alert('Incorrect Username or password try again')</script>";
         <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Login</h2>
         <div class="relative mb-4">
 
-          <form action="login.php" method="post">
+          <form action="index.php" method="post">
 
           <label for="full-name" class="leading-7 text-sm text-gray-600">Username</label>
           <input type="username" id="username" name="username" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
