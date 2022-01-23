@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+    <link href="404style.css" rel="stylesheet">
+  
     <title> Food on Rails</title>
 </head>
 
@@ -33,6 +35,7 @@
     <table id="DisplayTable">
         <tr>
           <th>Food_id</th>
+          <th>Username</th>
           <th>Items</th>
           <th>Quantity</th>
           <th>Status</th>
@@ -54,23 +57,28 @@
             while($row=mysqli_fetch_assoc($result))
             {
 
-              F_id c_id items quantity status
+              // F_id c_id items quantity status
+              $F_ID=$row['F_ID'];
+              $username=$row['C_ID'];
               $ITEMS=$row['ITEMS'];
               $QUANTITY=$row['QUANTITY'];
-              $username=$row['C_ID'];
+              $STATUS=$row['ITEMS'];
+              
               
               
               echo '<tr>
+              <td>'.$F_ID.'</td>
+              <td>'.$username.'</td>
               <td>'.$ITEMS.'</td>
               <td>'.$QUANTITY.'</td>
-              <td>'.$username.'</td>
+              
            
-
-              <td>
-                      <button ><a href="deletefood.php">Delete</a></button>
-          </td>
+            
+            <td>
+                     <button ><a href="deletefood.php">Delete</a></button>
+           </td>
           </tr>';
-      
+       
             }
           }   
         ?>
