@@ -15,7 +15,7 @@ if(isset($_POST['submit'])) {
     $dest=$_POST['dest'];
     $ti_type="POSTAL";
     
-
+    
     //queries
     //insert into ticket table
     $query="INSERT INTO TICKET(`C_NAME`,`C_ID`,`TI_TYPE`,`SRC`,`DEST`) VALUES ('$name','$c_id','$ti_type','$src','$dest')";
