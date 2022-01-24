@@ -9,7 +9,6 @@
     <link href="style.css" rel="stylesheet">
     <title>Food Order Admin</title>
 </head>
-
 <body>
     <header class="text-gray-600 body-font">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -28,59 +27,3 @@
             </button>
           </div>
         </div>
-      </header>
-      <h1>ADMIN CONSOLE Food Orders</h1>
-      <a href="adminfoodupdate.php">Update food</a>    
-      <table id="DisplayTable">
-        <tr>
-          <th>Food_id/items</th>
-          <th>Quantity</th>
-          <th>Customer name</th>
-          <th>Status</th>
-          <th>Action</th>
-        </tr>
-        <?php
-        include "config.php";
-        // session_start();
-        // $adusername = $_SESSION["username"];
-        $sql= "Select * from `food`;";
-      
-        $result= mysqli_query($conn,$sql);
-      
-        if($result){
-            while($row=mysqli_fetch_assoc($result))
-            {
-              $ITEMS=$row['ITEMS'];
-              $QUANTITY=$row['QUANTITY'];
-              $username=$row['C_ID'];
-              
-              
-              echo '<tr>
-              <td>'.$ITEMS.'</td>
-              <td>'.$QUANTITY.'</td>
-              <td>'.$username.'</td>
-              <td>'.$username.'</td>
-           
-
-              <td>
-                      <button ><a href="deletefood.php">Delete</a></button>
-          </td>
-          </tr>';
-      
-            }
-          }   
-        ?>
-         <!-- <label for="status">Status</label>
-                  <select name="status" id="status">
-               <option value="Cancelled">Cancelled</option>
-               <option value="Confirmed">Confirmed</option>
-                <option value="Fullfiled">Fullfiled</option>
-             </select> 
-        <br><br> -->
-
-      </table>
-      <br><br><br><br><br><br><br>
-  
-     
-</body>
-</html>
