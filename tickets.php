@@ -76,7 +76,7 @@
         $run=mysqli_query($conn,$query) or die("connection failed");
         if($run) {
             echo "sucessfully inserted";
-            
+            header('Refresh: 2; URL = ticketbooking.html');
             
         }
         else {

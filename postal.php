@@ -25,7 +25,7 @@ if(isset($_POST['submit'])) {
 
     if($run) {
         echo "sucessfully inserted";
-        
+        header('Refresh: 2; URL = postalbooking.html');
       
     }
     else {
