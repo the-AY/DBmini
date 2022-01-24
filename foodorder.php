@@ -65,7 +65,7 @@ if(isset($_POST['Submit']))
           $ITEMS ="North Indian";
           break;
       case "6":
-          $price=4;
+          $price=40;
           $F_ID ="F005";
           $ITEMS ="Onion Pokoda";
           break;

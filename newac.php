@@ -28,7 +28,7 @@ if(isset($_POST['submit'])) {
   $PASSWORD=$_POST['password'];
 	$query="INSERT INTO customer (`C_ID`, `C_NAME`, `AGE`, `ADDRESS`, `GENDER`, `CONTACT`, `PASSWORD`) VALUES ('$C_ID', '$C_NAME', '$AGE', '$ADDRESS', '$GENDER', '$CONTACT', '$PASSWORD') ";
 
-	$run=mysqli_query($conn,$query) or die("connection failed");
+	$run=mysqli_query($conn,$query) or die("connection failed|Username or Password Error");
 
 	if($run) {
 		echo "successfully Inserted  Redirecting to LOGIN PAGE";	
