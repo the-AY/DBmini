@@ -28,4 +28,68 @@
           </div>
         </div>
 
-        
+    ==========================================
+    <?php
+include 'config.php';
+
+
+$MID=$_GET['MID'];
+$QUERY="SELECT * FROM `food` WHERE C_ID=$C_ID;";
+$res=mysqli_query($connect,$QUERY);
+$Row=mysqli_fetch_array($res);
+$=$Row['table value'];
+$=$Row[''];
+$=$Row[''];
+$=$Row[''];
+
+
+if(isset($_POST['submit'])){
+    $=$_GET[''];
+    $=$_POST[''];
+    $=$_POST[''];
+    $=$_POST[''];
+    $=$_POST[''];
+    $sql="UPDATE `food` SET ``='$',``='$',``='$',``='$' WHERE `MID` = $MID;";
+    $result=mysqli_query($connect,$sql);
+    if($result){
+        echo "<script>alert('updated successfully');</script>";
+        header("Location:display_machine.php");
+        die;
+    }else{
+        echo "not";
+        //die(mysqfa-li-error($conn));
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <title>Update Machine</title>
+</head>
+<body>
+
+<div>
+
+<form  method="post">
+
+<label for=''></label>
+<input type="" id='' name='Brand value=<?php echo $#; ?>><br>
+
+<label for='#'>Machine Type</label>
+<input type="#" id='#' name='#'value=<?php echo $#; ?>><br>
+
+
+
+                <input type="submit" name="submit" value="Submit">   
+            </form>
+           
+  <button ><a href=".php">Back</a></button>
+                                       
+</div>
+
+</body>
+</html>    
