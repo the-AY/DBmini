@@ -74,26 +74,20 @@ admin_ticket.html
 admin_postal.html
 admin_foofbook.html
 
+current flow of the website
+main file :- index.php (LOGIN)
+admin login:- loginadmin.php
+create new account :- newacbackup.php
 
-Food offered <br>
-Breakfast 
-idli vada
-masala dosa
+!USER(NORMAL)
+ticket->
+postal->
+food-> foodbooking.html-> foodorder.php |fooddisplay.php
 
-Lunch 
-south indian thali
-north indian thali
-curd rice
 
-Dinner 
-special thali
-south indian thali
-north indian thali
+!USER(ADMIN)
 
-Snacks
-onion pokoda
-Samosa
 
-Desert
-Gulab Jamun
-
+ticket->
+postal->
+food-> .html-> fooddisplay.php

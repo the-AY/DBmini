@@ -1,6 +1,6 @@
 
 
-!<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -15,11 +15,7 @@
         <link rel="stylesheet" href="">
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     </head>
-    ?php
 
-include "config.php";
-
-?>
     <body>
       <header class="text-gray-600 body-font">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -73,16 +69,16 @@ include "config.php";
                   name="username"
                 />
               </div>
-
+            <form action="postal_display.php" method="post"> 
               <div class="flex space-x-2 justify-center">
                 <div>
-
-                  <button type="submit" formaction="postal_display.php" formmethod="post" name="submit" value="submit" class="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Submit</button>
+                  <button type="submit"  name="submit" value="submit" class="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Submit</button>
                 </div>
               </div>
-        
+            </form>
         <script src="" async defer></script>
 
         
     </body>
 </html>
+<!-- formaction="postal_display.php" formmethod="post" -->

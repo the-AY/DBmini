@@ -26,7 +26,7 @@ if(isset($_POST['submit'])) {
     if($run) {
         echo "sucessfully inserted";
         
-        
+      
     }
     else {
         echo "unsuccessful";

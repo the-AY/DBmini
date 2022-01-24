@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+    <link href="404style.css" rel="stylesheet">
+  
     <title> Food on Rails</title>
 </head>
 
@@ -24,7 +26,7 @@
         <span class="ml-3 text-xl">Railway Management System</span>
         </a>
         <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
-          <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="login.php">login</a>
+          <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="logout.php">Logout</a>
           </button>
         </div>
       </div>
@@ -33,12 +35,57 @@
     <table id="DisplayTable">
         <tr>
           <th>Food_id</th>
+          <th>Username</th>
           <th>Items</th>
           <th>Quantity</th>
           <th>Status</th>
-          <th>Action</th>
+         
         </tr>
        
      
       </table>
       <br><br><br><br><br><br><br>
+      <?php
+        include "config.php";
+        session_start();
+        $username = $_SESSION["username"];
+        $sql= "Select * from `food` WHERE  `C_ID`='$username';";
+      
+        $result= mysqli_query($conn,$sql);
+      
+        if($result){
+            while($row=mysqli_fetch_assoc($result))
+            {
+
+              // F_id c_id items quantity status
+              $F_ID=$row['F_ID'];
+              $username=$row['C_ID'];
+              $ITEMS=$row['ITEMS'];
+              $QUANTITY=$row['QUANTITY'];
+              $STATUS=$row['ITEMS'];
+              
+              
+              
+              echo '<tr>
+              <td>'.$F_ID.'</td>
+              <td>'.$username.'</td>
+              <td>'.$ITEMS.'</td>
+              <td>'.$QUANTITY.'</td>
+              
+           
+            
+            <td>
+                     <button ><a href="deletefood.php">Delete</a></button>
+           </td>
+          </tr>';
+       
+            }
+          }   
+        ?>
+         
+      </table>
+      <br><br><br><br><br><br><br>
+     
+     
+</body>
+</html>

@@ -19,7 +19,7 @@
           <span class="ml-3 text-xl">Railway Management System</span>
           </a>
           <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
-            <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="login.php">login</a>
+            <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="logout.php">Logout</a>
             </button>
           </div>
         </div>
@@ -31,77 +31,77 @@ include "config.php";
 session_start();
 $username = $_SESSION["username"];
 
-if(isset($_POST['Submit'])){
+if(isset($_POST['Submit']))
+{
   //  $C_ID = $_POST['username'];
-    $F_IDNAME=$_POST['item'];
+    // $F_IDNAME=$_POST['item'];
     $QUANTITY = $_POST['quantity'];
-    $sql="INSERT INTO `food` (`C_ID`, `ITEMS`, `QUANTITY`, `PRICE`, `F_ID`) VALUES ('$username', '$ITEMS', '$QUANTITY', '$price', '$F_ID') ";
-    $result=mysqli_query($conn,$sql);
-    if($result)
-    {
-    echo "<script>alert('inserted successfully');</script>";
-     header("Location:foodorder.php");
-    die;
-    }
-    else
-    {
-      header("Location:foodorder.php");
-    }
-  } 
-  $option=['option'];
+    $option=$_POST['item'];
+    switch ("$option") {
 
-  switch ($option) {
-
-      case 1:
+      case "1":
           $price=0;
           $F_ID ="NONE";
           $ITEMS ="0";
           break;
-      case 2:
+      case "2":
           $price=50;
           $F_ID ="F001";
           $ITEMS ="Masala Dosa";
           break;
-      case 3:
+      case "3":
           $price=55;
           $F_ID ="F002";
           $ITEMS ="Idli Vada";
           break;
-      case 4:
+      case "4":
           $price=100;
           $F_ID ="F003";
           $ITEMS ="South Indian";
           break;
-      case 5:
+      case "5":
           $price=100;
           $F_ID ="F004";
           $ITEMS ="North Indian";
           break;
-      case 6:
+      case "6":
           $price=4;
           $F_ID ="F005";
           $ITEMS ="Onion Pokoda";
           break;
-      case 7:
+      case "7":
             $price=20;
             $F_ID ="F006";
             $ITEMS ="Samosa";
             break;
-      case 8:
+      case "8":
             $price=30;
             $F_ID ="F007";
             $ITEMS ="Gulab Jamun";
             break;
-      case 9:
+      case "9":
               $price=15;
               $F_ID ="F008";
               $ITEMS ="TEA";
               break;
-      default : echo "invalid option";
+      default : echo "ERROR";
       break;
-
+    }
+      $sql="INSERT INTO `food` (`C_ID`, `ITEMS`, `QUANTITY`, `PRICE`, `F_ID`) VALUES ('$username', '$ITEMS', '$QUANTITY', '$price', '$F_ID') ";
+      $result=mysqli_query($conn,$sql);
+      if($result)
+      {
+      echo "<script>alert('inserted successfully');</script>";
+      echo "ordered sucessfully";
+      header('Refresh: 2; URL = foodorder.php');
+      die;
       }
-
+      else
+      {
+        header("Location:foodorder.php");
+      }
+    
+  } 
   ?>  
   <span class="ml-3 text-xl">Food Menu</span>
     <section class="text-gray-600 body-font">
@@ -199,8 +199,8 @@ if(isset($_POST['Submit'])){
           <!-- <label for="username" class="leading-7 text-sm text-gray-600">Username</label> -->
           <!-- <input type="username" id="username" name="username" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"> -->
         <!-- </div> -->
-        <label for="option">Item:</label>
-        <select name="option" id="option">
+        <label for="item">Item:</label>
+        <select name="item" id="item">
           <option value="1">None</option>
           <option value="2">Masala Dosa</option>
           <option value="3">Idli vada</option>
