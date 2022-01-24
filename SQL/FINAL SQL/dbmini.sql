@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 20, 2022 at 05:17 AM
+-- Generation Time: Jan 24, 2022 at 11:53 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.14
 
@@ -61,7 +61,7 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`C_ID`, `C_NAME`, `AGE`, `ADDRESS`, `GENDER`, `CONTACT`, `PASSWORD`) VALUES
-('test', 'test', 12, 'mangalore', 'male', '9876543210', 'test');
+('test', 'test', 12, 'mangalore', 'MALE', '79462166466', 'test');
 
 -- --------------------------------------------------------
 
@@ -82,8 +82,12 @@ CREATE TABLE `food` (
 --
 
 INSERT INTO `food` (`C_ID`, `ITEMS`, `QUANTITY`, `PRICE`, `F_ID`) VALUES
-('', 'F01-Masala Dosa', 2, 0, ''),
-('', 'F06-Samosa', 5, 0, '');
+('test', 'Samosa', 10, 20, 'F006'),
+('test', 'North Indian', 7, 100, 'F004'),
+('test', 'Samosa', 9, 20, 'F006'),
+('test', 'Onion Pokoda', 1, 4, 'F005'),
+('test', 'Gulab Jamun', 8, 30, 'F007'),
+('test', 'Onion Pokoda', 10, 4, 'F005');
 
 -- --------------------------------------------------------
 
@@ -138,7 +142,7 @@ CREATE TABLE `reserves` (
 
 CREATE TABLE `ticket` (
   `TI_TYPE` varchar(10) NOT NULL,
-  `PNR` varchar(10) NOT NULL,
+  `PNR` int(10) NOT NULL,
   `SRC` varchar(10) NOT NULL,
   `DEST` varchar(10) NOT NULL,
   `C_NAME` varchar(20) NOT NULL,
@@ -153,7 +157,7 @@ CREATE TABLE `ticket` (
 --
 
 INSERT INTO `ticket` (`TI_TYPE`, `PNR`, `SRC`, `DEST`, `C_NAME`, `COACH_NO`, `SEAT_NO`, `PRICE`, `C_ID`) VALUES
-('postal', '', 'mangalore', 'delhi', 'test', '', '', 0, 'test');
+('POSTAL', 10000, 'MANGLORE', 'BANGALORE', 'Anirudh', '', '', 0, 'test');
 
 -- --------------------------------------------------------
 
@@ -198,6 +202,16 @@ ALTER TABLE `ticket_holder`
   ADD KEY `PNR` (`PNR`);
 
 --
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `ticket`
+--
+ALTER TABLE `ticket`
+  MODIFY `PNR` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10001;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -206,12 +220,6 @@ ALTER TABLE `ticket_holder`
 --
 ALTER TABLE `ticket`
   ADD CONSTRAINT `ticket_ibfk_1` FOREIGN KEY (`C_ID`) REFERENCES `customer` (`C_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `ticket_holder`
---
-ALTER TABLE `ticket_holder`
-  ADD CONSTRAINT `ticket_holder_ibfk_1` FOREIGN KEY (`PNR`) REFERENCES `ticket` (`PNR`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

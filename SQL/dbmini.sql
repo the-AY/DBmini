@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 13, 2022 at 09:53 AM
--- Server version: 8.0.21
--- PHP Version: 8.0.0
+-- Generation Time: Jan 20, 2022 at 05:17 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.0.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,17 +24,44 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `USERNAME` varchar(10) NOT NULL,
+  `PASSWORD` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`USERNAME`, `PASSWORD`) VALUES
+('ADMIN1', 'ADMIN1212'),
+('ADMIN2', 'ADMIN1212');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `customer`
 --
 
 CREATE TABLE `customer` (
   `C_ID` varchar(10) NOT NULL,
   `C_NAME` varchar(20) DEFAULT NULL,
-  `AGE` int DEFAULT NULL,
+  `AGE` int(11) DEFAULT NULL,
   `ADDRESS` varchar(30) DEFAULT NULL,
   `GENDER` varchar(6) DEFAULT NULL,
-  `CONTACT` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `CONTACT` varchar(11) DEFAULT NULL,
+  `PASSWORD` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`C_ID`, `C_NAME`, `AGE`, `ADDRESS`, `GENDER`, `CONTACT`, `PASSWORD`) VALUES
+('test', 'test', 12, 'mangalore', 'male', '9876543210', 'test');
 
 -- --------------------------------------------------------
 
@@ -43,12 +70,33 @@ CREATE TABLE `customer` (
 --
 
 CREATE TABLE `food` (
-  `F_ID` varchar(10) NOT NULL,
-  `F_NAME` varchar(20) NOT NULL,
-  `QUANTITY` int NOT NULL,
-  `PRICE` int NOT NULL,
-  `C_ID` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `C_ID` varchar(11) NOT NULL,
+  `ITEMS` varchar(20) NOT NULL,
+  `QUANTITY` int(5) NOT NULL,
+  `PRICE` int(5) NOT NULL,
+  `F_ID` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `food`
+--
+
+INSERT INTO `food` (`C_ID`, `ITEMS`, `QUANTITY`, `PRICE`, `F_ID`) VALUES
+('', 'F01-Masala Dosa', 2, 0, ''),
+('', 'F06-Samosa', 5, 0, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `form`
+--
+
+CREATE TABLE `form` (
+  `name` varchar(30) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `age` int(11) NOT NULL,
+  `contact` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -57,10 +105,18 @@ CREATE TABLE `food` (
 --
 
 CREATE TABLE `orders` (
-  `DOORDER` date DEFAULT NULL,
+  `DOORDER` datetime DEFAULT current_timestamp(),
   `C_ID` varchar(10) NOT NULL,
   `F_ID` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`DOORDER`, `C_ID`, `F_ID`) VALUES
+('2022-01-18 00:00:00', '1000', 'F01'),
+('2022-01-18 13:03:10', '1001', 'F01');
 
 -- --------------------------------------------------------
 
@@ -72,7 +128,7 @@ CREATE TABLE `reserves` (
   `TI_TYPE` varchar(10) DEFAULT NULL,
   `PNR` varchar(10) NOT NULL,
   `PNR_STATUS` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -81,7 +137,6 @@ CREATE TABLE `reserves` (
 --
 
 CREATE TABLE `ticket` (
-  `T_NO` varchar(10) NOT NULL,
   `TI_TYPE` varchar(10) NOT NULL,
   `PNR` varchar(10) NOT NULL,
   `SRC` varchar(10) NOT NULL,
@@ -89,9 +144,16 @@ CREATE TABLE `ticket` (
   `C_NAME` varchar(20) NOT NULL,
   `COACH_NO` varchar(10) NOT NULL,
   `SEAT_NO` varchar(10) NOT NULL,
-  `PRICE` int NOT NULL,
+  `PRICE` int(11) NOT NULL,
   `C_ID` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ticket`
+--
+
+INSERT INTO `ticket` (`TI_TYPE`, `PNR`, `SRC`, `DEST`, `C_NAME`, `COACH_NO`, `SEAT_NO`, `PRICE`, `C_ID`) VALUES
+('postal', '', 'mangalore', 'delhi', 'test', '', '', 0, 'test');
 
 -- --------------------------------------------------------
 
@@ -101,14 +163,20 @@ CREATE TABLE `ticket` (
 
 CREATE TABLE `ticket_holder` (
   `TIH_NAME` varchar(20) DEFAULT NULL,
-  `AGE` int DEFAULT NULL,
+  `AGE` int(11) DEFAULT NULL,
   `ADDRESS` varchar(30) DEFAULT NULL,
   `PNR` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`USERNAME`);
 
 --
 -- Indexes for table `customer`
@@ -117,25 +185,35 @@ ALTER TABLE `customer`
   ADD PRIMARY KEY (`C_ID`);
 
 --
--- Indexes for table `food`
---
-ALTER TABLE `food`
-  ADD PRIMARY KEY (`F_ID`);
-
---
--- Indexes for table `reserves`
---
-ALTER TABLE `reserves`
-  ADD PRIMARY KEY (`PNR`);
-
---
 -- Indexes for table `ticket`
 --
 ALTER TABLE `ticket`
-  ADD PRIMARY KEY (`T_NO`);
+  ADD PRIMARY KEY (`PNR`),
+  ADD KEY `C_ID` (`C_ID`);
+
+--
+-- Indexes for table `ticket_holder`
+--
+ALTER TABLE `ticket_holder`
+  ADD KEY `PNR` (`PNR`);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `ticket`
+--
+ALTER TABLE `ticket`
+  ADD CONSTRAINT `ticket_ibfk_1` FOREIGN KEY (`C_ID`) REFERENCES `customer` (`C_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `ticket_holder`
+--
+ALTER TABLE `ticket_holder`
+  ADD CONSTRAINT `ticket_holder_ibfk_1` FOREIGN KEY (`PNR`) REFERENCES `ticket` (`PNR`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
