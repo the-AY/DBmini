@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 25, 2022 at 08:00 AM
+-- Generation Time: Jan 24, 2022 at 11:53 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.14
 
@@ -43,26 +43,6 @@ INSERT INTO `admin` (`USERNAME`, `PASSWORD`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `console`
---
-
-CREATE TABLE `console` (
-  `C_NO` int(10) NOT NULL,
-  `C_ID` varchar(10) NOT NULL,
-  `DATE` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `ACTION` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `console`
---
-
-INSERT INTO `console` (`C_NO`, `C_ID`, `DATE`, `ACTION`) VALUES
-(1, 'adish', '2022-01-25 05:30:10', 'Account Created');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `customer`
 --
 
@@ -81,7 +61,6 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`C_ID`, `C_NAME`, `AGE`, `ADDRESS`, `GENDER`, `CONTACT`, `PASSWORD`) VALUES
-('adish', 'adish', 20, 'mangalore', 'MALE', '77995577223', 'ADMIN1212'),
 ('test', 'test', 12, 'mangalore', 'MALE', '79462166466', 'test');
 
 -- --------------------------------------------------------
@@ -95,21 +74,20 @@ CREATE TABLE `food` (
   `ITEMS` varchar(20) NOT NULL,
   `QUANTITY` int(5) NOT NULL,
   `PRICE` int(5) NOT NULL,
-  `F_ID` varchar(20) NOT NULL,
-  `STATUS` varchar(20) NOT NULL
+  `F_ID` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `food`
 --
 
-INSERT INTO `food` (`C_ID`, `ITEMS`, `QUANTITY`, `PRICE`, `F_ID`, `STATUS`) VALUES
-('test', 'Samosa', 10, 20, 'F006', ''),
-('test', 'North Indian', 7, 100, 'F004', ''),
-('test', 'Samosa', 9, 20, 'F006', ''),
-('test', 'Onion Pokoda', 1, 4, 'F005', ''),
-('test', 'Gulab Jamun', 8, 30, 'F007', ''),
-('test', 'Onion Pokoda', 10, 4, 'F005', '');
+INSERT INTO `food` (`C_ID`, `ITEMS`, `QUANTITY`, `PRICE`, `F_ID`) VALUES
+('test', 'Samosa', 10, 20, 'F006'),
+('test', 'North Indian', 7, 100, 'F004'),
+('test', 'Samosa', 9, 20, 'F006'),
+('test', 'Onion Pokoda', 1, 4, 'F005'),
+('test', 'Gulab Jamun', 8, 30, 'F007'),
+('test', 'Onion Pokoda', 10, 4, 'F005');
 
 -- --------------------------------------------------------
 
@@ -179,8 +157,7 @@ CREATE TABLE `ticket` (
 --
 
 INSERT INTO `ticket` (`TI_TYPE`, `PNR`, `SRC`, `DEST`, `C_NAME`, `COACH_NO`, `SEAT_NO`, `PRICE`, `C_ID`) VALUES
-('POSTAL', 10000, 'MANGLORE', 'BANGALORE', 'Anirudh', '', '', 0, 'test'),
-('POSTAL', 10001, 'mangalore', 'bangalore', 'test', '', '', 0, 'test');
+('POSTAL', 10000, 'MANGLORE', 'BANGALORE', 'Anirudh', '', '', 0, 'test');
 
 -- --------------------------------------------------------
 
@@ -206,12 +183,6 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`USERNAME`);
 
 --
--- Indexes for table `console`
---
-ALTER TABLE `console`
-  ADD PRIMARY KEY (`C_NO`);
-
---
 -- Indexes for table `customer`
 --
 ALTER TABLE `customer`
@@ -235,16 +206,10 @@ ALTER TABLE `ticket_holder`
 --
 
 --
--- AUTO_INCREMENT for table `console`
---
-ALTER TABLE `console`
-  MODIFY `C_NO` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
 -- AUTO_INCREMENT for table `ticket`
 --
 ALTER TABLE `ticket`
-  MODIFY `PNR` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10002;
+  MODIFY `PNR` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10001;
 
 --
 -- Constraints for dumped tables
