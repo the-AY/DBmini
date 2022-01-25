@@ -30,7 +30,6 @@
            <tr>
                <th>PNR</th>
                <th>NAME</th>
-               <th>CITY</th>
                <th>PRICE</th>
                <th>FROM</th>
                <th>DESTINATION</th>
@@ -39,11 +38,11 @@
            include "config.php";
            if(isset($_POST['submit'])) {
            $c_id=$_POST['username'];
-           $sql="SELECT * FROM TICKET WHERE TI_TYPE='POSTAL' and C_ID=$c_id ";
+           $sql="SELECT * FROM TICKET T, CUSTOMERS C WHERE T.TI_TYPE='POSTAL' ";
            $result=$conn->query($sql);
 
            if($result->num_rows > 0) {
-               while ($row =$result->fetch_assoc()) {
+               while ($row =mysqli_fetch_assoc($result)) {
                    echo "<tr><td>" . $row["PNR"] . "</td><td>" . $row["C_NAME"] . " </td><td>" . $row["PRICE"] . "</td><td>" . $row["SRC"] . "</td><td>" . $row["DEST"] . "</td></tr>";
                }
             }
