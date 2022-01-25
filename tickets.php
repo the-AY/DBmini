@@ -11,7 +11,6 @@
         //get the input details from ticketbooking
         $name = $_POST['name'];
 
-        $c_id= $_POST['c_id'];
    
 
         $coach_type=$_POST['coach_type'];
@@ -34,9 +33,6 @@
 
         $address2=$_POST['address2'];
         $price=0;
-        
-
-        
 
         //assign the coach type to its coach no
         $coach_no;
@@ -63,25 +59,15 @@
 
             }
 
-            //all the queries
-            //inserting into ticket table
-        // $query="INSERT INTO TICKET(`C_NAME`,`C_ID`,`COACH_NO`,`SRC`,`DEST`) VALUES ('$name','$c_id','$coach_no','$src','$dest')";
-        $query="INSERT INTO TICKET(`TI_TYPE`,`C_NAME`,`C_ID`,`COACH_NO`,`SRC`,`DEST`) VALUES ('$ti_type','$name','$username,'$coach_no','$src','$dest')"; 
-        //inserting into ticket_holder table
 
-        // $query .="INSERT INTO TICKET_HOLDER(`TIH_NAME`,`AGE`,`ADDRESS`) VALUES ('$pname1','$age1','$address1')";
-        // $query .="INSERT INTO TICKET_HOLDER(`TIH_NAME`,`AGE`,`ADDRESS`) VALUES ('$pname2','$age2','$address2')";
 
-        // $run=mysqli_multi_query($conn,$query) or die("connection failed");
-        $run=mysqli_query($conn,$query) or die("connection failed");
-        if($run) {
-            echo "sucessfully inserted";
-            header('Refresh: 2; URL = ticketbooking.html');
-            
-        }
-        else {
-            echo "unsuccessful";
-            
-        }
-    }
-?>
+<?php
+
+include "config.php";
+
+    session_start();
+    $username = $_SESSION["username"];
+
+    if(isset($_POST['submit'])) {
+
+        $name=
