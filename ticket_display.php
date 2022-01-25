@@ -41,8 +41,7 @@
            include "config.php";
            if(isset($_POST['submit'])) {
            $username=$_POST['username'];
-        //    $sql="SELECT A.*,B.* FROM TICKET A JOIN TICKET_HOLDER B WHERE A.TI_TYPE='TRAVEL' AND C_ID=$username";
-           $sql="SELECT A.*,B.* FROM TICKET A,TICKET_HOLDER B WHERE A.TI_TYPE='TRAVEL' AND C_ID=$username";
+           $sql="SELECT A.*,B.* FROM TICKET A,TICKET_HOLDER B WHERE A.TI_TYPE='TRAVEL' AND C_ID='$username'";
            $result=$conn->query($sql);
 
            if($result->num_rows>0) {
