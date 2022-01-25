@@ -40,10 +40,10 @@
            $username = $_SESSION["username"];
            if(isset($_POST['submit'])) {
         //    $C_ID=$_POST['username'];
-           $sql="SELECT * FROM TICKET WHERE TI_TYPE='POSTAL' and C_ID=$username ";
+           $sql="SELECT * FROM TICKET WHERE TI_TYPE='POSTAL' and C_ID='$username' ";
            $result=$conn->query($sql);
 
-           if($result->num_rows > 0) {
+           if($result) {
                while ($row =mysqli_fetch_assoc($result)) {
                    echo "<tr><td>" . $row["PNR"] . "</td><td>" . $row["C_NAME"] . " </td><td>" . $row["PRICE"] . "</td><td>" . $row["SRC"] . "</td><td>" . $row["DEST"] . "</td></tr>";
                }
