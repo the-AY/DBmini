@@ -37,9 +37,11 @@
            </tr>
            <?php
            include "config.php";
+           session_start();
+           $username = $_SESSION["username"];
            if(isset($_POST['submit'])) {
-           $c_id=$_POST['username'];
-           $sql="SELECT * FROM TICKET WHERE TI_TYPE='POSTAL' and C_ID=$c_id ";
+        //    $C_ID=$_POST['username'];
+           $sql="SELECT * FROM TICKET WHERE TI_TYPE='POSTAL' and C_ID=$username ";
            $result=$conn->query($sql);
 
            if($result->num_rows > 0) {
