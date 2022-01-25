@@ -67,10 +67,10 @@
               
               
               echo '<tr>
-              <td>'.$F_ID.'</td>
-              <td>'.$username.'</td>
-              <td>'.$ITEMS.'</td>
-              <td>'.$QUANTITY.'</td>
+                    <td>'.$F_ID.'</td>
+                    <td>'.$username.'</td>
+                    <td>'.$ITEMS.'</td>
+                    <td>'.$QUANTITY.'</td>
               
            
             
