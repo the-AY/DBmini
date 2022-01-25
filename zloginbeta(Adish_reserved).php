@@ -26,22 +26,26 @@ if(isset($_POST['submit'])) {
   $GENDER=$_POST['gender'];
   $CONTACT=$_POST['contact'];
   $PASSWORD=$_POST['password'];
-	$query="INSERT INTO customer (`C_ID`, `C_NAME`, `AGE`, `ADDRESS`, `GENDER`, `CONTACT`, `PASSWORD`) VALUES ('$C_ID', '$C_NAME', '$AGE', '$ADDRESS', '$GENDER', '$CONTACT', '$PASSWORD') ";
+  $action ="Account Created";
+	// $query="INSERT INTO customer (`C_ID`, `C_NAME`, `AGE`, `ADDRESS`, `GENDER`, `CONTACT`, `PASSWORD`) VALUES ('$C_ID', '$C_NAME', '$AGE', '$ADDRESS', '$GENDER', '$CONTACT', '$PASSWORD') ";
+   $sq="INSERT INTO console (`C_NO`, `C_ID`, `DATE`, `ACTION`) VALUES (NULL, '$C_ID', current_timestamp(), '$action') ";
+   $log=mysqli_query($sq) or die("connection failed|Logged");
+//    $run=mysqli_query($conn,$query) or die("connection failed|Username or Password Error");
 
-	$run=mysqli_query($conn,$query) or die("connection failed|Username or Password Error");
+// 	if($run) {
+// 		echo "successfully Inserted  Redirecting to LOGIN PAGE";	
+//     $log=mysqli_query($conn,$sq) or die("connection failed|Logged");
+//     header('Refresh: 2; URL = index.php');
 
-	if($run) {
-		echo "successfully Inserted  Redirecting to LOGIN PAGE";	
-    header('Refresh: 2; URL = index.php');
-	}
-	else {
-		echo "unsuccessful account creation Please try again Redirecting to ACCOUNT CREATION PAGE";
-    header('Refresh: 2; URL = newac.php');
+// 	}
+// 	else {
+// 		echo "unsuccessful account creation Please try again Redirecting to ACCOUNT CREATION PAGE";
+//     header('Refresh: 2; URL = newac.php');
 
 		
-	}
-}
-?>
+// 	}
+// }
+// ?>
 
 <body>
   <header class="text-gray-600 body-font">

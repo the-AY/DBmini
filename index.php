@@ -46,6 +46,7 @@ echo "<script>alert('Incorrect Username or password try again')</script>";
         <a class="mr-5 hover:text-gray-900" href="contactus.html">Contact us</a> 
         <a class="mr-5 hover:text-gray-900" href="aboutus.html" >About us</a>
         <a class="mr-5 hover:text-gray-900" href="index.php">PNR Status</a>
+        <a class="mr-5 hover:text-gray-900" href="zloginbeta(Adish_reserved).php">#TEST FILE LOGS</a>
       </nav>
       <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
       <span class="ml-3 text-xl">Railway Management System</span>
