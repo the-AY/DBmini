@@ -45,7 +45,12 @@
 
            if($result->num_rows > 0) {
                while ($row =mysqli_fetch_assoc($result)) {
-                   echo "<tr><td>" . $row["PNR"] . "</td><td>" . $row["C_NAME"] . " </td><td>" . $row["PRICE"] . "</td><td>" . $row["SRC"] . "</td><td>" . $row["DEST"] . "</td></tr>";
+                   echo "<tr><td>" . $row["PNR"] . "</td>
+                   <td>" . $row["C_NAME"] . " </td>
+                   <td>" . $row["PRICE"] . "</td>
+                   <td>" . $row["SRC"] . "</td>
+                   <td>" . $row["DEST"] . "</td>
+                   </tr>";
                }
             }
             else {
