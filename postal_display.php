@@ -38,11 +38,11 @@
            <?php
            include "config.php";
            if(isset($_POST['submit'])) {
-           $username=$_POST['username'];
-           $sql="SELECT * FROM TICKET WHERE TI_TYPE='POSTAL' AND C_ID=$username ";
+           $c_id=$_POST['username'];
+           $sql="SELECT * FROM TICKET WHERE TI_TYPE='POSTAL' and C_ID=$c_id ";
            $result=$conn->query($sql);
 
-           if($result->num_rows>0) {
+           if($result->num_rows > 0) {
                while ($row =$result->fetch_assoc()) {
                    echo "<tr><td>" . $row["PNR"] . "</td><td>" . $row["C_NAME"] . " </td><td>" . $row["PRICE"] . "</td><td>" . $row["SRC"] . "</td><td>" . $row["DEST"] . "</td></tr>";
                }
