@@ -70,4 +70,5 @@ include "config.php";
 
     if(isset($_POST['submit'])) {
 
-        $name=
+        $name=$_POST['name'];
+        $username=
