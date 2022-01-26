@@ -41,15 +41,21 @@
            if(isset($_POST['submit'])) {
         //    $C_ID=$_POST['username'];
            $sql="SELECT * FROM TICKET WHERE TI_TYPE='POSTAL' and C_ID='$username' ";
-           $result=$conn->query($sql);
+           $result= mysqli_query($conn, $sql);
 
            if($result) {
                while ($row =mysqli_fetch_assoc($result)) {
-                   echo "<tr><td>" . $row["PNR"] . "</td>
-                   <td>" . $row["C_NAME"] . " </td>
-                   <td>" . $row["PRICE"] . "</td>
-                   <td>" . $row["SRC"] . "</td>
-                   <td>" . $row["DEST"] . "</td>
+                $pnr= $row['PNR'] ;
+                $c_name=$row['C_NAME'];
+                $price=$row['PRICE'];
+                $src= $row['SRC'];
+                $dest= $row['DEST'];
+
+                   echo "<tr><td>" .$pnr. "</td>
+                   <td>" . $c_name. " </td>
+                   <td>" .$price. "</td>
+                   <td>" .$src. "</td>
+                   <td>" .$dest. "</td>
                    </tr>";
                }
             }
