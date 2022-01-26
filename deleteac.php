@@ -11,11 +11,11 @@
  include "config.php";
 
  session_start();
- $username=$_SESSION["username"];
+//  $username=$_SESSION["username"];
 
 if(isset($_POST['login']))
 { 
-  // $username = $_SESSION["username"];
+$username = $_SESSION["username"];
 $username = $_POST['username']; 
 $password = $_POST['password'];
 $action ="Account Deleted";
