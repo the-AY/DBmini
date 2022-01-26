@@ -92,9 +92,9 @@ if(isset($_POST['Submit']))
       $result=mysqli_query($conn,$sql);
       if($result)
       {
-      echo "<script>alert('inserted successfully');</script>";
-      echo "ordered sucessfully";
-      header(' URL = foodorder.phpRefresh: 2;');
+      echo "<script>alert('Ordered food successfully');</script>";
+      echo "Ordered sucessfully Redirecting...";
+      header('Refresh: 2; URL = foodorder.php');
       die;
       }
       else
