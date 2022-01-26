@@ -45,7 +45,7 @@
         include "config.php";
         // session_start();
         // $adusername = $_SESSION["username"];
-        $sql= "";
+        $sql= "SELECT * FROM `food`;";
       
         $result= mysqli_query($conn,$sql);
       
@@ -56,7 +56,7 @@
               $ITEMS=$row['ITEMS'];
               $QUANTITY=$row['QUANTITY'];
               $username=$row['C_ID'];
-              $STATUS=$row['C_ID'];
+              $STATUS=$row['STATUS'];
               
               echo '<tr>
               <td>'.$F_ID.'</td>

@@ -93,7 +93,7 @@ if(isset($_POST['Submit']))
       {
       echo "<script>alert('inserted successfully');</script>";
       echo "ordered sucessfully";
-      header('Refresh: 2; URL = foodorder.php');
+      header(' URL = foodorder.phpRefresh: 2;');
       die;
       }
       else
