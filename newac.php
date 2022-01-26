@@ -11,12 +11,6 @@
 
  include "config.php";
 
-// $host = "localhost";
-// $user ="root";
-// $pwd = "";
-// $db ="dbmini";
-// $conn = mysqli_connect($host,$user,$pwd,$db);
-
 if(isset($_POST['submit'])) {
 
 	$C_ID=$_POST['username'];
@@ -28,13 +22,15 @@ if(isset($_POST['submit'])) {
   $PASSWORD=$_POST['password'];
   $action ="Account Created";
 	 $query="INSERT INTO customer (`C_ID`, `C_NAME`, `AGE`, `ADDRESS`, `GENDER`, `CONTACT`, `PASSWORD`) VALUES ('$C_ID', '$C_NAME', '$AGE', '$ADDRESS', '$GENDER', '$CONTACT', '$PASSWORD') ";
-   $sq="INSERT INTO console (`C_NO`, `C_ID`, `DATE`, `ACTION`) VALUES (NULL, '$C_ID', current_timestamp(), '$action') ";
- 
+  //  $sq="INSERT INTO console (`C_NO`, `C_ID`, `DATE`, `ACTION`) VALUES (NULL, '$C_ID', current_timestamp(), '$action') ";
+   $sql = "CREATE TRIGGER console AFTER INSERT ON customer FOR EACH ROW INSERT INTO console (`C_NO`, `C_ID`, `DATE`, `ACTION`) VALUES (NULL, '$C_ID', current_timestamp(), 'Account Created') ";
    $run=mysqli_query($conn,$query) or die("connection failed|Username or Password Error");
-
+   $new=mysqli_query($conn,$sql) ;
 	if($run) {
 		echo "successfully Inserted  Redirecting to LOGIN PAGE";	
-    $log=mysqli_query($conn,$sq) or die("connection failed|Logged");
+    // $log=mysqli_query($conn,$sq) or die("connection failed|Logged");
+    //  $new=mysqli_query($conn,$sql) or die("connection failed|Logged");
+
     header('Refresh: 2; URL = index.php');
 
 	}
@@ -67,7 +63,7 @@ if(isset($_POST['submit'])) {
     </div>
   </header>
   
-  <form action="zloginbeta(Adish_reserved).php" method="post">
+  <form action="newac.php" method="post">
     <section class="text-gray-600 body-font">
         <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
           <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
@@ -116,3 +112,5 @@ if(isset($_POST['submit'])) {
       </form>
 </body>
 </html>
+<!-- trigger in php my admin 
+INSERT INTO console (`C_NO`, `C_ID`, `DATE`, `ACTION`) VALUES (NULL, '$C_ID', current_timestamp(), 'Accout Created') -->
