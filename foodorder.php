@@ -41,47 +41,47 @@ if(isset($_POST['Submit']))
     switch ("$option") {
 
       case "1":
-          $price=0;
+          $price=0*$QUANTITY;
           $F_ID ="NONE";
           $ITEMS ="0";
           break;
       case "2":
-          $price=50;
+          $price=50*$QUANTITY;
           $F_ID ="F001";
           $ITEMS ="Masala Dosa";
           break;
       case "3":
-          $price=55;
+          $price=55*$QUANTITY;
           $F_ID ="F002";
           $ITEMS ="Idli Vada";
           break;
       case "4":
-          $price=100;
+          $price=100*$QUANTITY;
           $F_ID ="F003";
           $ITEMS ="South Indian";
           break;
       case "5":
-          $price=100;
+          $price=100*$QUANTITY;
           $F_ID ="F004";
           $ITEMS ="North Indian";
           break;
       case "6":
-          $price=40;
+          $price=40*$QUANTITY;
           $F_ID ="F005";
           $ITEMS ="Onion Pokoda";
           break;
       case "7":
-            $price=20;
+            $price=20*$QUANTITY;
             $F_ID ="F006";
             $ITEMS ="Samosa";
             break;
       case "8":
-            $price=30;
+            $price=30*$QUANTITY;
             $F_ID ="F007";
             $ITEMS ="Gulab Jamun";
             break;
       case "9":
-              $price=15;
+              $price=15*$QUANTITY;
               $F_ID ="F008";
               $ITEMS ="TEA";
               break;

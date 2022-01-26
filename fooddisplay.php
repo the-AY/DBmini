@@ -38,6 +38,7 @@
           <th>Username</th>
           <th>Items</th>
           <th>Quantity</th>
+          <th>Total Price</th>
           <th>Status</th>
          
         </tr>
@@ -61,6 +62,7 @@
               $username=$row['C_ID'];
               $ITEMS=$row['ITEMS'];
               $QUANTITY=$row['QUANTITY'];
+              $PRICE=$row['PRICE'];
               $STATUS=$row['STATUS'];
               
               
@@ -70,6 +72,7 @@
                     <td>'.$username.'</td>
                     <td>'.$ITEMS.'</td>
                     <td>'.$QUANTITY.'</td>
+                    <td>'.$PRICE.'</td>
                     <td>'.$STATUS.'</td>
               
               
@@ -84,7 +87,7 @@
          
       </table>
       <br><br><br><br><br><br><br>
-     
+     <a href="printwin.html"> Print bill</a>
      
 </body>
 </html>
