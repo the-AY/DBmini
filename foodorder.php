@@ -27,13 +27,8 @@
 
 <?php
 
-// include "config.php";
+ include "config.php";
 
-$host = "localhost";
-$user ="root";
-$pwd = "";
-$db ="dbmini";
-$conn = mysqli_connect($host,$user,$pwd,$db);
 session_start();
 $username = $_SESSION["username"];
 
