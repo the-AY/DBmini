@@ -9,13 +9,13 @@
 </head>
 <?php
 
-// include "config.php";
+ include "config.php";
 
-$host = "localhost";
-$user ="root";
-$pwd = "";
-$db ="dbmini";
-$conn = mysqli_connect($host,$user,$pwd,$db);
+// $host = "localhost";
+// $user ="root";
+// $pwd = "";
+// $db ="dbmini";
+// $conn = mysqli_connect($host,$user,$pwd,$db);
 
 if(isset($_POST['submit'])) {
 
@@ -26,17 +26,21 @@ if(isset($_POST['submit'])) {
   $GENDER=$_POST['gender'];
   $CONTACT=$_POST['contact'];
   $PASSWORD=$_POST['password'];
-	$query="INSERT INTO customer (`C_ID`, `C_NAME`, `AGE`, `ADDRESS`, `GENDER`, `CONTACT`, `PASSWORD`) VALUES ('$C_ID', '$C_NAME', '$AGE', '$ADDRESS', '$GENDER', '$CONTACT', '$PASSWORD') ";
-
-	$run=mysqli_query($conn,$query) or die("connection failed|Username or Password Error");
+  $action ="Account Created";
+	 $query="INSERT INTO customer (`C_ID`, `C_NAME`, `AGE`, `ADDRESS`, `GENDER`, `CONTACT`, `PASSWORD`) VALUES ('$C_ID', '$C_NAME', '$AGE', '$ADDRESS', '$GENDER', '$CONTACT', '$PASSWORD') ";
+   $sq="INSERT INTO console (`C_NO`, `C_ID`, `DATE`, `ACTION`) VALUES (NULL, '$C_ID', current_timestamp(), '$action') ";
+ 
+   $run=mysqli_query($conn,$query) or die("connection failed|Username or Password Error");
 
 	if($run) {
 		echo "successfully Inserted  Redirecting to LOGIN PAGE";	
+    $log=mysqli_query($conn,$sq) or die("connection failed|Logged");
     header('Refresh: 2; URL = index.php');
+
 	}
 	else {
 		echo "unsuccessful account creation Please try again Redirecting to ACCOUNT CREATION PAGE";
-    header('Refresh: 2; URL = newac.php');
+          header('Refresh: 2; URL = newac.php');
 
 		
 	}
@@ -63,7 +67,7 @@ if(isset($_POST['submit'])) {
     </div>
   </header>
   
-  <form action="newac.php" method="post">
+  <form action="zloginbeta(Adish_reserved).php" method="post">
     <section class="text-gray-600 body-font">
         <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
           <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">

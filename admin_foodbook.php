@@ -33,7 +33,8 @@
       <a href="adminfoodupdate.php">Update food</a>    
       <table id="DisplayTable">
         <tr>
-          <th>Food_id/items</th>
+          <th>Food_id</th>
+          <th>ITEM</th>
           <th>Quantity</th>
           <th>Customer name</th>
           <th>Status</th>
@@ -50,12 +51,14 @@
         if($result){
             while($row=mysqli_fetch_assoc($result))
             {
+              $F_ID=$row['F_ID'];
               $ITEMS=$row['ITEMS'];
               $QUANTITY=$row['QUANTITY'];
               $username=$row['C_ID'];
               
               
               echo '<tr>
+              <td>'.$F_ID.'</td>
               <td>'.$ITEMS.'</td>
               <td>'.$QUANTITY.'</td>
               <td>'.$username.'</td>
