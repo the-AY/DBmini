@@ -39,12 +39,13 @@
           <th>Customer name</th>
           <th>Status</th>
           <th>Action</th>
+          
         </tr>
         <?php
         include "config.php";
         // session_start();
         // $adusername = $_SESSION["username"];
-        $sql= "Select * from `food`;";
+        $sql= "";
       
         $result= mysqli_query($conn,$sql);
       
@@ -55,14 +56,14 @@
               $ITEMS=$row['ITEMS'];
               $QUANTITY=$row['QUANTITY'];
               $username=$row['C_ID'];
-              
+              $STATUS=$row['C_ID'];
               
               echo '<tr>
               <td>'.$F_ID.'</td>
               <td>'.$ITEMS.'</td>
               <td>'.$QUANTITY.'</td>
               <td>'.$username.'</td>
-              <td>'.$username.'</td>
+              <td>'.$STATUS.'</td>
            
 
               <td>

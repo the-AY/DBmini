@@ -43,8 +43,7 @@
         </tr>
        
      
-      </table>
-      <br><br><br><br><br><br><br>
+    
       <?php
         include "config.php";
         session_start();
@@ -74,9 +73,7 @@
               
            
             
-            <td>
-                     <button ><a href="deletefood.php">Delete</a></button>
-           </td>
+        
           </tr>';
        
             }

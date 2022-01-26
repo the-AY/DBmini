@@ -33,11 +33,11 @@
 include 'config.php';
 
 
-$MID=$_GET['MID'];
-$QUERY="SELECT * FROM `food` WHERE C_ID=$C_ID;";
-$res=mysqli_query($connect,$QUERY);
-$Row=mysqli_fetch_array($res);
-$=$Row['table value'];
+
+$QUERY="SELECT C_ID FROM `food`";
+$sql1=mysqli_query($connect,$QUERY);
+$Row=mysqli_fetch_array($sql1);
+$=$Row[''];
 $=$Row[''];
 $=$Row[''];
 $=$Row[''];
@@ -68,13 +68,13 @@ if(isset($_POST['submit'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="form.css">
-    <title>Update Machine</title>
+    <title>Update food </title>
 </head>
 <body>
 
 <div>
 
-<form  method="post">
+<form action="adminfoodupdate.php" method="post">
 
 <label for=''></label>
 <input type="" id='' name='Brand value=<?php echo $#; ?>><br>
