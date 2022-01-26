@@ -11,16 +11,18 @@
  include "config.php";
 
  session_start();
- $username = $_SESSION["username"];
+ $username=$_SESSION["username"];
 
 if(isset($_POST['login']))
 { 
+  // $username = $_SESSION["username"];
 $username = $_POST['username']; 
 $password = $_POST['password'];
-$_SESSION["username"] = $username;
+$C_ID=['username'];
+$action ="Account Deleted";
 $sql="SELECT * FROM `customer` WHERE `C_ID`='$username' and `PASSWORD` = '$password';";
 $del="DELETE FROM customer WHERE customer .`C_ID` ='$username';";
-$tri = "CREATE TRIGGER delt AFTER DELETE ON customer FOR EACH ROW INSERT INTO console (`C_NO`, `C_ID`, `DATE`, `ACTION`) VALUES (NULL, '$username, current_timestamp(), 'Account Deleted') ";
+$tri = "CREATE TRIGGER condel BEFORE INSERT ON customer FOR EACH ROW INSERT INTO console (`LOG_NO`, `C_ID`, `DATE`, `ACTION`) VALUES (NULL, '$C_ID', current_timestamp(), '$action');";
 $result=mysqli_query($conn, $sql); 
 
 
@@ -29,7 +31,7 @@ if(isset($check))
 { 
     $delac=mysqli_query($conn, $del);
     $trigger=mysqli_query($conn, $tri); 
-   header('Location:zdeleteac.php');
+   header('Location:deleteac.php');
    echo " Sucessfully Deleted account";
 }
 else
@@ -72,7 +74,7 @@ echo "<script>alert('Incorrect Username or password try again')</script>";
         <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Login</h2>
         <div class="relative mb-4">
 
-          <form action="zdeleteac.php" method="post">
+          <form action="deleteac.php" method="post">
 
           <label for="full-name" class="leading-7 text-sm text-gray-600">Username</label>
           <input type="username" id="username" name="username" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
