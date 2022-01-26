@@ -86,8 +86,8 @@
         ?>
          
       </table>
-      <br><br><br><br><br><br><br>
-     <a href="printwin.html"> Print bill</a>
-     
+      
+
+      <button onclick="window.print()">Print </button>
 </body>
 </html>
