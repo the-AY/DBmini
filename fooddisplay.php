@@ -61,7 +61,7 @@
               $username=$row['C_ID'];
               $ITEMS=$row['ITEMS'];
               $QUANTITY=$row['QUANTITY'];
-              $STATUS=$row['ITEMS'];
+              $STATUS=$row['STATUS'];
               
               
               
@@ -70,6 +70,8 @@
                     <td>'.$username.'</td>
                     <td>'.$ITEMS.'</td>
                     <td>'.$QUANTITY.'</td>
+                    <td>'.$STATUS.'</td>
+              
               
            
             
