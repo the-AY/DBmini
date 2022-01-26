@@ -18,11 +18,14 @@ if(isset($_POST['login']))
   // $username = $_SESSION["username"];
 $username = $_POST['username']; 
 $password = $_POST['password'];
-$C_ID=['username'];
 $action ="Account Deleted";
 $sql="SELECT * FROM `customer` WHERE `C_ID`='$username' and `PASSWORD` = '$password';";
 $del="DELETE FROM customer WHERE customer .`C_ID` ='$username';";
-$tri = "CREATE TRIGGER condel BEFORE INSERT ON customer FOR EACH ROW INSERT INTO console (`LOG_NO`, `C_ID`, `DATE`, `ACTION`) VALUES (NULL, '$C_ID', current_timestamp(), '$action');";
+// $tri = "CREATE TRIGGER condel AFTER DELETE ON customer FOR EACH ROW INSERT INTO console (`LOG_NO`, `C_ID`, `DATE`, `ACTION`) VALUES (NULL, '$username', current_timestamp(), 'Account Deleted') ";
+
+
+$tri = "CREATE TRIGGER condel BEFORE DELETE ON customer FOR EACH ROW INSERT INTO console (`LOG_NO`, `C_ID`, `DATE`, `ACTION`) VALUES (NULL, '$username', current_timestamp(), 'Account Deleted');";
+
 $result=mysqli_query($conn, $sql); 
 
 
