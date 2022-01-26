@@ -27,7 +27,8 @@
 
 <?php
 
-include "config.php";
+ include "config.php";
+
 session_start();
 $username = $_SESSION["username"];
 
@@ -91,8 +92,8 @@ if(isset($_POST['Submit']))
       $result=mysqli_query($conn,$sql);
       if($result)
       {
-      echo "<script>alert('inserted successfully');</script>";
-      echo "ordered sucessfully";
+      echo "<script>alert('Ordered food successfully');</script>";
+      echo "Ordered sucessfully Redirecting...";
       header('Refresh: 2; URL = foodorder.php');
       die;
       }

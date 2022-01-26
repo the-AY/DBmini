@@ -43,8 +43,7 @@
         </tr>
        
      
-      </table>
-      <br><br><br><br><br><br><br>
+    
       <?php
         include "config.php";
         session_start();
@@ -62,7 +61,7 @@
               $username=$row['C_ID'];
               $ITEMS=$row['ITEMS'];
               $QUANTITY=$row['QUANTITY'];
-              $STATUS=$row['ITEMS'];
+              $STATUS=$row['STATUS'];
               
               
               
@@ -71,12 +70,12 @@
                     <td>'.$username.'</td>
                     <td>'.$ITEMS.'</td>
                     <td>'.$QUANTITY.'</td>
+                    <td>'.$STATUS.'</td>
+              
               
            
             
-            <td>
-                     <button ><a href="deletefood.php">Delete</a></button>
-           </td>
+        
           </tr>';
        
             }

@@ -9,14 +9,10 @@
 </head>
 <?php
 
-// include "config.php";
+ include "config.php";
 
-$host = "localhost";
-$user ="root";
-$pwd = "";
-$db ="dbmini";
-$conn = mysqli_connect($host,$user,$pwd,$db);
-
+ session_start();
+ $username=$_SESSION["username"];
 if(isset($_POST['submit'])) {
 
 	$C_ID=$_POST['username'];
@@ -26,18 +22,24 @@ if(isset($_POST['submit'])) {
   $GENDER=$_POST['gender'];
   $CONTACT=$_POST['contact'];
   $PASSWORD=$_POST['password'];
-	$query="INSERT INTO customer (`C_ID`, `C_NAME`, `AGE`, `ADDRESS`, `GENDER`, `CONTACT`, `PASSWORD`) VALUES ('$C_ID', '$C_NAME', '$AGE', '$ADDRESS', '$GENDER', '$CONTACT', '$PASSWORD') ";
-
-	$run=mysqli_query($conn,$query) or die("connection failed|Username or Password Error");
-
+  
+  $action ="Account Created";
+	 $query="INSERT INTO customer (`C_ID`, `C_NAME`, `AGE`, `ADDRESS`, `GENDER`, `CONTACT`, `PASSWORD`) VALUES ('$C_ID', '$C_NAME', '$AGE', '$ADDRESS', '$GENDER', '$CONTACT', '$PASSWORD') ";
+   $sql = "CREATE TRIGGER console AFTER INSERT ON customer FOR EACH ROW INSERT INTO console (`LOG_NO`, `C_ID`, `DATE`, `ACTION`) VALUES (NULL, '$username', current_timestamp(), 'Account Created') ";
+  
+   $run=mysqli_query($conn,$query) or die("connection failed|Username or Password Error");
+   $new=mysqli_query($conn,$sql);
 	if($run) {
 		echo "successfully Inserted  Redirecting to LOGIN PAGE";	
+    // $log=mysqli_query($conn,$sq) or die("connection failed|Logged");
+    //  $new=mysqli_query($conn,$sql) or die("connection failed|Logged");
+
     header('Refresh: 2; URL = index.php');
+
 	}
 	else {
 		echo "unsuccessful account creation Please try again Redirecting to ACCOUNT CREATION PAGE";
-    header('Refresh: 2; URL = newac.php');
-
+          header('Refresh: 2; URL = newac.php');
 		
 	}
 }
@@ -112,3 +114,5 @@ if(isset($_POST['submit'])) {
       </form>
 </body>
 </html>
+<!-- trigger in php my admin 
+INSERT INTO console (`C_NO`, `C_ID`, `DATE`, `ACTION`) VALUES (NULL, '$C_ID', current_timestamp(), 'Account Created') -->

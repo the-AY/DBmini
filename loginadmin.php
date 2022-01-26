@@ -41,18 +41,18 @@ echo "<script>alert('Incorrect Username or password try again')</script>";
     <header class="text-gray-600 body-font">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
-            <a class="mr-5 hover:text-gray-900" href="homeadmin.html">Home</a>
-            <a class="mr-5 hover:text-gray-900" href="admin_ticket.html">Travel Ticket </a>
-            <a class="mr-5 hover:text-gray-900" href="admin_postalbook.html">Postal Ticket</a>
-            <a class="mr-5 hover:text-gray-900" href="admin_foodbook.html">Food Order</a>
-            <a class="mr-5 hover:text-gray-900" href="admin_pnrstart.html">PNR Update</a>
+            <a class="mr-5 hover:text-gray-900" href="loginadmin.php">Home</a>
+            <a class="mr-5 hover:text-gray-900" href="loginadmin.php">Travel Ticket </a>
+            <a class="mr-5 hover:text-gray-900" href="loginadmin.php">Postal Ticket</a>
+            <a class="mr-5 hover:text-gray-900" href="loginadmin.php">Food Order</a>
+ 
           </nav>
           <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
           <span class="ml-3 text-xl">Railway Management Admin Console</span>
           </a>
           <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
-            <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="homeadmin.html">Login Admin </a>
-            </button>
+           
+          
           </div>
         </div>
       </header>
