@@ -2,7 +2,7 @@
 include 'config.php';
 if(isset($_GET['C_ID'])){
     $C_ID=$_GET['C_ID'];
-    $sql="DELETE FROM `customer` WHERE `C_ID`='$C_ID' AND `F_ID`=$F_ID";
+    $sql="DELETE FROM `customer` WHERE `F_ID`=$F_ID";
     $result=mysqli_query($conn,$sql);
     if($result){
         header('location:adminfoodupdate.php');
