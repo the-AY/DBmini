@@ -33,6 +33,7 @@
                <th>PRICE</th>
                <th>FROM</th>
                <th>DESTINATION</th>
+               <th>PNR STATUS</th>
            </tr>
            <?php
            include "config.php";
@@ -50,12 +51,14 @@
                 $price=$row['PRICE'];
                 $src= $row['SRC'];
                 $dest= $row['DEST'];
+                $pnr_status=$row["PNR_STATUS"];
 
                    echo "<tr><td>" .$pnr. "</td>
                    <td>" . $c_name. " </td>
                    <td>" .$price. "</td>
                    <td>" .$src. "</td>
                    <td>" .$dest. "</td>
+                   <td>".$pnr_status."</td>
                    </tr>";
                }
             }
