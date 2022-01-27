@@ -31,7 +31,7 @@ $C_ID=$_POST['username'];
    $run=mysqli_query($conn,$query) or die("connection failed|Username or Password Error");
    $new=mysqli_query($conn,$sql);
 	if($run) {
-		echo "successfully Inserted  Redirecting to LOGIN PAGE";	
+		echo '<script> alert("Your Account was sucessfully created")</script>';	
     // $log=mysqli_query($conn,$sq) or die("connection failed|Logged");
     //  $new=mysqli_query($conn,$sql) or die("connection failed|Logged");
 
@@ -77,19 +77,19 @@ $C_ID=$_POST['username'];
             <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Enter your details</h2>
             <div class="relative mb-4">
               <label for="full-name" class="leading-7 text-sm text-gray-600">Username</label>
-              <input type="text" id="username" name="username" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              <input type="text" id="username" placeholder="Username..." name="username" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
             </div>
             <div class="relative mb-4">
               <label for="full-name" class="leading-7 text-sm text-gray-600">Name</label>
-              <input type="text" id="name" name="name" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              <input type="text" id="name" name="name" placeholder="Name..." class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
             </div>
             <div class="relative mb-4">
               <label for="full-name" class="leading-7 text-sm text-gray-600">Age</label>
-              <input type="text" id="Age" name="age" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              <input type="number" min="0" max="100" id="Age" name="age" placeholder="Age..." class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
             </div>
             <div class="relative mb-4">
                 <label for="full-name" class="leading-7 text-sm text-gray-600">Address</label>
-                <input type="text" id="address" name="address" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                <input type="text" id="address" placeholder="Address... " name="address" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
               </div>
               <div class="mt-4">
                   <label class="block">Select Your gender</label>
@@ -113,20 +113,21 @@ $C_ID=$_POST['username'];
                     <option selected>Select...</option>
                <option value="MALE">Male</option>
                <option value="FEMALE">Female</option>
-               <option value="OTHERS">Others</option>
+               <option value="OTHERS">Other</option>
              </select>
               </div>
         <br><br>
               <div class="relative mb-4">
-                <label for="full-name" class="leading-7 text-sm text-gray-600">Phone Number</label>
-                <input type="phone" id="contact" name="contact" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                <label for="full-name" class="leading-7 text-sm text-gray-600">Contact Number</label>
+                <input type="tel" id="contact" placeholder="Contact..." name="contact" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" pattern="*/d" title="Numbers only, please..." required>
               </div>
             <div class="relative mb-4">
-              <label for="email" class="leading-7 text-sm text-gray-600">Password</label>
+              <label for="password" class="leading-7 text-sm text-gray-600">Password</label>
               <input type="password" id="password" name="password" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
             </div>
-            <button type="submit" value="submit" name="submit" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Create a account </button>
-           <a href="index.php">Return to login</a>
+            <button type="submit" value="submit" name="submit" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Create Account </button>
+            <button type="reset" value="submit" name="submit">Reset Values </button>
+           <p>Already Have an Account?? <a href="index.php" style="color: blue;">Return to login</a></p>
             //send credentials to the database to create a new account to the user
             <p class="text-xs text-gray-500 mt-3"></p>
           </div>

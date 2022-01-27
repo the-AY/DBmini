@@ -72,11 +72,11 @@ echo "<script>alert('Incorrect Username or password try again')</script>";
           <form action="index.php" method="post">
 
           <label for="full-name" class="leading-7 text-sm text-gray-600">Username</label>
-          <input type="username" id="username" name="username" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+          <input type="username" placeholder="Username..." id="username" name="username" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
         </div>
         <div class="relative mb-4">
           <label for="password" class="leading-7 text-sm text-gray-600">Password</label>
-          <input type="password" id="password" name="password" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+          <input type="password" placeholder="Password..." id="password" name="password" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
         </div>
 
         <button>
@@ -84,7 +84,7 @@ echo "<script>alert('Incorrect Username or password try again')</script>";
         </button>
       </form>
        <p>Don't have one?? <a href="newac.php" style="color: blue"> Create new account</a></p>
-        <p> Are you an admin??<a href="loginadmin.php" style="color: blue">Login here</a></p>
+        <p> Are you an admin?? <a href="loginadmin.php" style="color: blue">Login here</a></p>
         <p>Satisfied with your work?? <a href="deleteac.php" style="color: blue"> Delete Account</a></p>
         <p class="text-xs text-gray-500 mt-3"></p>
       
