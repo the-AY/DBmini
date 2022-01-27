@@ -53,7 +53,6 @@ if(isset($_POST['submit'])) {
         <a class="mr-5 hover:text-gray-900" href="https://www.railyatri.in/train-ticket?utm_source=ET277dweb&gclid=EAIaIQobChMI8ZHZt7yu9QIV1wkrCh2OFw96EAAYASAAEgLFRfD_BwE"> Trains </a>
         <a class="mr-5 hover:text-gray-900" href="contactus.html">Contact us</a> </a>
         <a class="mr-5 hover:text-gray-900" href="aboutus.html" >About us</a>
-        <a class="mr-5 hover:text-gray-900" href="pnrstart.html">PNR Status</a>
       </nav>
       <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
       <span class="ml-3 text-xl">Railway Management System</span>
@@ -105,7 +104,7 @@ if(isset($_POST['submit'])) {
               <input type="password" id="password" name="password" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
             </div>
             <button type="submit" value="submit" name="submit" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Create a account </button>
-           <a href="login.php">Return to login</a>
+           <a href="index.php">Return to login</a>
             //send credentials to the database to create a new account to the user
             <p class="text-xs text-gray-500 mt-3"></p>
           </div>

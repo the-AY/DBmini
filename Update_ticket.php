@@ -7,7 +7,7 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link href="404style.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
-    <title>Food Order Admin</title>
+    <title>Ticket Admin</title>
 </head>
 <body>
     <header class="text-gray-600 body-font">
@@ -48,11 +48,11 @@ if(isset($_POST['submit'])){
     // $=$_POST[''];
     // $sql="UPDATE `food` SET ``='$',``='$',``='$',``='$' WHERE `MID` = $MID;";
     $status=$_POST['status'];
-    $sql="UPDATE `food` SET `STATUS`='$status';";
+    $sql="UPDATE TICKET SET `PNR_STATUS`='$status';";
     $result=mysqli_query($conn,$sql);
     if($result){
        
-        header('Refresh: 2; URL = adminfoodupdate.php');
+        header('Refresh: 2; URL = admin_ticket.php');
         echo "<script>alert('updated successfully');</script>";
         die;
     }else{
@@ -62,7 +62,7 @@ if(isset($_POST['submit'])){
 }
 ?>
 
-<form action="adminfoodupdate.php" method="post">
+<form action="Update_ticket.php" method="post">
     <section class="text-gray-600 body-font">
         <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
           <!-- <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
@@ -78,11 +78,11 @@ if(isset($_POST['submit'])){
         
               <label for="status">UPDATE </label>
                   <select name="status" id="status">
-               <option value="NOT Updated">NOT Updated</option>
-               <option value="Confirmed">Confirmed</option>
-               <option value="Ready">Ready</option>
-               <option value="Delivered">Delivered</option>
-               <option value="Rejected">Rejected</option>  
+               <option value="WL">Waiting List</option>
+               <option value="CNF">Confirmed</option>
+               <option value="RAC">Reserve Against Cancellation</option>
+               <option value="TQWL">Tatkal Waiting List</option>
+               <option value="CAN">Cancelled</option>  
              </select>
         <br><br>
         

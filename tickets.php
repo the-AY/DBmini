@@ -62,7 +62,7 @@ include "config.php";
 
     if($run and $run1 and $run2) {
         echo '<script>  alert("Your ticket has been successfully booked") </script>';  //not showing an alert box
-        header('Refresh: 2; URL = ticketbooking.html');
+        header('URL = ticketbooking.html');
       
     }
     else {

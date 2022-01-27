@@ -33,20 +33,65 @@
         
         <table id="DisplayTable">
           <tr>
-            <th>Train Number</th>
-            <th>Train Name</th>
-            <th>Boarding Date</th>
-            <th>From</th>
-            <th>To</th>
-            <th>Class</th>
-            <th>Status</th>
-            <th>Action</th>
+            <th>PNR</th>
+            <th>Username</th>
+            <th>CUSTOMER NAME</th>
+            <th>PASSENGERS</th>
+            <th>COACH NUMBER</th>
+            <th>SEAT NUMBER</th>
+            <th>PRICE</th>
+            <th>DEPARTING FROM</th>
+            <th>DESTINATION</th>
+            <th>PNR Status</th>
           </tr>
-         
+          <?php
+          include "config.php";
+          session_start();
+          $adusername = $_SESSION["username"];
+          $sql= "SELECT A.*,B.* FROM TICKET A, TICKET_HOLDER B";
+        
+          $result= mysqli_query($conn,$sql);
+        
+          if($result){
+              while($row=mysqli_fetch_assoc($result))
+              {
+                $pnr= $row['PNR'] ;
+                $c_name=$row['C_NAME'];
+                $c_id=$row['C_ID'];
+                $price=$row['PRICE'];
+                $src= $row['SRC'];
+                $dest= $row['DEST'];
+                $city=$row["ADDRESS"];
+                $coach_no=$row["COACH_NO"];
+                $seat_no=$row["SEAT_NO"];
+                $pnr_status=$row["PNR_STATUS"];
+
+                   echo "<tr>
+                   <td>" .$pnr. "</td>
+                   <td>" . $c_id. " </td>
+                   <td>" . $c_name. " </td>
+                   <td>" .$row["TIH_NAME"]. " </td>
+                   <td>" .$coach_no. "</td>
+                   <td>" .$seat_no. "</td>
+                   <td>" .$price. "</td>
+                   <td>" .$src. "</td>
+                   <td>" .$dest. "</td>
+                   <td>".$pnr_status."</td>
+                   </tr>";
+             
+  
+                
+                
+
+        
+              }
+            }   
+          ?>
            
         </table>
         <br><br><br><br><br><br><br>
-       <a href="Update_ticket.html">Update ticket </a>
+        <button type="submit" ><a href="deleteticket.php">Delete</a></button>
+       <a href="Update_ticket.php">Update ticket </a>
        
 </body>
 </html>
