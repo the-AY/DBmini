@@ -23,6 +23,7 @@ $C_ID=$_POST['username'];
   $CONTACT=$_POST['contact'];
   $PASSWORD=$_POST['password'];
   
+                                     
   $action ="Account Created";
 	 $query="INSERT INTO customer (`C_ID`, `C_NAME`, `AGE`, `ADDRESS`, `GENDER`, `CONTACT`, `PASSWORD`) VALUES ('$C_ID', '$C_NAME', '$AGE', '$ADDRESS', '$GENDER', '$CONTACT', '$PASSWORD') ";
    $sql = "CREATE TRIGGER console AFTER INSERT ON customer FOR EACH ROW INSERT INTO console (`LOG_NO`, `C_ID`, `DATE`, `ACTION`) VALUES (NULL, '$C_ID', current_timestamp(), 'Account Created') ";
@@ -55,7 +56,7 @@ $C_ID=$_POST['username'];
         <a class="mr-5 hover:text-gray-900" href="aboutus.html" >About us</a>
        
       </nav>
-      <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
+      <a class="flex order-first lg:o-  arder-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
       <span class="ml-3 text-xl">Railway Management System</span>
       </a>
       <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
