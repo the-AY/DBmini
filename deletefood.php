@@ -2,10 +2,10 @@
 include 'config.php';
 if(isset($_GET['CID'])){
     $CID=$_GET['CID'];
-    $sql="DELETE FROM `customer` WHERE `CID`='$CID' AND `F_ID`=";
-    $result=mysqli_query($connect,$sql);
+    $sql="DELETE FROM `customer` WHERE `CID`='$CID' AND `F_ID`=$F_ID";
+    $result=mysqli_query($conn,$sql);
     if($result){
-        header('location:fooddisplay.php');
+        header('location:adminfoodupdate.php');
         echo "<script>alert('deleted');</script>";
     }
     else{

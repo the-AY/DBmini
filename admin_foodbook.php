@@ -68,6 +68,7 @@
 
               <td>
                       <button ><a href="deletefood.php">Delete</a></button>
+                      
           </td>
           </tr>';
       
