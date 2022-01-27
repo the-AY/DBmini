@@ -48,7 +48,7 @@ if(isset($_POST['submit'])){
     // $=$_POST[''];
     // $sql="UPDATE `food` SET ``='$',``='$',``='$',``='$' WHERE `MID` = $MID;";
     $status=$_POST['status'];
-    $sql="UPDATE TICKET SET `PNR_STATUS`='$status';";
+    $sql="UPDATE TICKET SET `PNR_STATUS`='$status' WHERE TI_TYPE='TICKET';";
     $result=mysqli_query($conn,$sql);
     if($result){
        

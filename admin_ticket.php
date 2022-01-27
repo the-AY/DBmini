@@ -48,7 +48,7 @@
           include "config.php";
           session_start();
           $adusername = $_SESSION["username"];
-          $sql= "SELECT A.*,B.* FROM TICKET A, TICKET_HOLDER B";
+          $sql= "SELECT A.*,B.* FROM TICKET A, TICKET_HOLDER B WHERE A.TI_TYPE='TICKET'";
         
           $result= mysqli_query($conn,$sql);
         
