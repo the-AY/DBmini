@@ -61,18 +61,6 @@ if(isset($_POST['submit'])){
     }
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="form.css">
-    <title>Update food </title>
-</head>
-<body>
-
-<div>
 
 <form action="adminfoodupdate.php" method="post">
     <section class="text-gray-600 body-font">
