@@ -91,11 +91,31 @@ $C_ID=$_POST['username'];
                 <label for="full-name" class="leading-7 text-sm text-gray-600">Address</label>
                 <input type="text" id="address" name="address" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
               </div>
-              <label for="gender">Gender</label>
-                  <select name="gender" id="gender">
-               <option value="MALE">MALE</option>
-               <option value="FEMALE">FEMALE</option>
+              <div class="mt-4">
+                  <label class="block">Select Your gender</label>
+                  <select name="gender" id="gender"
+                  class="form-select form-select-lg mt-4
+                    appearance-none
+                    block
+                    w-full
+                    px-4
+                    py-2
+                    text-xl
+                    font-normal
+                    text-gray-700
+                    bg-white bg-clip-padding bg-no-repeat
+                    border border-solid border-gray-300
+                    rounded
+                    transition
+                    ease-in-out
+                    m-0
+                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label=".form-select-lg example">
+                    <option selected>Select...</option>
+               <option value="MALE">Male</option>
+               <option value="FEMALE">Female</option>
+               <option value="OTHERS">Others</option>
              </select>
+              </div>
         <br><br>
               <div class="relative mb-4">
                 <label for="full-name" class="leading-7 text-sm text-gray-600">Phone Number</label>

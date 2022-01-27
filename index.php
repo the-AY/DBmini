@@ -45,7 +45,6 @@ echo "<script>alert('Incorrect Username or password try again')</script>";
         <a class="mr-5 hover:text-gray-900" href="index.php"> Trains </a>
         <a class="mr-5 hover:text-gray-900" href="contactus.html">Contact us</a> 
         <a class="mr-5 hover:text-gray-900" href="aboutus.html" >About us</a>
-        <a class="mr-5 hover:text-gray-900" href="index.php">PNR Status</a>
         <!-- <a class="mr-5 hover:text-gray-900" href="zdeleteac.php">#TEST FILE delete ac</a> -->
       </nav>
       <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
@@ -84,9 +83,9 @@ echo "<script>alert('Incorrect Username or password try again')</script>";
           <input type="Submit" value="login" name="login" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"> 
         </button>
       </form>
-        <a href="newac.php"> Create new account</a>
-        <a href="loginadmin.php"> Admin Login</a>
-        <a href="deleteac.php"> Delete Account</a>
+       <p>Don't have one?? <a href="newac.php" style="color: blue"> Create new account</a></p>
+        <p> Are you an admin??<a href="loginadmin.php" style="color: blue">Login here</a></p>
+        <p>Satisfied with your work?? <a href="deleteac.php" style="color: blue"> Delete Account</a></p>
         <p class="text-xs text-gray-500 mt-3"></p>
       
       </div>
