@@ -15,9 +15,9 @@
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
             <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
                 <a class="mr-5 hover:text-gray-900" href="homeadmin.html">Home</a>
-                <a class="mr-5 hover:text-gray-900" href="admin_ticket.html">Travel Ticket </a>
+                <a class="mr-5 hover:text-gray-900" href="admin_ticket.php">Travel Ticket </a>
                 <a class="mr-5 hover:text-gray-900" href="admin_postalbook.html">Postal Ticket</a>
-                <a class="mr-5 hover:text-gray-900" href="admin_foodbook.html">Food Order</a>
+                <a class="mr-5 hover:text-gray-900" href="admin_foodbook.php">Food Order</a>
               
               </nav>
           <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
