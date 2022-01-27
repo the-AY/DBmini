@@ -67,15 +67,19 @@
            
 
               <td>
-                      <button ><a href="deletefood.php">Delete</a></button>
                       
+                      <button ><a href="deletefood.php?F_ID='. $F_ID.'">Delete</a></button>
           </td>
           </tr>';
       
             }
           }   
         ?>
-         <!-- <label for="status">Status</label>
+         <!-- // <button ><a href="deletefood.php">Delete</a></button>
+                      // adminfoodupdate.php
+           
+         <label for="status">Status</label>
+
                   <select name="status" id="status">
                <option value="Cancelled">Cancelled</option>
                <option value="Confirmed">Confirmed</option>
