@@ -19,7 +19,7 @@
           <a class="mr-5 hover:text-gray-900" href="https://www.railyatri.in/train-ticket?utm_source=ET277dweb&gclid=EAIaIQobChMI8ZHZt7yu9QIV1wkrCh2OFw96EAAYASAAEgLFRfD_BwE"> Trains </a>
           <a class="mr-5 hover:text-gray-900" href="contactus.html">Contact us</a>
           <a class="mr-5 hover:text-gray-900" href="aboutus.html" >About us</a>
-          <a class="mr-5 hover:text-gray-900" href="pnrstart.html">PNR Status</a>
+        
         </nav>
         <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
   

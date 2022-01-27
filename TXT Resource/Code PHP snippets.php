@@ -5,7 +5,27 @@ $sql="INSERT INTO `tablename` (`Column`, `Column`, `Column`)  VALUES
 
     login -> create c_id
 
+
+
+    trains T_NO
+    
+    <label for="status">UPDATE </label>
+                  <select name="" id="status">
+               <option value="NOT Updated">NOT Updated</option>
+               <option value="Confirmed">Confirmed</option>
+               <option value="Ready">Ready</option>
+               <option value="Delivered">Delivered</option>
+               <option value="Rejected">Rejected</option>  
+             </select>
+
+
+
+
+
 Display all table details
+
+
+
 
 <?php
   include "config.php";
