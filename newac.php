@@ -11,11 +11,11 @@
 
  include "config.php";
 
- session_start();
- $username=$_SESSION["username"];
+//  session_start();
+//  $username=$_SESSION["username"];
 if(isset($_POST['submit'])) {
 
-	$C_ID=$_POST['username'];
+$C_ID=$_POST['username'];
 	$C_NAME=$_POST['name'];
 	$AGE=$_POST['age'];
 	$ADDRESS=$_POST['address'];
@@ -25,7 +25,7 @@ if(isset($_POST['submit'])) {
   
   $action ="Account Created";
 	 $query="INSERT INTO customer (`C_ID`, `C_NAME`, `AGE`, `ADDRESS`, `GENDER`, `CONTACT`, `PASSWORD`) VALUES ('$C_ID', '$C_NAME', '$AGE', '$ADDRESS', '$GENDER', '$CONTACT', '$PASSWORD') ";
-   $sql = "CREATE TRIGGER console AFTER INSERT ON customer FOR EACH ROW INSERT INTO console (`LOG_NO`, `C_ID`, `DATE`, `ACTION`) VALUES (NULL, '$username', current_timestamp(), 'Account Created') ";
+   $sql = "CREATE TRIGGER console AFTER INSERT ON customer FOR EACH ROW INSERT INTO console (`LOG_NO`, `C_ID`, `DATE`, `ACTION`) VALUES (NULL, '$C_ID', current_timestamp(), 'Account Created') ";
   
    $run=mysqli_query($conn,$query) or die("connection failed|Username or Password Error");
    $new=mysqli_query($conn,$sql);
@@ -53,7 +53,7 @@ if(isset($_POST['submit'])) {
         <a class="mr-5 hover:text-gray-900" href="https://www.railyatri.in/train-ticket?utm_source=ET277dweb&gclid=EAIaIQobChMI8ZHZt7yu9QIV1wkrCh2OFw96EAAYASAAEgLFRfD_BwE"> Trains </a>
         <a class="mr-5 hover:text-gray-900" href="contactus.html">Contact us</a> </a>
         <a class="mr-5 hover:text-gray-900" href="aboutus.html" >About us</a>
-        <a class="mr-5 hover:text-gray-900" href="pnrstart.html">PNR Status</a>
+       
       </nav>
       <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
       <span class="ml-3 text-xl">Railway Management System</span>
@@ -105,7 +105,7 @@ if(isset($_POST['submit'])) {
               <input type="password" id="password" name="password" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
             </div>
             <button type="submit" value="submit" name="submit" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Create a account </button>
-           <a href="login.php">Return to login</a>
+           <a href="index.php">Return to login</a>
             //send credentials to the database to create a new account to the user
             <p class="text-xs text-gray-500 mt-3"></p>
           </div>
