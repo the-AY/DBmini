@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/608539d5a6.js" crossorigin="anonymous"></script>
     <link href="404style.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <title>Railway Management Admin console</title>
@@ -42,10 +43,10 @@ echo "<script>alert('Incorrect Username or password try again')</script>";
     <header class="text-gray-600 body-font">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
-            <a class="mr-5 hover:text-gray-900" href="loginadmin.php">Home</a>
-            <a class="mr-5 hover:text-gray-900" href="loginadmin.php">Travel Ticket </a>
-            <a class="mr-5 hover:text-gray-900" href="loginadmin.php">Postal Ticket</a>
-            <a class="mr-5 hover:text-gray-900" href="loginadmin.php">Food Order</a>
+            <a class="mr-5 hover:text-gray-900" href="loginadmin.php"><i class="fas fa-home"></i> Home</a>
+            <a class="mr-5 hover:text-gray-900" href="loginadmin.php"><i class="fas fa-ticket-alt"></i> Travel Ticket </a>
+            <a class="mr-5 hover:text-gray-900" href="loginadmin.php"><i class="fas fa-mail-bulk"></i> Postal Ticket</a>
+            <a class="mr-5 hover:text-gray-900" href="loginadmin.php"><i class="fas fa-utensils"></i> Food Order</a>
  
           </nav>
           <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">

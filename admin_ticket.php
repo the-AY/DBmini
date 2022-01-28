@@ -78,12 +78,6 @@
                    <td>" .$dest. "</td>
                    <td>".$pnr_status."</td>
                    </tr>";
-             
-  
-                
-                
-
-        
               }
             }   
           ?>
