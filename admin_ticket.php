@@ -18,7 +18,7 @@
                 <a class="mr-5 hover:text-gray-900" href="admin_ticket.html">Travel Ticket </a>
                 <a class="mr-5 hover:text-gray-900" href="admin_postalbook.html">Postal Ticket</a>
                 <a class="mr-5 hover:text-gray-900" href="admin_foodbook.html">Food Order</a>
-                <a class="mr-5 hover:text-gray-900" href="admin_pnrstart.html">PNR Update</a>
+            
               </nav>
           <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
           <span class="ml-3 text-xl">Railway Management Admin Console</span>
@@ -46,8 +46,8 @@
           </tr>
           <?php
           include "config.php";
-          session_start();
-          $adusername = $_SESSION["username"];
+          // session_start();
+          // $adusername = $_SESSION["username"];
           $sql= "SELECT A.*,B.* FROM TICKET A, TICKET_HOLDER B WHERE A.TI_TYPE='TICKET'";
         
           $result= mysqli_query($conn,$sql);
@@ -55,7 +55,7 @@
           if($result){
               while($row=mysqli_fetch_assoc($result))
               {
-                $pnr= $row['PNR'] ;
+                $PNR=$row['PNR'] ;
                 $c_name=$row['C_NAME'];
                 $c_id=$row['C_ID'];
                 $price=$row['PRICE'];
@@ -67,7 +67,7 @@
                 $pnr_status=$row["PNR_STATUS"];
 
                    echo "<tr>
-                   <td>" .$pnr. "</td>
+                   <td>" .$PNR. "</td>
                    <td>" . $c_id. " </td>
                    <td>" . $c_name. " </td>
                    <td>" .$row["TIH_NAME"]. " </td>

@@ -91,7 +91,7 @@
            $username = $_SESSION["username"];
            if(isset($_POST['submit'])) {
         //    $C_ID=$_POST['username'];
-           $sql="SELECT A.*,B.* FROM TICKET A, TICKET_HOLDER B WHERE TI_TYPE='TICKET' and C_ID='$username' ";
+           $sql="SELECT A.*,B.* FROM TICKET A, TICKET_HOLDER B WHERE TI_TYPE='TICKET' and A.C_ID='$username' ";
            $result= mysqli_query($conn, $sql);
 
            if($result) {

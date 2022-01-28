@@ -36,7 +36,7 @@
           <div class="flex justify-center">
             <div>
               
-            <form action="deletepostal.php" method="post"> 
+            <form  method="post"> 
               <div class="mb-3 xl:w-96">
                 <label
                   for="exampleFormControlInput2"

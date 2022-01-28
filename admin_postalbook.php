@@ -18,7 +18,7 @@
                 <a class="mr-5 hover:text-gray-900" href="admin_ticket.php">Travel Ticket </a>
                 <a class="mr-5 hover:text-gray-900" href="admin_postalbook.php">Postal Ticket</a>
                 <a class="mr-5 hover:text-gray-900" href="admin_foodbook.html">Food Order</a>
-                <a class="mr-5 hover:text-gray-900" href="admin_pnrstart.html">PNR Update</a>
+  
               </nav>
           <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
           <span class="ml-3 text-xl">Railway Management Admin Console</span>
@@ -43,8 +43,8 @@
           </tr>
           <?php
           include "config.php";
-          session_start();
-          $adusername = $_SESSION["username"];
+          // session_start();
+          // $adusername = $_SESSION["username"];
           $sql= "SELECT * FROM TICKET WHERE TI_TYPE='POSTAL'";
         
           $result= mysqli_query($conn,$sql);

@@ -68,6 +68,7 @@
 
               <td>
                       
+                      <button ><a href="deletefood.php?C_ID='. $username.'"><a href="deletefood.php?F_ID='. $F_ID.'"></a>Delete</a></button>
                       <button ><a href="deletefood.php?F_ID='. $F_ID.'">Delete</a></button>
           </td>
           </tr>';

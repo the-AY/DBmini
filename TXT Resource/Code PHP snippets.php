@@ -9,17 +9,36 @@ $sql="INSERT INTO `tablename` (`Column`, `Column`, `Column`)  VALUES
 
     trains T_NO
     
-    <label for="status">UPDATE </label>
-                  <select name="" id="status">
-               <option value="NOT Updated">NOT Updated</option>
-               <option value="Confirmed">Confirmed</option>
-               <option value="Ready">Ready</option>
-               <option value="Delivered">Delivered</option>
-               <option value="Rejected">Rejected</option>  
+    <label for="status">TRAIN NO </label>
+                  <select name="tno" id="tno">
+               <option value=" RAJDHANI EXP (12431)"> RAJDHANI EXP (12431)</option>
+               <option value=" MATSYAGANDA EXP (12620)">< MATSYAGANDA EXP (12620)/option>
+               <option value="NETHRAVATHI EXP (16346)">NETHRAVATHI EXP (16346)</option>
+               <option value="MAJN CSMT EXP (12134)">MAJN CSMT EXP (12134)</option>
+               <option value="MANGLADWEEP EXP (12617)">MANGLADWEEP EXP (12617)</option>  
              </select>
 
 
 
+TRIVANDRUM CNTL-TVC 
+KOLLAM JN-QLN 
+ALLEPPEY-ALLP 
+ERNAKULAM JN-ERS 
+THRISUR-TCR
+SHORANUR JN-SRR 
+KOZHIKKODE-CLT 
+KANNUR-CAN
+KASARAGOD-KGQ  
+MANGALURU JN-MAJN  
+UDUPI-UD  
+KARWAR-KAWR 
+MADGAON-MAO 
+RATNAGIRI-RN  
+PANVEL-PNVL  
+VASAI ROAD-BSR  
+VADODARA JN-BRC 
+KOTA JN-KOTA  
+H NIZAMUDDIN-NZM  
 
 
 Display all table details

@@ -1,8 +1,10 @@
 <?php
 include 'config.php';
 if(isset($_GET['C_ID'])){
-    $C_ID=$_GET['C_ID'];
-    $sql="DELETE FROM `customer` WHERE `F_ID`=$F_ID";
+    // $C_ID=$_GET['username'];
+    $username=$_GET['C_ID']
+    $F_ID=$_GET['F_ID'];
+    $sql="DELETE FROM `food` WHERE `F_ID`=$F_ID AND `C_ID`=$username ";
     $result=mysqli_query($conn,$sql);
     if($result){
         header('location:adminfoodupdate.php');

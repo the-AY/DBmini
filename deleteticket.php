@@ -36,7 +36,7 @@
           <div class="flex justify-center">
             <div>
               
-            <form action="deletepostal.php" method="post"> 
+            <form  method="post"> 
               <div class="mb-3 xl:w-96">
                 <label
                   for="exampleFormControlInput2"
@@ -86,9 +86,13 @@ if(isset($_POST['submit'])){
         while($row=mysqli_fetch_assoc($result))
         {
 
-    $sql1="DELETE FROM TICKET WHERE TI_TYPE='TICKET' AND PNR='$pnr'";
+  
+    $sql2="DELETE FROM TICKET_HOLDER A ,TICKET B WHERE A.C_ID=B.C_ID  AND B.PNR='$pnr'; ";
+    $result2=mysqli_query($conn,$sql2);
+    $sql1="DELETE FROM TICKET WHERE TI_TYPE='TICKET' AND PNR='$pnr'; ";
     $result1=mysqli_query($conn,$sql1);
-    if($result1){
+   
+    if($result2 and $result1){
         header('location:admin_ticket.php');
         echo "<script>alert('deleted');</script>";
     }
