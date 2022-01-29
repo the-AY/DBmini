@@ -10,10 +10,7 @@
 </head>
 <?php
 
- include "config.php";
 
-//  session_start();
-//  $username=$_SESSION["username"];
 if(isset($_POST['submit'])) {
 
 $C_ID=$_POST['username'];
@@ -138,3 +135,7 @@ $C_ID=$_POST['username'];
 </html>
 <!-- trigger in php my admin 
 INSERT INTO console (`C_NO`, `C_ID`, `DATE`, `ACTION`) VALUES (NULL, '$C_ID', current_timestamp(), 'Account Created') -->
+include "config.php";
+<!-- 
+ session_start();
+ $username=$_SESSION["username"]; -->

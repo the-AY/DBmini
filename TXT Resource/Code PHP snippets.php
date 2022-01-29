@@ -5,19 +5,56 @@ $sql="INSERT INTO `tablename` (`Column`, `Column`, `Column`)  VALUES
 
     login -> create c_id
 
-
+    <label for="DISPLAY">DISPLAY </label>
+                  <select name="DISPLAY" id="DISPLAY">
+               <option value=""></option>
+               <option value=""></option>
+               <option value=""></option>
+               <option value=""></option>
+               <option value=""></option>
+               <option value=""></option>
+               <option value=""></option>
+               <option value=""></option>
+               <option value=""></option>
+               <option value=""></option>
+               <option value=""></option>
+               <option value=""></option>
+                
+             </select>
 
     trains T_NO
     
     <label for="status">TRAIN NO </label>
                   <select name="tno" id="tno">
-               <option value=" RAJDHANI EXP (12431)"> RAJDHANI EXP (12431)</option>
-               <option value=" MATSYAGANDA EXP (12620)">< MATSYAGANDA EXP (12620)/option>
+               <option value="RAJDHANI EXP (12431)"> RAJDHANI EXP (12431)</option>
+               <option value="MATSYAGANDA EXP (12620)">< MATSYAGANDA EXP (12620)/option>
                <option value="NETHRAVATHI EXP (16346)">NETHRAVATHI EXP (16346)</option>
                <option value="MAJN CSMT EXP (12134)">MAJN CSMT EXP (12134)</option>
                <option value="MANGLADWEEP EXP (12617)">MANGLADWEEP EXP (12617)</option>  
              </select>
 
+             <label for="tst">TRAIN Stations </label>
+                  <select name="tst" id="tst">
+               <option value="TRIVANDRUM CNTL-TVC ">TRIVANDRUM CNTL-TVC </option>
+               <option value="KOLLAM JN-QLN ">KOLLAM JN-QLN </option>
+               <option value="ALLEPPEY-ALLP ">ALLEPPEY-ALLP </option>
+               <option value="ERNAKULAM JN-ERS ">ERNAKULAM JN-ERS </option>
+               <option value="THRISUR-TCR">THRISUR-TCR</option>  
+               <option value="SHORANUR JN-SRR ">SHORANUR JN-SRR </option>
+               <option value="KOZHIKKODE-CLT ">KOZHIKKODE-CLT </option>
+               <option value="KANNUR-CAN">KANNUR-CAN</option>
+               <option value="KASARAGOD-KGQ  ">KASARAGOD-KGQ  </option>
+               <option value="MANGALURU JN-MAJN ">MANGALURU JN-MAJN </option> 
+               <option value="UDUPI-UD  ">UDUPI-UD  </option>
+               <option value="KARWAR-KAWR ">KARWAR-KAWR </option>
+               <option value="MADGAON-MAO ">MADGAON-MAO </option>
+               <option value="RATNAGIRI-RN ">RATNAGIRI-RN </option>
+               <option value="PANVEL-PNVL  ">PANVEL-PNVL  </option> 
+               <option value="VASAI ROAD-BSR ">VASAI ROAD-BSR </option>
+               <option value="VADODARA JN-BRC ">VADODARA JN-BRC </option> 
+               <option value="KOTA JN-KOTA  ">KOTA JN-KOTA  </option>
+               <option value="H NIZAMUDDIN-NZM ">H NIZAMUDDIN-NZM </option> 
+                </select>
 
 
 TRIVANDRUM CNTL-TVC 
