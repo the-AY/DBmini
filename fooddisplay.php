@@ -38,8 +38,9 @@
           <th>Username</th>
           <th>Items</th>
           <th>Quantity</th>
-          <th>Total Price</th>
+          <th>Price</th>
           <th>Status</th>
+          <th>Total Price</th>
          
         </tr>
        
@@ -50,8 +51,9 @@
         session_start();
         $username = $_SESSION["username"];
         $sql= "Select * from `food` WHERE  `C_ID`='$username';";
-      
+       
         $result= mysqli_query($conn,$sql);
+        
       
         if($result){
             while($row=mysqli_fetch_assoc($result))
@@ -74,14 +76,15 @@
                     <td>'.$QUANTITY.'</td>
                     <td>'.$PRICE.'</td>
                     <td>'.$STATUS.'</td>
-              
-              
-           
-            
-        
+
           </tr>';
        
             }
+            '<tr>
+                    <td>'.mysqli_fetch_assoc($tp).'</td>
+
+          </tr>';
+
           }   
         ?>
          

@@ -90,6 +90,11 @@ if(isset($_POST['Submit']))
     }
       $sql="INSERT INTO `food` (`C_ID`, `ITEMS`, `QUANTITY`, `PRICE`, `F_ID`) VALUES ('$username', '$ITEMS', '$QUANTITY', '$price', '$F_ID') ";
       $result=mysqli_query($conn,$sql);
+      $var="SELECT `PRICE` FROM `food` WHERE `C_ID`='$username';";
+        $tp= $var*(5/100); 
+        $new="INSERT INTO `orders` (`DOORDER`, `C_ID`, `F_ID`, `TOTAL PRICE`) VALUES (current_timestamp(), '$username', '$F_ID', '$tp'): ";
+        $result1= mysqli_query($conn,$var);
+        $result2= mysqli_query($conn,$new);
       if($result)
       {
       echo "<script>alert('Ordered food successfully');</script>";

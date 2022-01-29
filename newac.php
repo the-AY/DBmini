@@ -9,7 +9,7 @@
     <title>Create a New account</title>
 </head>
 <?php
-
+include "config.php";
 
 if(isset($_POST['submit'])) {
 

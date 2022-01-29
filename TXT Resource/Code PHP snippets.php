@@ -78,6 +78,11 @@ KOTA JN-KOTA
 H NIZAMUDDIN-NZM  
 
 
+# code for toatl Price
+$var= SELECT `price` FROM `table_name` WHERE C_ID=$username
+$tp= $var*0.05;
+
+
 Display all table details
 
 
