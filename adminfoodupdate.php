@@ -32,21 +32,8 @@
 include 'config.php';
 
 
-
-// $QUERY="";
-// $sql1=mysqli_query($conn,$QUERY);
-// $Row=mysqli_fetch_array($sql1);
-// // $=$Row[''];
-
-
-
 if(isset($_POST['submit'])){
-    // $=$_GET[''];
-    // $=$_POST[''];
-    // $=$_POST[''];
-    // $=$_POST[''];
-    // $=$_POST[''];
-    // $sql="UPDATE `food` SET ``='$',``='$',``='$',``='$' WHERE `MID` = $MID;";
+  
     $status=$_POST['status'];
     $sql="UPDATE `food` SET `STATUS`='$status';";
     $result=mysqli_query($conn,$sql);
@@ -57,7 +44,6 @@ if(isset($_POST['submit'])){
         die;
     }else{
         echo "not updated";
-        //die(mysqfa-li-error($conn));
     }
 }
 ?>

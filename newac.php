@@ -8,6 +8,7 @@
     <script src="https://kit.fontawesome.com/608539d5a6.js" crossorigin="anonymous"></script>
     <title>Create a New account</title>
 </head>
+
 <?php
 include "config.php";
 
@@ -19,27 +20,19 @@ $C_ID=$_POST['username'];
 	$ADDRESS=$_POST['address'];
   $GENDER=$_POST['gender'];
   $CONTACT=$_POST['contact'];
-  $PASSWORD=$_POST['password'];
-  
-                                     
-  $action ="Account Created";
+  $PASSWORD=$_POST['password'];                                   
 	 $query="INSERT INTO customer (`C_ID`, `C_NAME`, `AGE`, `ADDRESS`, `GENDER`, `CONTACT`, `PASSWORD`) VALUES ('$C_ID', '$C_NAME', '$AGE', '$ADDRESS', '$GENDER', '$CONTACT', '$PASSWORD') ";
-   $sql = "CREATE TRIGGER console AFTER INSERT ON customer FOR EACH ROW INSERT INTO console (`LOG_NO`, `C_ID`, `DATE`, `ACTION`) VALUES (NULL, '$C_ID', current_timestamp(), 'Account Created') ";
+   $sql ="CREATE TRIGGER console AFTER INSERT ON customer FOR EACH ROW INSERT INTO console (`LOG_NO`, `C_ID`, `DATE`, `ACTION`) VALUES (NULL, '$C_ID', current_timestamp(), 'Account Created')";
   
    $run=mysqli_query($conn,$query) or die("connection failed|Username or Password Error");
    $new=mysqli_query($conn,$sql);
 	if($run) {
 		echo '<script> alert("Your Account was sucessfully created")</script>';	
-    // $log=mysqli_query($conn,$sq) or die("connection failed|Logged");
-    //  $new=mysqli_query($conn,$sql) or die("connection failed|Logged");
-
     header('Refresh: 2; URL = index.php');
-
 	}
 	else {
 		echo "unsuccessful account creation Please try again Redirecting to ACCOUNT CREATION PAGE";
-          header('Refresh: 2; URL = newac.php');
-		
+          header('Refresh: 2; URL = newac.php');		
 	}
 }
 ?>
@@ -138,4 +131,6 @@ INSERT INTO console (`C_NO`, `C_ID`, `DATE`, `ACTION`) VALUES (NULL, '$C_ID', cu
 include "config.php";
 <!-- 
  session_start();
- $username=$_SESSION["username"]; -->
+ $username=$_SESSION["username"];
+   // $log=mysqli_query($conn,$sq) or die("connection failed|Logged");
+    //  $new=mysqli_query($conn,$sql) or die("connection failed|Logged"); -->

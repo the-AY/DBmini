@@ -30,23 +30,8 @@
 
     <?php
 include 'config.php';
-
-
-
-// $QUERY="";
-// $sql1=mysqli_query($conn,$QUERY);
-// $Row=mysqli_fetch_array($sql1);
-// // $=$Row[''];
-
-
-
 if(isset($_POST['submit'])){
-    // $=$_GET[''];
-    // $=$_POST[''];
-    // $=$_POST[''];
-    // $=$_POST[''];
-    // $=$_POST[''];
-    // $sql="UPDATE `food` SET ``='$',``='$',``='$',``='$' WHERE `MID` = $MID;";
+    
     $status=$_POST['status'];
     $sql="UPDATE TICKET SET `PNR_STATUS`='$status' WHERE TI_TYPE='TICKET';";
     $result=mysqli_query($conn,$sql);
@@ -57,7 +42,6 @@ if(isset($_POST['submit'])){
         die;
     }else{
         echo "not updated";
-        //die(mysqfa-li-error($conn));
     }
 }
 ?>
@@ -96,3 +80,18 @@ if(isset($_POST['submit'])){
       </form>
 </body>
 </html>
+
+<!-- // $QUERY="";
+// $sql1=mysqli_query($conn,$QUERY);
+// $Row=mysqli_fetch_array($sql1);
+// // $=$Row['']; 
+
+// $=$_GET[''];
+    // $=$_POST[''];
+    // $=$_POST[''];
+    // $=$_POST[''];
+    // $=$_POST[''];
+    // $sql="UPDATE `food` SET ``='$',``='$',``='$',``='$' WHERE `MID` = $MID;";
+
+       //die(mysqfa-li-error($conn));
+-->
