@@ -19,14 +19,14 @@
                             session_start();
                             $username = $_SESSION["username"];
 
-                        $MAJN_CSMT_EXP=array();
+                        $MAJN_CSMT_EXP=array("(MAJN)MANGALURU JN","(SL)SURATHKAL","(UD)UDUPI","(KUDA)KUNDAPURA","(BYNR)MOOKAMBIKA ROAD","(BTJL)BHATKAL","(KT)KUMTA","(KAWR)KARWAR","(MAO)MADGAON","(KRMI)KARMALI","(KKW)KANKAVALI","(RN)RATNAGIRI","(PNVL)PANVEL","(TNA)THANE","(CSMT)C SHIVAJI MAH T");
                         $MANGLADWEEP_EXP=array();
                         $MATSYAGANDHA_EXP=array();
                         $NETHRAWATHI_EXP=array();
                         $RAJDHANI_EXP=array();
-                        $d;
                         $sr;
                         $de;
+                        $tot_price=0;
                         if (array_key_exists($source, $MAJN_CSMT_EXP) and array_key_exists($dest, $MAJN_CSMT_EXP)) {
                             $d=mktime();
                             $sr="(MAJN)MANGALURU JN";
@@ -37,15 +37,16 @@
                                        <th>Schedule</th>
                                        <th>Destination</th>
                                        <th>Source</th>
-                                       <th>Runs On</th>
+                                       <th>Departs on</th>
+                                       <th>Runs on</th>
                                    </tr>";
                                     echo '<tr>
                                            <td>MAJN_CSMT_EXP</td>
-                                           <td><a><img src="../trains/MAJN_CSMT_EXP.jpg">Train Schedule</a></td>
-                                           <td>" . $d . "</td>
-                                           <td>" . $s. " </td>
+                                           <td><a href="../trains/MAJN_CSMT_EXP.jpg">Train Schedule</a></td>
+                                           <td>" . $de . "</td>
+                                           <td>" . $sr. " </td>
                                            <td>" . echo "date("h:i d-m-y",$d)" . "</td>
-                                           <td> 
+                                           <td>MON, TUE, WED, THURS, FRI, SAT, SUN</td> 
                                    </tr>';
 
                         }
@@ -59,15 +60,16 @@
                                        <th>Schedule</th>
                                        <th>Destination</th>
                                        <th>Source</th>
+                                       <th>Departs on</th>    
                                        <th>Runs On</th>
                                    </tr>";
                                     echo '<tr>
                                            <td>MANGLADWEEP_EXP</td>
-                                           <td><a><img src="../trains/MANGLADWEEP_EXP.jpg">Train Schedule</a></td>
-                                           <td>" . $d . "</td>
-                                           <td>" . $s. " </td>
+                                           <td><a href="../trains/MANGLADWEEP_EXP.jpg">Train Schedule</a></td>
+                                           <td>" . $de . "</td>
+                                           <td>" . $sr. " </td>
                                            <td>" . echo "date("h:i d-m-y",$d)" . "</td>
-                                           <td> 
+                                           <td>MON, TUE, WED, THURS, FRI, SAT, SUN</td> 
                                    </tr>';
 
                         }
@@ -81,15 +83,16 @@
                                        <th>Schedule</th>
                                        <th>Destination</th>
                                        <th>Source</th>
+                                        <th>Departs on</th>
                                        <th>Runs On</th>
                                    </tr>";
                                     echo '<tr>
                                            <td>MATSYAGANDHA_EXP</td>
-                                           <td><a><img src="../trains/MATSYAGANDHA_EXP.jpg">Train Schedule</a></td>
-                                           <td>" . $d . "</td>
-                                           <td>" . $s. " </td>
+                                           <td><a href="../trains/MATSYAGANDHA_EXP.jpg">Train Schedule</a></td>
+                                           <td>" . $de . "</td>
+                                           <td>" . $sr. " </td>
                                            <td>" . echo "date("h:i d-m-y",$d)" . "</td>
-                                           <td> 
+                                           <td>MON, TUE, WED, THURS, FRI, SAT, SUN</td>
                                    </tr>';
 
                         }
@@ -103,15 +106,16 @@
                                        <th>Schedule</th>
                                        <th>Destination</th>
                                        <th>Source</th>
+                                        <th>Departs on</th>
                                        <th>Runs On</th>
                                    </tr>";
                                     echo '<tr>
                                            <td>NETHRAWATHI_EXP</td>
-                                           <td><a><img src="../trains/NETHRAWATHI_EXP.jpg">Train Schedule</a></td>
-                                           <td>" . $d . "</td>
-                                           <td>" . $s. " </td>
-                                           <td>" . echo "date("h:i d-m-y",$d)" . "</td>
-                                           <td> 
+                                           <td><a href="../trains/NETHRAWATHI_EXP.jpg">Train Schedule</a></td>
+                                           <td>' . $de . '</td>
+                                           <td>' . $sr. ' </td>
+                                           <td>' echo "date("h:i d-m-y",$d)"; . '</td>
+                                           <td>MON, TUE, WED, THURS, FRI, SAT, SUN</td>
                                    </tr>';
 
                         }
@@ -125,15 +129,16 @@
                                        <th>Schedule</th>
                                        <th>Destination</th>
                                        <th>Source</th>
+                                        <th>Departs on</th>
                                        <th>Runs On</th>
                                    </tr>";
                                     echo '<tr>
                                            <td>RAJDHANI_EXP</td>
                                            <td><a><img src="../trains/RAJDHANI_EXP.jpg">Train Schedule</a></td>
-                                           <td>" . $d . "</td>
-                                           <td>" . $s. " </td>
+                                           <td>" . $de . "</td>
+                                           <td>" . $sr. " </td>
                                            <td>" . echo "date("h:i d-m-y",$d)" . "</td>
-                                           <td> 
+                                           <td>TUE, THURS, FRI</td> 
                                    </tr>';
                         }
                         else {
