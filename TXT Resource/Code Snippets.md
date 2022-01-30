@@ -87,3 +87,14 @@ $db ="dbmini";
 $connect = mysqli_connect($host,$user,$pwd,$db);
 
 ?>
+//   <button ><a href="deletefood.php">Delete</a></button>
+//   adminfoodupdate.php
+
+// <label for="status">Status</label>
+
+// <select name="status" id="status">
+// <option value="Cancelled">Cancelled</option>
+// <option value="Confirmed">Confirmed</option>
+// <option value="Fullfiled">Fullfiled</option>
+// </select> 
+// <br><br> 

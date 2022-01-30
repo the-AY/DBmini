@@ -41,10 +41,12 @@
           <th>Action</th>
           
         </tr>
+     
         <?php
         include "config.php";
         // session_start();
         // $adusername = $_SESSION["username"];
+       
         $sql= "SELECT * FROM `food`;";
       
         $result= mysqli_query($conn,$sql);
@@ -64,33 +66,20 @@
               <td>'.$QUANTITY.'</td>
               <td>'.$username.'</td>
               <td>'.$STATUS.'</td>
-           
-
-              <td>
+            <td>
                       
-                      <button ><a href="deletefood.php?C_ID='. $username.'"><a href="deletefood.php?F_ID='. $F_ID.'"></a>Delete</a></button>
-                      <button ><a href="deletefood.php?F_ID='. $F_ID.'">Delete</a></button>
+                      <button ><a href="deletefood.php?C_ID='.$username.'"> Delete</a></button>
+                      
           </td>
           </tr>';
       
             }
           }   
         ?>
-         <!-- // <button ><a href="deletefood.php">Delete</a></button>
-                      // adminfoodupdate.php
-           
-         <label for="status">Status</label>
+        </table>
+      
 
-                  <select name="status" id="status">
-               <option value="Cancelled">Cancelled</option>
-               <option value="Confirmed">Confirmed</option>
-                <option value="Fullfiled">Fullfiled</option>
-             </select> 
-        <br><br> -->
-
-      </table>
-      <br><br><br><br><br><br><br>
-  
-     
+        
 </body>
 </html>
+

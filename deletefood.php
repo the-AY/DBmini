@@ -1,11 +1,12 @@
 <?php
 include 'config.php';
+include 'admin_foodbook.php';
 if(isset($_GET['C_ID'])){
     // $C_ID=$_GET['username'];
-    $username=$_GET['C_ID']
-    $F_ID=$_GET['F_ID'];
-    $sql="DELETE FROM `food` WHERE `F_ID`=$F_ID AND `C_ID`=$username ";
-    $result=mysqli_query($conn,$sql);
+    $user=$_GET['C_ID'];
+    
+    $sql4="DELETE FROM `food` WHERE `C_ID`='$user' ";
+    $result=mysqli_query($conn,$sql4);
     if($result){
         header('location:adminfoodupdate.php');
         echo "<script>alert('deleted');</script>";
@@ -13,7 +14,7 @@ if(isset($_GET['C_ID'])){
     
     else{
         echo "<script>alert('Didn't delete');</script>";
-        die(mysqli_error($connect));
+        die(mysqli_error($conn));
     }
 }
 ?>
