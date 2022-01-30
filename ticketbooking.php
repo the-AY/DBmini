@@ -136,31 +136,11 @@
                                            <td>" . echo "date("h:i d-m-y",$d)" . "</td>
                                            <td> 
                                    </tr>';
-
                         }
-                        if (array_key_exists($source, $train6) and array_key_exists($dest, $train6)) {
-                            $d=mktime();
-                            $sr;
-                            $de;
-                            echo"
-                                    <tr>
-                                       <th>Train</th>
-                                       <th>Schedule</th>
-                                       <th>Destination</th>
-                                       <th>Source</th>
-                                       <th>Runs On</th>
-                                   </tr>";
-                                    echo '<tr>
-                                           <td>Train1</td>
-                                           <td><a><img src="../trains/train1.jpg">Train Schedule</a></td>
-                                           <td>" . $d . "</td>
-                                           <td>" . $s. " </td>
-                                           <td>" . echo "date("h:i d-m-y",$d)" . "</td>
-                                           <td> 
-                                   </tr>';
-
-                            }
-                        
+                        else {
+                            echo "Error in the code!!! please try again...............";
+                        }
+                     
                              
                         ?>
 
