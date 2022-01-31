@@ -19,148 +19,132 @@
                             session_start();
                             $username = $_SESSION["username"];
 
-                        $train1=array();
-                        $train2=array();
-                        $train3=array();
-                        $train4=array();
-                        $train5=array();
-                        $train6=array();
-                        $d;
+                        $MAJN_CSMT_EXP=array("(MAJN)MANGALURU JN","(SL)SURATHKAL","(UD)UDUPI","(KUDA)KUNDAPURA","(BYNR)MOOKAMBIKA ROAD","(BTJL)BHATKAL","(KT)KUMTA","(KAWR)KARWAR","(MAO)MADGAON","(KRMI)KARMALI","(KKW)KANKAVALI","(RN)RATNAGIRI","(PNVL)PANVEL","(TNA)THANE","(CSMT)C SHIVAJI MAH T");
+                        $MANGLADWEEP_EXP=array();
+                        $MATSYAGANDHA_EXP=array();
+                        $NETHRAWATHI_EXP=array();
+                        $RAJDHANI_EXP=array();
                         $sr;
                         $de;
-                        if (array_key_exists($source, $train1) and array_key_exists($dest, $train1)) {
+                        $tot_price=0;
+                        if (array_key_exists($source, $MAJN_CSMT_EXP) and array_key_exists($dest, $MAJN_CSMT_EXP)) {
                             $d=mktime();
-                            $sr;
-                            $de;
+                            $sr="(MAJN)MANGALURU JN";
+                            $de="(CSMT)C SHIVAJI MAH T";
                             echo"
                                     <tr>
                                        <th>Train</th>
                                        <th>Schedule</th>
                                        <th>Destination</th>
                                        <th>Source</th>
-                                       <th>Runs On</th>
+                                       <th>Departs on</th>
+                                       <th>Runs on</th>
                                    </tr>";
                                     echo '<tr>
-                                           <td>Train1</td>
-                                           <td><a><img src="../trains/train1.jpg">Train Schedule</a></td>
-                                           <td>" . $d . "</td>
-                                           <td>" . $s. " </td>
+                                           <td>MAJN_CSMT_EXP</td>
+                                           <td><a href="../trains/MAJN_CSMT_EXP.jpg">Train Schedule</a></td>
+                                           <td>" . $de . "</td>
+                                           <td>" . $sr. " </td>
                                            <td>" . echo "date("h:i d-m-y",$d)" . "</td>
-                                           <td> 
+                                           <td>MON, TUE, WED, THURS, FRI, SAT, SUN</td> 
                                    </tr>';
 
                         }
-                        elseif (array_key_exists($source, $train2) and array_key_exists($dest, $train2)) {
+                        elseif (array_key_exists($source, $MANGLADWEEP_EXP) and array_key_exists($dest, $MANGLADWEEP_EXP)) {
                             $d=mktime();
-                            $sr;
-                            $de;
+                            $sr="(ERS)ERNAKULAM JN";
+                            $de="(NZM)H NIZAMUDDIN";
                             echo"
                                     <tr>
                                        <th>Train</th>
                                        <th>Schedule</th>
                                        <th>Destination</th>
                                        <th>Source</th>
+                                       <th>Departs on</th>    
                                        <th>Runs On</th>
                                    </tr>";
                                     echo '<tr>
-                                           <td>Train1</td>
-                                           <td><a><img src="../trains/train1.jpg">Train Schedule</a></td>
-                                           <td>" . $d . "</td>
-                                           <td>" . $s. " </td>
+                                           <td>MANGLADWEEP_EXP</td>
+                                           <td><a href="../trains/MANGLADWEEP_EXP.jpg">Train Schedule</a></td>
+                                           <td>" . $de . "</td>
+                                           <td>" . $sr. " </td>
                                            <td>" . echo "date("h:i d-m-y",$d)" . "</td>
-                                           <td> 
+                                           <td>MON, TUE, WED, THURS, FRI, SAT, SUN</td> 
                                    </tr>';
 
                         }
-                        if (array_key_exists($source, $train3) and array_key_exists($dest, $train3)) {
+                        if (array_key_exists($source, $MATSYAGANDHA_EXP) and array_key_exists($dest, $MATSYAGANDHA_EXP)) {
                             $d=mktime();
-                            $sr;
-                            $de;
+                            $sr="(MAQ)MANGALURU CNTL";
+                            $de="(LTT)LOKMANYATILAK T";
                             echo"
                                     <tr>
                                        <th>Train</th>
                                        <th>Schedule</th>
                                        <th>Destination</th>
                                        <th>Source</th>
+                                        <th>Departs on</th>
                                        <th>Runs On</th>
                                    </tr>";
                                     echo '<tr>
-                                           <td>Train1</td>
-                                           <td><a><img src="../trains/train1.jpg">Train Schedule</a></td>
-                                           <td>" . $d . "</td>
-                                           <td>" . $s. " </td>
+                                           <td>MATSYAGANDHA_EXP</td>
+                                           <td><a href="../trains/MATSYAGANDHA_EXP.jpg">Train Schedule</a></td>
+                                           <td>" . $de . "</td>
+                                           <td>" . $sr. " </td>
                                            <td>" . echo "date("h:i d-m-y",$d)" . "</td>
-                                           <td> 
+                                           <td>MON, TUE, WED, THURS, FRI, SAT, SUN</td>
                                    </tr>';
 
                         }
-                        if (array_key_exists($source, $train4) and array_key_exists($dest, $train4)) {
+                        if (array_key_exists($source, $NETHRAWATHI_EXP) and array_key_exists($dest, $NETHRAWATHI_EXP)) {
                             $d=mktime();
-                            $sr;
-                            $de;
+                            $sr="(TVC)TRIVANDRUM CNTL";
+                            $de="(LTT)LOKMANYATILAK T";
                             echo"
                                     <tr>
                                        <th>Train</th>
                                        <th>Schedule</th>
                                        <th>Destination</th>
                                        <th>Source</th>
+                                        <th>Departs on</th>
                                        <th>Runs On</th>
                                    </tr>";
                                     echo '<tr>
-                                           <td>Train1</td>
-                                           <td><a><img src="../trains/train1.jpg">Train Schedule</a></td>
-                                           <td>" . $d . "</td>
-                                           <td>" . $s. " </td>
-                                           <td>" . echo "date("h:i d-m-y",$d)" . "</td>
-                                           <td> 
+                                           <td>NETHRAWATHI_EXP</td>
+                                           <td><a href="../trains/NETHRAWATHI_EXP.jpg">Train Schedule</a></td>
+                                           <td>' . $de . '</td>
+                                           <td>' . $sr. ' </td>
+                                           <td>' echo "date("h:i d-m-y",$d)"; . '</td>
+                                           <td>MON, TUE, WED, THURS, FRI, SAT, SUN</td>
                                    </tr>';
 
                         }
-                        elseif (array_key_exists($source, $train5) and array_key_exists($dest, $train5)) {
+                        elseif (array_key_exists($source, $RAJDHANI_EXP) and array_key_exists($dest, $RAJDHANI_EXP)) {
                             $d=mktime();
-                            $sr;
-                            $de;
+                            $sr="(TVC)TRIVANDRUM CNTL";
+                            $de="(NZM)H NIZAMUDDIN";
                             echo"
                                     <tr>
                                        <th>Train</th>
                                        <th>Schedule</th>
                                        <th>Destination</th>
                                        <th>Source</th>
+                                        <th>Departs on</th>
                                        <th>Runs On</th>
                                    </tr>";
                                     echo '<tr>
-                                           <td>Train1</td>
-                                           <td><a><img src="../trains/train1.jpg">Train Schedule</a></td>
-                                           <td>" . $d . "</td>
-                                           <td>" . $s. " </td>
+                                           <td>RAJDHANI_EXP</td>
+                                           <td><a><img src="../trains/RAJDHANI_EXP.jpg">Train Schedule</a></td>
+                                           <td>" . $de . "</td>
+                                           <td>" . $sr. " </td>
                                            <td>" . echo "date("h:i d-m-y",$d)" . "</td>
-                                           <td> 
+                                           <td>TUE, THURS, FRI</td> 
                                    </tr>';
-
                         }
-                        if (array_key_exists($source, $train6) and array_key_exists($dest, $train6)) {
-                            $d=mktime();
-                            $sr;
-                            $de;
-                            echo"
-                                    <tr>
-                                       <th>Train</th>
-                                       <th>Schedule</th>
-                                       <th>Destination</th>
-                                       <th>Source</th>
-                                       <th>Runs On</th>
-                                   </tr>";
-                                    echo '<tr>
-                                           <td>Train1</td>
-                                           <td><a><img src="../trains/train1.jpg">Train Schedule</a></td>
-                                           <td>" . $d . "</td>
-                                           <td>" . $s. " </td>
-                                           <td>" . echo "date("h:i d-m-y",$d)" . "</td>
-                                           <td> 
-                                   </tr>';
-
-                            }
-                        
+                        else {
+                            echo "Error in the code!!! please try again...............";
+                        }
+                     
                              
                         ?>
 
