@@ -12,6 +12,11 @@
                        <link rel="stylesheet" href="">
                    </head>
                    <body>
+                   <div>
+                  <label class="block" for="trains"><h3> Available are</h3> </label>
+                          <input type="text" placeholder="Name"
+                              class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="name">
+              </div>
                         <?php
                         include "config.php";
                         include "tickets.php";
@@ -24,12 +29,12 @@
                             $tot_price=0;
     //all the trains have been sorted into array, with elements being the stations they pass through
                         $MAJN_CSMT_EXP=array("(MAJN)MANGALURU JN","(SL)SURATHKAL","(UD)UDUPI","(KUDA)KUNDAPURA","(BYNR)MOOKAMBIKA ROAD","(BTJL)BHATKAL","(KT)KUMTA","(KAWR)KARWAR","(MAO)MADGAON","(KRMI)KARMALI","(KKW)KANKAVALI","(RN)RATNAGIRI","(PNVL)PANVEL","(TNA)THANE","(CSMT)C SHIVAJI MAH T");
-                        $MANGLADWEEP_EXP=array();
-                        $MATSYAGANDHA_EXP=array();
-                        $NETHRAWATHI_EXP=array();
-                        $RAJDHANI_EXP=array();
+                        $MANGLADWEEP_EXP=array("(ERS)ERNAKULAM JN","(AWY)ALUVA","(TCR)THRISUR","(SRR)SHORANUR JN","(PTB)PATTAMBI","(KTU)KUTTIPPURAM","(TIR)TIRUR","(PGI)PARPANANGADI","(FK)FEROK","(CLT)KOZHIKKODE","(QLD)QUILANDI","(BDJ)VADAKARA","(TLY)THALASSERY","(CAN)KANNUR","(PAZ)PAYANGADI","(NLE)NILESHWAR","(KZE)KANHANGAD","(KGQ)KASARAGOD","(NZM)H NIZAMUDDIN");
+                        $MATSYAGANDHA_EXP=array("(MAQ)MANGALURU CNTL","(SL)SURATHKAL","(MULK)MULKI","(UD)UDUPI","(KUDA)KUNDAPURA","(BYNR)MOOKAMBIKA ROAD","(BTJL)BHATKAL","(MRDW)MURDESHWAR","(HNA)HONNAVAR","(KT)KUMTA","(GOK)GOKARNA ROAD","(ANKL)ANKOLA","(KAWR)KARWAR","(MAO)MADGAON","(KUDL)KUDAL","(RN)RATNAGIRI","(CHI)CHIPLUN","(PNVL)PANVEL","(TNA)THANE","(LTT)LOKMANYATILAK T");
+                        $NETHRAWATHI_EXP=array("(TVC)TRIVANDRUM CNTL","(VAK)VARKALASIVAGIRI","(QLN)KOLLAM JN","(KPY)KARUNAGAPALLI","(KYJ)KAYANKULAM JN","(HAD)HARIPPAD","(AMPA)AMBALAPPUZHA","(SRTL)CHERTHALA","(ERS)ERNAKULAM JN","(AWY)ALUVA","(TCR)THRISUR","(SRR)SHORANUR JN","(KTU)KUTTIPPURAM","(TIR)TIRUR","(PGI)PARPANANGADI","(CLT)KOZHIKKODE","(BDJ)VADAKARA","(TLY)THALASSERY","(LTT)LOKMANYATILAK T");
+                        $RAJDHANI_EXP=array("(TVC)TRIVANDRUM CNTL","(QLN)KOLLAM JN","(ALLP)ALLEPPEY","(ERS)ERNAKULAM JN","(TCR)THRISUR","(SRR)SHORANUR JN","(CLT)KOZHIKKODE","(CAN)KANNUR","(KGQ)KASARAGOD","(MAJN)MANGALURU JN","(MAQ)MANGALURU CNTL","(UD)UDUPI","(KAWR)KARWAR","(MAO)MADGAON","(RN)RATNAGIRI","(PNVL)PANVEL","(BSR)VASAI ROAD","(BRC)VADODARA JN","(KOTA)KOTA JN","(NZM)H NIZAMUDDIN");
                        
-                        //if conditions for whether the train goes to the source and destinations, then the table will be displayed which shos train, source destination etc
+                        //if conditions for whether the train goes to the source and destinations, then the table will be displayed which shows train, source destination etc
                         if (array_key_exists($source, $MAJN_CSMT_EXP) and array_key_exists($dest, $MAJN_CSMT_EXP)) {
                             $d=mktime();
                             $sr="(MAJN)MANGALURU JN";
