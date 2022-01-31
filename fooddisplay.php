@@ -43,8 +43,6 @@
           <th>Total Price</th>
          
         </tr>
-       
-     
     
       <?php
         include "config.php";
@@ -59,7 +57,6 @@
             while($row=mysqli_fetch_assoc($result))
             {
 
-              // F_id c_id items quantity status
               $F_ID=$row['F_ID'];
               $username=$row['C_ID'];
               $ITEMS=$row['ITEMS'];
@@ -80,10 +77,10 @@
           </tr>';
        
             }
-            '<tr>
-                    <td>'.mysqli_fetch_assoc($tp).'</td>
+          //   '<tr>
+          //           <td>'.mysqli_fetch_assoc($tp).'</td>
 
-          </tr>';
+          // </tr>';
 
           }   
         ?>
