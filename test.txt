@@ -235,7 +235,7 @@ if(isset($_POST['submit'])) {
 
 
 
-            <!-- <?php
+        <?php
             include "config.php";
             if(isset($_POST['submit'])) {
             $username=$_POST['username'];
@@ -255,11 +255,13 @@ if(isset($_POST['submit'])) {
          else {
              echo "error";
          }
-            ?> -->
+         $d=mktime();
+       <table> <tr> <td>' . date("h:i d-m-y",$d) . '</td></tr></table>
+
+            ?>
 
 
 
 
 
-            $d=mktime();
-            <td>' . date("h:i d-m-y",$d) . '</td>
+            
