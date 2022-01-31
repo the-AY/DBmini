@@ -18,19 +18,23 @@
 
                             session_start();
                             $username = $_SESSION["username"];
-
+                            $sr;
+                            $de;
+                            $tname;
+                            $tot_price=0;
+    //all the trains have been sorted into array, with elements being the stations they pass through
                         $MAJN_CSMT_EXP=array("(MAJN)MANGALURU JN","(SL)SURATHKAL","(UD)UDUPI","(KUDA)KUNDAPURA","(BYNR)MOOKAMBIKA ROAD","(BTJL)BHATKAL","(KT)KUMTA","(KAWR)KARWAR","(MAO)MADGAON","(KRMI)KARMALI","(KKW)KANKAVALI","(RN)RATNAGIRI","(PNVL)PANVEL","(TNA)THANE","(CSMT)C SHIVAJI MAH T");
                         $MANGLADWEEP_EXP=array();
                         $MATSYAGANDHA_EXP=array();
                         $NETHRAWATHI_EXP=array();
                         $RAJDHANI_EXP=array();
-                        $sr;
-                        $de;
-                        $tot_price=0;
+                       
+                        //if conditions for whether the train goes to the source and destinations, then the table will be displayed which shos train, source destination etc
                         if (array_key_exists($source, $MAJN_CSMT_EXP) and array_key_exists($dest, $MAJN_CSMT_EXP)) {
                             $d=mktime();
                             $sr="(MAJN)MANGALURU JN";
                             $de="(CSMT)C SHIVAJI MAH T";
+                            $tname="MAJN_CSMT_EXP_12134";
                             echo"
                                     <tr>
                                        <th>Train</th>
@@ -41,19 +45,21 @@
                                        <th>Runs on</th>
                                    </tr>";
                                     echo '<tr>
-                                           <td>MAJN_CSMT_EXP</td>
+                                           <td>'.$tname.'</td>
                                            <td><a href="../trains/MAJN_CSMT_EXP.jpg">Train Schedule</a></td>
-                                           <td>" . $de . "</td>
-                                           <td>" . $sr. " </td>
-                                           <td>" . echo "date("h:i d-m-y",$d)" . "</td>
+                                           <td>' . $de . '</td>
+                                           <td>' . $sr. ' </td>
+                                           <td>'. date("h:i d-m-y",$d). '</td>
                                            <td>MON, TUE, WED, THURS, FRI, SAT, SUN</td> 
+                                           <td><button ><a href="deletefood.php?C_ID='.$username.'"> Select</a></button></td>
                                    </tr>';
 
                         }
-                        elseif (array_key_exists($source, $MANGLADWEEP_EXP) and array_key_exists($dest, $MANGLADWEEP_EXP)) {
+                        if (array_key_exists($source, $MANGLADWEEP_EXP) and array_key_exists($dest, $MANGLADWEEP_EXP)) {
                             $d=mktime();
                             $sr="(ERS)ERNAKULAM JN";
                             $de="(NZM)H NIZAMUDDIN";
+                            $tname="MANGLADWEEP_EXP_12617";
                             echo"
                                     <tr>
                                        <th>Train</th>
@@ -64,11 +70,11 @@
                                        <th>Runs On</th>
                                    </tr>";
                                     echo '<tr>
-                                           <td>MANGLADWEEP_EXP</td>
+                                           <td>'.$tname.'</td>
                                            <td><a href="../trains/MANGLADWEEP_EXP.jpg">Train Schedule</a></td>
-                                           <td>" . $de . "</td>
-                                           <td>" . $sr. " </td>
-                                           <td>" . echo "date("h:i d-m-y",$d)" . "</td>
+                                           <td>' . $de . '</td>
+                                           <td>'. $sr. ' </td>
+                                           <td>' .date("h:i d-m-y",$d) . '</td>
                                            <td>MON, TUE, WED, THURS, FRI, SAT, SUN</td> 
                                    </tr>';
 
@@ -77,6 +83,7 @@
                             $d=mktime();
                             $sr="(MAQ)MANGALURU CNTL";
                             $de="(LTT)LOKMANYATILAK T";
+                            $tname="MATSYAGANDHA_EXP_12620";
                             echo"
                                     <tr>
                                        <th>Train</th>
@@ -87,11 +94,11 @@
                                        <th>Runs On</th>
                                    </tr>";
                                     echo '<tr>
-                                           <td>MATSYAGANDHA_EXP</td>
+                                           <td>'.$tname.'</td>
                                            <td><a href="../trains/MATSYAGANDHA_EXP.jpg">Train Schedule</a></td>
-                                           <td>" . $de . "</td>
-                                           <td>" . $sr. " </td>
-                                           <td>" . echo "date("h:i d-m-y",$d)" . "</td>
+                                           <td>' . $de . '</td>
+                                           <td>' . $sr. ' </td>
+                                           <td>' .date("h:i d-m-y",$d) . '</td>
                                            <td>MON, TUE, WED, THURS, FRI, SAT, SUN</td>
                                    </tr>';
 
@@ -100,6 +107,7 @@
                             $d=mktime();
                             $sr="(TVC)TRIVANDRUM CNTL";
                             $de="(LTT)LOKMANYATILAK T";
+                            $tname="NETHRAWATHI_EXP_16346";
                             echo"
                                     <tr>
                                        <th>Train</th>
@@ -110,19 +118,20 @@
                                        <th>Runs On</th>
                                    </tr>";
                                     echo '<tr>
-                                           <td>NETHRAWATHI_EXP</td>
+                                           <td>'.$tname.'</td>
                                            <td><a href="../trains/NETHRAWATHI_EXP.jpg">Train Schedule</a></td>
                                            <td>' . $de . '</td>
                                            <td>' . $sr. ' </td>
-                                           <td>' echo "date("h:i d-m-y",$d)"; . '</td>
+                                           <td>'. date("h:i d-m-y",$d).'</td>
                                            <td>MON, TUE, WED, THURS, FRI, SAT, SUN</td>
                                    </tr>';
 
                         }
-                        elseif (array_key_exists($source, $RAJDHANI_EXP) and array_key_exists($dest, $RAJDHANI_EXP)) {
+                        if (array_key_exists($source, $RAJDHANI_EXP) and array_key_exists($dest, $RAJDHANI_EXP)) {
                             $d=mktime();
                             $sr="(TVC)TRIVANDRUM CNTL";
                             $de="(NZM)H NIZAMUDDIN";
+                            $tname="RAJDHANI_EXP_12431";
                             echo"
                                     <tr>
                                        <th>Train</th>
@@ -133,16 +142,13 @@
                                        <th>Runs On</th>
                                    </tr>";
                                     echo '<tr>
-                                           <td>RAJDHANI_EXP</td>
+                                           <td>'.$tname.'</td>
                                            <td><a><img src="../trains/RAJDHANI_EXP.jpg">Train Schedule</a></td>
-                                           <td>" . $de . "</td>
-                                           <td>" . $sr. " </td>
-                                           <td>" . echo "date("h:i d-m-y",$d)" . "</td>
+                                           <td>' . $de . '</td>
+                                           <td>' . $sr. ' </td>
+                                           <td>' . date("h:i d-m-y",$d) . '</td>
                                            <td>TUE, THURS, FRI</td> 
                                    </tr>';
-                        }
-                        else {
-                            echo "Error in the code!!! please try again...............";
                         }
                      
                              
