@@ -26,10 +26,26 @@ include "ticketbooking.php";
         $address2=$_POST['address2'];
         $address3=$_POST['address3'];
         $doj=$_POST['doj'];
-        $price=0;
+        $coach_price=0;
         $ti_type="TICKET";
+        $count1;
+        $count2;
 
-
+        //to calculate price of the ticket
+        //for loops gets the indexes of source and destination, which then is subtracted and then multipliedwith 50(fixed station price)
+        for($i=0;$i<count($stations);$i++) {
+            if($stations[$i]==$src or $stations[$i]==$dest){
+                $count1=$i;
+                break;
+            }
+        }
+        for($i=count($stations);$i>0;$i--) {
+            if($stations[$i]==$src or $stations[$i]==$dest){
+                $count2=$i;
+                break;
+            }
+        }
+        $tot_price=(($count2-$count1)*50)+$coach_price;
 
         $coach_no;
 
@@ -37,23 +53,23 @@ include "ticketbooking.php";
 
             case 1:
                 $coach_no="SL101";
-                $price= 450;
+                $coach_price= 450;
                 break;
             case 2:
                 $coach_no= "1A101";
-                $price=2500;
+                $coach_price=2500;
                 break;
             case 3:
                 $coach_no= "CC101";
-                $price=1000;
+                $coach_price=1000;
                 break;
             case 4:
                 $coach_no= "2S101";
-                $price=200;
+                $coach_price=200;
                 break;
             case 5:
                 $coach_no= "2A101" ;
-                $price=2000;
+                $coach_price=2000;
                 break;
             default : echo "invalid option";
             break;
@@ -62,7 +78,7 @@ include "ticketbooking.php";
 
          //queries
     //insert into ticket table
-    $query="INSERT INTO TICKET(`C_NAME`,`C_ID`,`TI_TYPE`,`SRC`,`DEST`,`COACH_NO`,`DOJ`) VALUES ('$name','$username','$ti_type','$src','$dest','$coach_no','$doj')";
+    $query="INSERT INTO TICKET(`C_NAME`,`C_ID`,`TI_TYPE`,`SRC`,`DEST`,`COACH_NO`,`DOJ`,`PRICE`) VALUES ('$name','$username','$ti_type','$src','$dest','$coach_no','$doj','$tot_price')";
     $query1="INSERT INTO TICKET_HOLDER(`TIH_NAME`,`AGE`,`ADDRESS`,`C_ID`) VALUES ('$pname1','$age1','$address1','$username')";
     $query2="INSERT INTO TICKET_HOLDER(`TIH_NAME`,`AGE`,`ADDRESS`,`C_ID`) VALUES ('$pname2','$age2','$address2','$username')";
     $query2="INSERT INTO TICKET_HOLDER(`TIH_NAME`,`AGE`,`ADDRESS`,`C_ID`) VALUES ('$pname3','$age3','$address3','$username')";

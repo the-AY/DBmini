@@ -27,6 +27,7 @@
                             $de;
                             $tname;
                             $tot_price=0;
+                            //all the stations has been inserted in array so that price can be calculated
                             $stations=array("(MAQ)MANGALURU CNTL","(SL)SURATHKAL","(MULK)MULKI","(UD)UDUPI","(KUDA)KUNDAPURA","(BYNR)MOOKAMBIKA ROAD","(BTJL)BHATKAL","(MRDW)MURDESHWAR","(HNA)HONNAVAR","(KT)KUMTA","(GOK)GOKARNA ROAD","(ANKL)ANKOLA","(KAWR)KARWAR","(MAO)MADGAON","(KUDL)KUDAL","(RN)RATNAGIRI","(CHI)CHIPLUN","(PNVL)PANVEL","(TNA)THANE","(LTT)LOKMANYATILAK T","(TVC)TRIVANDRUM CNTL","(QLN)KOLLAM JN","(ALLP)ALLEPPEY","(ERS)ERNAKULAM JN","(TCR)THRISUR","(SRR)SHORANUR JN","(CLT)KOZHIKKODE","(CAN)KANNUR","(KGQ)KASARAGOD","(MAJN)MANGALURU JN","(BSR)VASAI ROAD","(BRC)VADODARA JN","(KOTA)KOTA JN","(NZM)H NIZAMUDDIN","(VAK)VARKALASIVAGIRI","(KPY)KARUNAGAPALLI","(KYJ)KAYANKULAM JN","(HAD)HARIPPAD","(AMPA)AMBALAPPUZHA","(SRTL)CHERTHALA","(AWY)ALUVA","(KTU)KUTTIPPURAM","(TIR)TIRUR","(PGI)PARPANANGADI","(BDJ)VADAKARA","(KRMI)KARMALI","(KKW)KANKAVALI","(CSMT)C SHIVAJI MAH T","(PTB)PATTAMBI","(FK)FEROK","(QLD)QUILANDI","(TLY)THALASSERY","(PAZ)PAYANGADI","(NLE)NILESHWAR","(KZE)KANHANGAD");
                          // all the trains have been sorted into array, with elements being the stations they pass through
                         $MAJN_CSMT_EXP=array("(MAJN)MANGALURU JN","(SL)SURATHKAL","(UD)UDUPI","(KUDA)KUNDAPURA","(BYNR)MOOKAMBIKA ROAD","(BTJL)BHATKAL","(KT)KUMTA","(KAWR)KARWAR","(MAO)MADGAON","(KRMI)KARMALI","(KKW)KANKAVALI","(RN)RATNAGIRI","(PNVL)PANVEL","(TNA)THANE","(CSMT)C SHIVAJI MAH T");
@@ -37,7 +38,6 @@
                        
                         //if conditions for whether the train goes to the source and destinations, then the table will be displayed which shows train, source destination etc
                         if (array_key_exists($source, $MAJN_CSMT_EXP) and array_key_exists($dest, $MAJN_CSMT_EXP)) {
-                            $d=mktime();
                             $sr="(MAJN)MANGALURU JN";
                             $de="(CSMT)C SHIVAJI MAH T";
                             $tname="MAJN_CSMT_EXP_12134";
@@ -47,7 +47,6 @@
                                        <th>Schedule</th>
                                        <th>Destination</th>
                                        <th>Source</th>
-                                       <th>Departs on</th>
                                        <th>Runs on</th>
                                    </tr>";
                                     echo '<tr>
@@ -55,14 +54,12 @@
                                            <td><a href="../trains/MAJN_CSMT_EXP.jpg">Train Schedule</a></td>
                                            <td>' . $de . '</td>
                                            <td>' . $sr. ' </td>
-                                           <td>'. date("h:i d-m-y",$d). '</td>
-                                           <td>MON, TUE, WED, THURS, FRI, SAT, SUN</td> 
+                                           <td>'. date("h:i d-m-y",$d). '</td> 
                                            <td><button ><a href="deletefood.php?C_ID='.$username.'"> Select</a></button></td>
                                    </tr>';
 
                         }
                         if (array_key_exists($source, $MANGLADWEEP_EXP) and array_key_exists($dest, $MANGLADWEEP_EXP)) {
-                            $d=mktime();
                             $sr="(ERS)ERNAKULAM JN";
                             $de="(NZM)H NIZAMUDDIN";
                             $tname="MANGLADWEEP_EXP_12617";
@@ -71,8 +68,7 @@
                                        <th>Train</th>
                                        <th>Schedule</th>
                                        <th>Destination</th>
-                                       <th>Source</th>
-                                       <th>Departs on</th>    
+                                       <th>Source</th> 
                                        <th>Runs On</th>
                                    </tr>";
                                     echo '<tr>
@@ -80,13 +76,11 @@
                                            <td><a href="../trains/MANGLADWEEP_EXP.jpg">Train Schedule</a></td>
                                            <td>' . $de . '</td>
                                            <td>'. $sr. ' </td>
-                                           <td>' .date("h:i d-m-y",$d) . '</td>
                                            <td>MON, TUE, WED, THURS, FRI, SAT, SUN</td> 
                                    </tr>';
 
                         }
                         if (array_key_exists($source, $MATSYAGANDHA_EXP) and array_key_exists($dest, $MATSYAGANDHA_EXP)) {
-                            $d=mktime();
                             $sr="(MAQ)MANGALURU CNTL";
                             $de="(LTT)LOKMANYATILAK T";
                             $tname="MATSYAGANDHA_EXP_12620";
@@ -96,7 +90,6 @@
                                        <th>Schedule</th>
                                        <th>Destination</th>
                                        <th>Source</th>
-                                        <th>Departs on</th>
                                        <th>Runs On</th>
                                    </tr>";
                                     echo '<tr>
@@ -104,13 +97,11 @@
                                            <td><a href="../trains/MATSYAGANDHA_EXP.jpg">Train Schedule</a></td>
                                            <td>' . $de . '</td>
                                            <td>' . $sr. ' </td>
-                                           <td>' .date("h:i d-m-y",$d) . '</td>
                                            <td>MON, TUE, WED, THURS, FRI, SAT, SUN</td>
                                    </tr>';
 
                         }
                         if (array_key_exists($source, $NETHRAWATHI_EXP) and array_key_exists($dest, $NETHRAWATHI_EXP)) {
-                            $d=mktime();
                             $sr="(TVC)TRIVANDRUM CNTL";
                             $de="(LTT)LOKMANYATILAK T";
                             $tname="NETHRAWATHI_EXP_16346";
@@ -120,7 +111,6 @@
                                        <th>Schedule</th>
                                        <th>Destination</th>
                                        <th>Source</th>
-                                        <th>Departs on</th>
                                        <th>Runs On</th>
                                    </tr>";
                                     echo '<tr>
@@ -128,13 +118,11 @@
                                            <td><a href="../trains/NETHRAWATHI_EXP.jpg">Train Schedule</a></td>
                                            <td>' . $de . '</td>
                                            <td>' . $sr. ' </td>
-                                           <td>'. date("h:i d-m-y",$d).'</td>
                                            <td>MON, TUE, WED, THURS, FRI, SAT, SUN</td>
                                    </tr>';
 
                         }
                         if (array_key_exists($source, $RAJDHANI_EXP) and array_key_exists($dest, $RAJDHANI_EXP)) {
-                            $d=mktime();
                             $sr="(TVC)TRIVANDRUM CNTL";
                             $de="(NZM)H NIZAMUDDIN";
                             $tname="RAJDHANI_EXP_12431";
@@ -144,7 +132,6 @@
                                        <th>Schedule</th>
                                        <th>Destination</th>
                                        <th>Source</th>
-                                        <th>Departs on</th>
                                        <th>Runs On</th>
                                    </tr>";
                                     echo '<tr>
@@ -152,7 +139,7 @@
                                            <td><a><img src="../trains/RAJDHANI_EXP.jpg">Train Schedule</a></td>
                                            <td>' . $de . '</td>
                                            <td>' . $sr. ' </td>
-                                           <td>' . date("h:i d-m-y",$d) . '</td>
+                                    
                                            <td>TUE, THURS, FRI</td> 
                                    </tr>';
                         }
