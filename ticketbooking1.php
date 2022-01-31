@@ -49,99 +49,21 @@
       <h3 class="text-2xl font-bold text-center">Book your ticket here</h3>
       <form action="tickets.php" method="post">
           <div class="mt-4">
-              <div>
-                  <label class="block" for="Name">Enter Your Name<label>
-                          <input type="text" placeholder="Name"
-                              class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="name">
-              </div>
-
-
-              <div>
-                <label class="block" for="Name">Enter passenger name 1<label>
-                        <input type="text" placeholder="Name"
-                            class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="pname1">
-              </div>
-
-              <div>
-                <label class="block" for="Name">Enter age<label>
-                        <input type="text" placeholder="age"
-                            class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="age1">
-              </div>
-
-              <div>
-                <label class="block" for="Name">Enter address<label>
-                        <input type="text" placeholder="address"
-                            class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="address1">
-              </div>
-
-              <div>
-                <label class="block" for="Name">Enter passenger name 2<label>
-                        <input type="text" placeholder="Name"
-                            class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="pname2">
-              </div>
               
-              <div>
-                <label class="block" for="Name">Enter age<label>
-                        <input type="text" placeholder="age"
-                            class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="age2">
-              </div>
-
-              <div>
-                <label class="block" for="Name">Enter address<label>
-                        <input type="text" placeholder="address"
-                            class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="address2">
-              </div>
-
-              <div>
-                <label class="block" for="Name">Enter passenger name 2<label>
-                        <input type="text" placeholder="Name"
-                            class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="pname3">
-              </div>
-              
-              <div>
-                <label class="block" for="Name">Enter age<label>
-                        <input type="text" placeholder="age"
-                            class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="age3">
-              </div>
-
-              <div>
-                <label class="block" for="Name">Enter address<label>
-                        <input type="text" placeholder="address"
-                            class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="address3">
-              </div>
-              
-              
-                  <div class="mt-4">
-                  <label class="block">Select the Coach Class</label>
-                  <select class="form-select form-select-lg mt-4
-                    appearance-none
-                    block
-                    w-full
-                    px-4
-                    py-2
-                    text-xl
-                    font-normal
-                    text-gray-700
-                    bg-white bg-clip-padding bg-no-repeat
-                    border border-solid border-gray-300
-                    rounded
-                    transition
-                    ease-in-out
-                    m-0
-                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label=".form-select-lg example" id="coach_type" name="coach_type">
-                      <option selected>Open this select menu</option>
-                      <option value="1">sleeper</option>
-                      <option value="2">first class</option>
-                      <option value="3">AC chair car</option>
-                      <option value="4">second seater</option>
-                      <option value="5">AC two tier</option>
-                    </select>
-                  </div>
-
                   <div>
                     <label class="block" for="src">Enter your Source <label>
                             <input type="text" placeholder="Source"
                                 class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="src" name="src">
+                                include "tickets.php"
+                                <label> Source</label>
+                                <select>
+                                <?php
+                                include "tickets.php"
+                                foreach($stations as $i){
+                                  echo "<option value='strtolower($i)'>$i</option>";
+                                }
+                                ?>
+                                </select>
                 </div>
 
                 <div>
@@ -160,14 +82,6 @@
                   </div>
                   <input datepicker="" name="doj" datepicker-buttons="" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 datepicker-input" placeholder="Select date">
                   </div>
-                  <div>
-                    <label class="block" for="dest">Enter Your Destination</label></div>
-                            <input type="date" placeholder="Destination"
-                                class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="dest" name="dest">
-                </div>
-                  
-  
-
               <div class="flex">
                   <button type="submit" name="submit" class="w-full px-6 py-2 mt-4 text-white bg-blue-600 rounded-lg hover:bg-blue-900" value="submit"> <a href="index.php"> Submit</a></button>
               </div>

@@ -44,7 +44,7 @@ if(isset($_POST['submit'])) {
     if($run) {
         echo '<script>alert("Your Price is". $price")</script>';
         echo '<script> alert("Your Post has been successfully booked")</script>';  //not showing an alert box.
-        header('Refresh: 1; URL = postbooking.html');
+        header('Refresh: 1; URL = home.html');
       
     }
     else {

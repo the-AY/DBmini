@@ -31,6 +31,11 @@ include "ticketbooking.php";
         $count1;
         $count2;
 
+        //options for dropdown for source and destination
+        foreach($stations as $i){
+            echo "<option value='strtolower($i)'>$i</option>";
+        }
+
         //to calculate price of the ticket
         //for loops gets the indexes of source and destination, which then is subtracted and then multipliedwith 50(fixed station price)
         for($i=0;$i<count($stations);$i++) {

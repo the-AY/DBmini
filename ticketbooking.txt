@@ -1,0 +1,88 @@
+<div>
+                  <label class="block" for="Name">Enter Your Name<label>
+                          <input type="text" placeholder="Name"
+                              class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="name">
+              </div>
+
+
+              <div>
+                <label class="block" for="Name">Enter passenger name 1<label>
+                        <input type="text" placeholder="Name"
+                            class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="pname1">
+              </div>
+
+              <div>
+                <label class="block" for="Name">Enter age<label>
+                        <input type="text" placeholder="age"
+                            class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="age1">
+              </div>
+
+              <div>
+                <label class="block" for="Name">Enter address<label>
+                        <input type="text" placeholder="address"
+                            class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="address1">
+              </div>
+
+              <div>
+                <label class="block" for="Name">Enter passenger name 2<label>
+                        <input type="text" placeholder="Name"
+                            class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="pname2">
+              </div>
+              
+              <div>
+                <label class="block" for="Name">Enter age<label>
+                        <input type="text" placeholder="age"
+                            class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="age2">
+              </div>
+
+              <div>
+                <label class="block" for="Name">Enter address<label>
+                        <input type="text" placeholder="address"
+                            class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="address2">
+              </div>
+
+              <div>
+                <label class="block" for="Name">Enter passenger name 2<label>
+                        <input type="text" placeholder="Name"
+                            class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="pname3">
+              </div>
+              
+              <div>
+                <label class="block" for="Name">Enter age<label>
+                        <input type="text" placeholder="age"
+                            class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="age3">
+              </div>
+
+              <div>
+                <label class="block" for="Name">Enter address<label>
+                        <input type="text" placeholder="address"
+                            class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="address3">
+              </div>
+              
+              
+                  <div class="mt-4">
+                  <label class="block">Select the Coach Class</label>
+                  <select class="form-select form-select-lg mt-4
+                    appearance-none
+                    block
+                    w-full
+                    px-4
+                    py-2
+                    text-xl
+                    font-normal
+                    text-gray-700
+                    bg-white bg-clip-padding bg-no-repeat
+                    border border-solid border-gray-300
+                    rounded
+                    transition
+                    ease-in-out
+                    m-0
+                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label=".form-select-lg example" id="coach_type" name="coach_type">
+                      <option selected>Open this select menu</option>
+                      <option value="1">sleeper</option>
+                      <option value="2">first class</option>
+                      <option value="3">AC chair car</option>
+                      <option value="4">second seater</option>
+                      <option value="5">AC two tier</option>
+                    </select>
+                  </div>
