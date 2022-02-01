@@ -39,8 +39,9 @@
           <th>Items</th>
           <th>Quantity</th>
           <th>Price</th>
-          <th>Status</th>
           <th>Total Price</th>
+          <th>Status</th>
+
          
         </tr>
     
@@ -63,6 +64,7 @@
               $QUANTITY=$row['QUANTITY'];
               $PRICE=$row['PRICE'];
               $STATUS=$row['STATUS'];
+              $TOT_PRICE=$row['TOTAL_PRICE'];
               
               
               
@@ -72,6 +74,7 @@
                     <td>'.$ITEMS.'</td>
                     <td>'.$QUANTITY.'</td>
                     <td>'.$PRICE.'</td>
+                    <td>'.$TOT_PRICE.'</td>
                     <td>'.$STATUS.'</td>
 
           </tr>';

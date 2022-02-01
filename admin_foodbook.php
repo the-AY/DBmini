@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+aA<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -68,7 +68,7 @@
               <td>'.$STATUS.'</td>
             <td>
                       
-                      <button ><a href="deletefood.php?C_ID='.$username.'"> Delete</a></button>
+                      <button ><a href="deletefood.php?C_ID='.$username.'&F_ID='.$F_ID.'"> Delete</a></button>
                       
           </td>
           </tr>';

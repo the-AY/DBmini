@@ -38,57 +38,69 @@ if(isset($_POST['Submit']))
     // $F_IDNAME=$_POST['item'];
     $QUANTITY = $_POST['quantity'];
     $option=$_POST['item'];
+    $tot_price=0;
+    $price=0;
     switch ("$option") {
 
       case "1":
-          $price=0*$QUANTITY;
+          $price=0;
+          $tot_price=0*$QUANTITY;
           $F_ID ="NONE";
           $ITEMS ="0";
           break;
       case "2":
-          $price=50*$QUANTITY;
+          $price=50;
+          $tot_price=50*$QUANTITY;
           $F_ID ="F001";
           $ITEMS ="Masala Dosa";
           break;
       case "3":
-          $price=55*$QUANTITY;
+        $price=55;
+          $tot_price=55*$QUANTITY;
           $F_ID ="F002";
           $ITEMS ="Idli Vada";
           break;
       case "4":
-          $price=100*$QUANTITY;
+        $price=100;
+          $tot_price=100*$QUANTITY;
           $F_ID ="F003";
           $ITEMS ="South Indian";
           break;
       case "5":
-          $price=100*$QUANTITY;
+        $price=100;
+          $tot_price=100*$QUANTITY;
           $F_ID ="F004";
           $ITEMS ="North Indian";
           break;
       case "6":
-          $price=40*$QUANTITY;
+        $price=40;
+          $tot_price=40*$QUANTITY;
           $F_ID ="F005";
           $ITEMS ="Onion Pokoda";
           break;
       case "7":
-            $price=20*$QUANTITY;
+        $price=20;
+            $tot_price=20*$QUANTITY;
             $F_ID ="F006";
             $ITEMS ="Samosa";
             break;
       case "8":
-            $price=30*$QUANTITY;
+        $price=30;
+            $tot_price=30*$QUANTITY;
             $F_ID ="F007";
             $ITEMS ="Gulab Jamun";
             break;
       case "9":
-              $price=15*$QUANTITY;
+        $price=15;
+              $tot_price=15*$QUANTITY;
               $F_ID ="F008";
               $ITEMS ="TEA";
               break;
       default : echo "ERROR";
       break;
     }
-      $sql="INSERT INTO `food` (`C_ID`, `ITEMS`, `QUANTITY`, `PRICE`, `F_ID`) VALUES ('$username', '$ITEMS', '$QUANTITY', '$price', '$F_ID') ";
+
+      $sql="INSERT INTO `food` (`C_ID`, `ITEMS`, `QUANTITY`, `PRICE`, `F_ID`,`TOTAL_PRICE`) VALUES ('$username', '$ITEMS', '$QUANTITY', '$price', '$F_ID','$tot_price') ";
       $result=mysqli_query($conn,$sql);
       // $var="SELECT `PRICE` FROM `food` WHERE `C_ID`='$username';";
       //   $tp= $var*(5/100); 
@@ -99,7 +111,7 @@ if(isset($_POST['Submit']))
       {
       echo "<script>alert('Ordered food successfully');</script>";
       echo "Ordered sucessfully Redirecting...";
-      header('Refresh: 2; URL = foodorder.php');
+      header('Refresh: 2; URL = home.html');
       die;
       }
       else

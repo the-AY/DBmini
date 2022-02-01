@@ -60,7 +60,6 @@
            include "config.php";
            session_start();
            $username = $_SESSION["username"];
-           if(isset($_POST['submit'])) {
         //    $C_ID=$_POST['username'];
            $sql="SELECT * FROM TICKET WHERE TI_TYPE='POSTAL' and C_ID='$username' ";
            $result= mysqli_query($conn, $sql);
@@ -87,10 +86,6 @@
                 echo "no results";
             }
             $conn->close();
-        }
-        else {
-            echo "error";
-        }
            ?>
        </table> 
         <script src="" async defer></script>
