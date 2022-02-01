@@ -1,19 +1,19 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Ticket Booking</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://kit.fontawesome.com/608539d5a6.js" crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/@themesberg/flowbite@1.3.0/dist/datepicker.bundle.js"></script>
-        <script src="../path/to/@themesberg/flowbite/dist/datepicker.bundle.js"></script>
-        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-        
-    </head>
-    <body>
-      <header class="text-gray-600 body-font">
+
+
+ <!DOCTYPE html>
+
+               <html>
+                   <head>
+                       <meta charset="utf-8">
+                       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                       <title></title>
+                       <meta name="description" content="">
+                       <meta name="viewport" content="width=device-width, initial-scale=1">
+                       <link rel="stylesheet" href="">
+                   </head>
+                   <body>
+
+                   <header class="text-gray-600 body-font">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
             <a class="mr-5 hover:text-gray-900" href="home.html">Home</a>
@@ -31,6 +31,164 @@
           </div>
         </div>
       </header>
+      
+                   <div>
+                  <label class="block" for="trains"><h3> Available are</h3> </label>
+                          <input type="text" placeholder="Name"
+                              class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="name">
+              </div>
+                        <?php
+                        include "config.php";
+                        include "tickets.php";
+
+                            session_start();
+                            $username = $_SESSION["username"];
+                            $sr;
+                            $de;
+                            $tname;
+                            $tot_price=0;
+                            //all the stations has been inserted in array so that price can be calculated
+                            $stations=array("(MAQ)MANGALURU CNTL","(SL)SURATHKAL","(MULK)MULKI","(UD)UDUPI","(KUDA)KUNDAPURA","(BYNR)MOOKAMBIKA ROAD","(BTJL)BHATKAL","(MRDW)MURDESHWAR","(HNA)HONNAVAR","(KT)KUMTA","(GOK)GOKARNA ROAD","(ANKL)ANKOLA","(KAWR)KARWAR","(MAO)MADGAON","(KUDL)KUDAL","(RN)RATNAGIRI","(CHI)CHIPLUN","(PNVL)PANVEL","(TNA)THANE","(LTT)LOKMANYATILAK T","(TVC)TRIVANDRUM CNTL","(QLN)KOLLAM JN","(ALLP)ALLEPPEY","(ERS)ERNAKULAM JN","(TCR)THRISUR","(SRR)SHORANUR JN","(CLT)KOZHIKKODE","(CAN)KANNUR","(KGQ)KASARAGOD","(MAJN)MANGALURU JN","(BSR)VASAI ROAD","(BRC)VADODARA JN","(KOTA)KOTA JN","(NZM)H NIZAMUDDIN","(VAK)VARKALASIVAGIRI","(KPY)KARUNAGAPALLI","(KYJ)KAYANKULAM JN","(HAD)HARIPPAD","(AMPA)AMBALAPPUZHA","(SRTL)CHERTHALA","(AWY)ALUVA","(KTU)KUTTIPPURAM","(TIR)TIRUR","(PGI)PARPANANGADI","(BDJ)VADAKARA","(KRMI)KARMALI","(KKW)KANKAVALI","(CSMT)C SHIVAJI MAH T","(PTB)PATTAMBI","(FK)FEROK","(QLD)QUILANDI","(TLY)THALASSERY","(PAZ)PAYANGADI","(NLE)NILESHWAR","(KZE)KANHANGAD");
+                         // all the trains have been sorted into array, with elements being the stations they pass through
+                        $MAJN_CSMT_EXP=array("(MAJN)MANGALURU JN","(SL)SURATHKAL","(UD)UDUPI","(KUDA)KUNDAPURA","(BYNR)MOOKAMBIKA ROAD","(BTJL)BHATKAL","(KT)KUMTA","(KAWR)KARWAR","(MAO)MADGAON","(KRMI)KARMALI","(KKW)KANKAVALI","(RN)RATNAGIRI","(PNVL)PANVEL","(TNA)THANE","(CSMT)C SHIVAJI MAH T");
+                        $MANGLADWEEP_EXP=array("(ERS)ERNAKULAM JN","(AWY)ALUVA","(TCR)THRISUR","(SRR)SHORANUR JN","(PTB)PATTAMBI","(KTU)KUTTIPPURAM","(TIR)TIRUR","(PGI)PARPANANGADI","(FK)FEROK","(CLT)KOZHIKKODE","(QLD)QUILANDI","(BDJ)VADAKARA","(TLY)THALASSERY","(CAN)KANNUR","(PAZ)PAYANGADI","(NLE)NILESHWAR","(KZE)KANHANGAD","(KGQ)KASARAGOD","(NZM)H NIZAMUDDIN");
+                        $MATSYAGANDHA_EXP=array("(MAQ)MANGALURU CNTL","(SL)SURATHKAL","(MULK)MULKI","(UD)UDUPI","(KUDA)KUNDAPURA","(BYNR)MOOKAMBIKA ROAD","(BTJL)BHATKAL","(MRDW)MURDESHWAR","(HNA)HONNAVAR","(KT)KUMTA","(GOK)GOKARNA ROAD","(ANKL)ANKOLA","(KAWR)KARWAR","(MAO)MADGAON","(KUDL)KUDAL","(RN)RATNAGIRI","(CHI)CHIPLUN","(PNVL)PANVEL","(TNA)THANE","(LTT)LOKMANYATILAK T");
+                        $NETHRAWATHI_EXP=array("(TVC)TRIVANDRUM CNTL","(VAK)VARKALASIVAGIRI","(QLN)KOLLAM JN","(KPY)KARUNAGAPALLI","(KYJ)KAYANKULAM JN","(HAD)HARIPPAD","(AMPA)AMBALAPPUZHA","(SRTL)CHERTHALA","(ERS)ERNAKULAM JN","(AWY)ALUVA","(TCR)THRISUR","(SRR)SHORANUR JN","(KTU)KUTTIPPURAM","(TIR)TIRUR","(PGI)PARPANANGADI","(CLT)KOZHIKKODE","(BDJ)VADAKARA","(TLY)THALASSERY","(LTT)LOKMANYATILAK T");
+                        $RAJDHANI_EXP=array("(TVC)TRIVANDRUM CNTL","(QLN)KOLLAM JN","(ALLP)ALLEPPEY","(ERS)ERNAKULAM JN","(TCR)THRISUR","(SRR)SHORANUR JN","(CLT)KOZHIKKODE","(CAN)KANNUR","(KGQ)KASARAGOD","(MAJN)MANGALURU JN","(MAQ)MANGALURU CNTL","(UD)UDUPI","(KAWR)KARWAR","(MAO)MADGAON","(RN)RATNAGIRI","(PNVL)PANVEL","(BSR)VASAI ROAD","(BRC)VADODARA JN","(KOTA)KOTA JN","(NZM)H NIZAMUDDIN");
+                       
+                        //if conditions for whether the train goes to the source and destinations, then the table will be displayed which shows train, source destination etc
+                        if (array_key_exists($source, $MAJN_CSMT_EXP) and array_key_exists($dest, $MAJN_CSMT_EXP)) {
+                            $sr="(MAJN)MANGALURU JN";
+                            $de="(CSMT)C SHIVAJI MAH T";
+                            $tname="MAJN_CSMT_EXP_12134";
+                            echo"
+                                    <tr>
+                                       <th>Train</th>
+                                       <th>Schedule</th>
+                                       <th>Destination</th>
+                                       <th>Source</th>
+                                       <th>Runs on</th>
+                                   </tr>";
+                                    echo '<tr>
+                                           <td>'.$tname.'</td>
+                                           <td><a href="../trains/MAJN_CSMT_EXP.jpg">Train Schedule</a></td>
+                                           <td>' . $de . '</td>
+                                           <td>' . $sr. ' </td>
+                                           <td>'. date("h:i d-m-y",$d). '</td> 
+                                           <td><button ><a href="deletefood.php?C_ID='.$username.'"> Select</a></button></td>
+                                   </tr>';
+
+                        }
+                        if (array_key_exists($source, $MANGLADWEEP_EXP) and array_key_exists($dest, $MANGLADWEEP_EXP)) {
+                            $sr="(ERS)ERNAKULAM JN";
+                            $de="(NZM)H NIZAMUDDIN";
+                            $tname="MANGLADWEEP_EXP_12617";
+                            echo"
+                                    <tr>
+                                       <th>Train</th>
+                                       <th>Schedule</th>
+                                       <th>Destination</th>
+                                       <th>Source</th> 
+                                       <th>Runs On</th>
+                                   </tr>";
+                                    echo '<tr>
+                                           <td>'.$tname.'</td>
+                                           <td><a href="../trains/MANGLADWEEP_EXP.jpg">Train Schedule</a></td>
+                                           <td>' . $de . '</td>
+                                           <td>'. $sr. ' </td>
+                                           <td>MON, TUE, WED, THURS, FRI, SAT, SUN</td> 
+                                   </tr>';
+
+                        }
+                        if (array_key_exists($source, $MATSYAGANDHA_EXP) and array_key_exists($dest, $MATSYAGANDHA_EXP)) {
+                            $sr="(MAQ)MANGALURU CNTL";
+                            $de="(LTT)LOKMANYATILAK T";
+                            $tname="MATSYAGANDHA_EXP_12620";
+                            echo"
+                                    <tr>
+                                       <th>Train</th>
+                                       <th>Schedule</th>
+                                       <th>Destination</th>
+                                       <th>Source</th>
+                                       <th>Runs On</th>
+                                   </tr>";
+                                    echo '<tr>
+                                           <td>'.$tname.'</td>
+                                           <td><a href="../trains/MATSYAGANDHA_EXP.jpg">Train Schedule</a></td>
+                                           <td>' . $de . '</td>
+                                           <td>' . $sr. ' </td>
+                                           <td>MON, TUE, WED, THURS, FRI, SAT, SUN</td>
+                                   </tr>';
+
+                        }
+                        if (array_key_exists($source, $NETHRAWATHI_EXP) and array_key_exists($dest, $NETHRAWATHI_EXP)) {
+                            $sr="(TVC)TRIVANDRUM CNTL";
+                            $de="(LTT)LOKMANYATILAK T";
+                            $tname="NETHRAWATHI_EXP_16346";
+                            echo"
+                                    <tr>
+                                       <th>Train</th>
+                                       <th>Schedule</th>
+                                       <th>Destination</th>
+                                       <th>Source</th>
+                                       <th>Runs On</th>
+                                   </tr>";
+                                    echo '<tr>
+                                           <td>'.$tname.'</td>
+                                           <td><a href="../trains/NETHRAWATHI_EXP.jpg">Train Schedule</a></td>
+                                           <td>' . $de . '</td>
+                                           <td>' . $sr. ' </td>
+                                           <td>MON, TUE, WED, THURS, FRI, SAT, SUN</td>
+                                   </tr>';
+
+                        }
+                        if (array_key_exists($source, $RAJDHANI_EXP) and array_key_exists($dest, $RAJDHANI_EXP)) {
+                            $sr="(TVC)TRIVANDRUM CNTL";
+                            $de="(NZM)H NIZAMUDDIN";
+                            $tname="RAJDHANI_EXP_12431";
+                            echo"
+                                    <tr>
+                                       <th>Train</th>
+                                       <th>Schedule</th>
+                                       <th>Destination</th>
+                                       <th>Source</th>
+                                       <th>Runs On</th>
+                                   </tr>";
+                                    echo '<tr>
+                                           <td>'.$tname.'</td>
+                                           <td><a><img src="../trains/RAJDHANI_EXP.jpg">Train Schedule</a></td>
+                                           <td>' . $de . '</td>
+                                           <td>' . $sr. ' </td>
+                                    
+                                           <td>TUE, THURS, FRI</td> 
+                                   </tr>';
+                        }
+                     
+                             
+                        ?>
+
+                       <script src="" async defer></script>
+                   </body>
+               </html>
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Ticket Booking</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://kit.fontawesome.com/608539d5a6.js" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/@themesberg/flowbite@1.3.0/dist/datepicker.bundle.js"></script>
+        <script src="../path/to/@themesberg/flowbite/dist/datepicker.bundle.js"></script>
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        
+    </head>
+    <body>
+      
                 
       
 
@@ -49,39 +207,96 @@
       <h3 class="text-2xl font-bold text-center">Book your ticket here</h3>
       <form action="tickets.php" method="post">
           <div class="mt-4">
-              
-                  <div>
-                    <label class="block" for="src">Enter your Source <label>
-                            <input type="text" placeholder="Source"
-                                class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="src" name="src">
-                                include "tickets.php"
-                                <label> Source</label>
-                                <select>
-                                <?php
-                                include "tickets.php"
-                                foreach($stations as $i){
-                                  echo "<option value='strtolower($i)'>$i</option>";
-                                }
-                                ?>
-                                </select>
-                </div>
-
-                <div>
-                  <label class="block" for="dest">Enter Your Destination</label></div>
-                          <input type="text" placeholder="Destination"
-                              class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="dest" name="dest">
-              </div>
               <div>
-                <label class="block" for="dest">Enter Date of Departure</label></div>
-                <!-- <input type="date" placeholder="Select date"
-                class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="doj" name="doj" /> -->
-                
-                <div class="relative">
-                  <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                  <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                  <label class="block" for="Name">Enter Your Name<label>
+                          <input type="text" placeholder="Name"
+                              class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="name">
+              </div>
+
+
+              <div>
+                <label class="block" for="Name">Enter passenger name 1<label>
+                        <input type="text" placeholder="Name"
+                            class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="pname1">
+              </div>
+
+              <div>
+                <label class="block" for="Name">Enter age<label>
+                        <input type="text" placeholder="age"
+                            class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="age1">
+              </div>
+
+              <div>
+                <label class="block" for="Name">Enter address<label>
+                        <input type="text" placeholder="address"
+                            class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="address1">
+              </div>
+
+              <div>
+                <label class="block" for="Name">Enter passenger name 2<label>
+                        <input type="text" placeholder="Name"
+                            class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="pname2">
+              </div>
+              
+              <div>
+                <label class="block" for="Name">Enter age<label>
+                        <input type="text" placeholder="age"
+                            class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="age2">
+              </div>
+
+              <div>
+                <label class="block" for="Name">Enter address<label>
+                        <input type="text" placeholder="address"
+                            class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="address2">
+              </div>
+
+              <div>
+                <label class="block" for="Name">Enter passenger name 3<label>
+                        <input type="text" placeholder="Name"
+                            class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="pname3">
+              </div>
+              
+              <div>
+                <label class="block" for="Name">Enter age<label>
+                        <input type="text" placeholder="age"
+                            class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="age3">
+              </div>
+
+              <div>
+                <label class="block" for="Name">Enter address<label>
+                        <input type="text" placeholder="address"
+                            class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="address3">
+              </div>
+              
+              
+              
+                  <div class="mt-4">
+                  <label class="block">Select the Coach Class</label>
+                  <select class="form-select form-select-lg mt-4
+                    appearance-none
+                    block
+                    w-full
+                    px-4
+                    py-2
+                    text-xl
+                    font-normal
+                    text-gray-700
+                    bg-white bg-clip-padding bg-no-repeat
+                    border border-solid border-gray-300
+                    rounded
+                    transition
+                    ease-in-out
+                    m-0
+                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label=".form-select-lg example" id="coach_type" name="coach_type">
+                      <option selected>Open this select menu</option>
+                      <option value="1">sleeper</option>
+                      <option value="2">first class</option>
+                      <option value="3">AC chair car</option>
+                      <option value="4">second seater</option>
+                      <option value="5">AC two tier</option>
+                    </select>
                   </div>
-                  <input datepicker="" name="doj" datepicker-buttons="" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 datepicker-input" placeholder="Select date">
-                  </div>
+
               <div class="flex">
                   <button type="submit" name="submit" class="w-full px-6 py-2 mt-4 text-white bg-blue-600 rounded-lg hover:bg-blue-900" value="submit"> <a href="index.php"> Submit</a></button>
               </div>
