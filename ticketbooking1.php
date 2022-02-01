@@ -10,6 +10,21 @@
                        <meta name="description" content="">
                        <meta name="viewport" content="width=device-width, initial-scale=1">
                        <link rel="stylesheet" href="">
+                       <style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                color: #eb4034;
+                font-family: monospace;
+                font-size: 25px;
+                text-align: left;
+            }
+            th {
+                background-color: #eb4034;
+                color: white;
+            }
+            tr:nth-child(even) {background-color :#ededed}
+        </style>
                    </head>
                    <body>
 
@@ -33,22 +48,25 @@
       </header>
       
                    <div>
-                  <label class="block" for="trains"><h3> Available are</h3> </label>
-                          <input type="text" placeholder="Name"
-                              class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="name">
+                  <label class="block" for="trains"><h3> Trains Available are</h3> </label>
               </div>
+              <table>
+              <tr>
+                                       <th>Train</th>
+                                       <th>Schedule</th>
+                                       <th>Destination</th>
+                                       <th>Source</th>
+                                       <th>Runs On</th>
+                                   </tr>
                         <?php
-                        include "config.php";
-                        include "tickets.php";
-
+                        include 'config.php';
                             session_start();
                             $username = $_SESSION["username"];
                             $sr;
                             $de;
-                            $tname;
-                            $tot_price=0;
-                            //all the stations has been inserted in array so that price can be calculated
-                            $stations=array("(MAQ)MANGALURU CNTL","(SL)SURATHKAL","(MULK)MULKI","(UD)UDUPI","(KUDA)KUNDAPURA","(BYNR)MOOKAMBIKA ROAD","(BTJL)BHATKAL","(MRDW)MURDESHWAR","(HNA)HONNAVAR","(KT)KUMTA","(GOK)GOKARNA ROAD","(ANKL)ANKOLA","(KAWR)KARWAR","(MAO)MADGAON","(KUDL)KUDAL","(RN)RATNAGIRI","(CHI)CHIPLUN","(PNVL)PANVEL","(TNA)THANE","(LTT)LOKMANYATILAK T","(TVC)TRIVANDRUM CNTL","(QLN)KOLLAM JN","(ALLP)ALLEPPEY","(ERS)ERNAKULAM JN","(TCR)THRISUR","(SRR)SHORANUR JN","(CLT)KOZHIKKODE","(CAN)KANNUR","(KGQ)KASARAGOD","(MAJN)MANGALURU JN","(BSR)VASAI ROAD","(BRC)VADODARA JN","(KOTA)KOTA JN","(NZM)H NIZAMUDDIN","(VAK)VARKALASIVAGIRI","(KPY)KARUNAGAPALLI","(KYJ)KAYANKULAM JN","(HAD)HARIPPAD","(AMPA)AMBALAPPUZHA","(SRTL)CHERTHALA","(AWY)ALUVA","(KTU)KUTTIPPURAM","(TIR)TIRUR","(PGI)PARPANANGADI","(BDJ)VADAKARA","(KRMI)KARMALI","(KKW)KANKAVALI","(CSMT)C SHIVAJI MAH T","(PTB)PATTAMBI","(FK)FEROK","(QLD)QUILANDI","(TLY)THALASSERY","(PAZ)PAYANGADI","(NLE)NILESHWAR","(KZE)KANHANGAD");
+                            $tname=array();
+                            $source=$_POST['src'];
+                            $dest=$_POST['dest'];
                          // all the trains have been sorted into array, with elements being the stations they pass through
                         $MAJN_CSMT_EXP=array("(MAJN)MANGALURU JN","(SL)SURATHKAL","(UD)UDUPI","(KUDA)KUNDAPURA","(BYNR)MOOKAMBIKA ROAD","(BTJL)BHATKAL","(KT)KUMTA","(KAWR)KARWAR","(MAO)MADGAON","(KRMI)KARMALI","(KKW)KANKAVALI","(RN)RATNAGIRI","(PNVL)PANVEL","(TNA)THANE","(CSMT)C SHIVAJI MAH T");
                         $MANGLADWEEP_EXP=array("(ERS)ERNAKULAM JN","(AWY)ALUVA","(TCR)THRISUR","(SRR)SHORANUR JN","(PTB)PATTAMBI","(KTU)KUTTIPPURAM","(TIR)TIRUR","(PGI)PARPANANGADI","(FK)FEROK","(CLT)KOZHIKKODE","(QLD)QUILANDI","(BDJ)VADAKARA","(TLY)THALASSERY","(CAN)KANNUR","(PAZ)PAYANGADI","(NLE)NILESHWAR","(KZE)KANHANGAD","(KGQ)KASARAGOD","(NZM)H NIZAMUDDIN");
@@ -57,40 +75,30 @@
                         $RAJDHANI_EXP=array("(TVC)TRIVANDRUM CNTL","(QLN)KOLLAM JN","(ALLP)ALLEPPEY","(ERS)ERNAKULAM JN","(TCR)THRISUR","(SRR)SHORANUR JN","(CLT)KOZHIKKODE","(CAN)KANNUR","(KGQ)KASARAGOD","(MAJN)MANGALURU JN","(MAQ)MANGALURU CNTL","(UD)UDUPI","(KAWR)KARWAR","(MAO)MADGAON","(RN)RATNAGIRI","(PNVL)PANVEL","(BSR)VASAI ROAD","(BRC)VADODARA JN","(KOTA)KOTA JN","(NZM)H NIZAMUDDIN");
                        
                         //if conditions for whether the train goes to the source and destinations, then the table will be displayed which shows train, source destination etc
-                        if (array_key_exists($source, $MAJN_CSMT_EXP) and array_key_exists($dest, $MAJN_CSMT_EXP)) {
+                        
+                        if (in_array($source, $MAJN_CSMT_EXP)  ) {
+                            if (in_array($dest, $MAJN_CSMT_EXP)) {
                             $sr="(MAJN)MANGALURU JN";
                             $de="(CSMT)C SHIVAJI MAH T";
-                            $tname="MAJN_CSMT_EXP_12134";
-                            echo"
-                                    <tr>
-                                       <th>Train</th>
-                                       <th>Schedule</th>
-                                       <th>Destination</th>
-                                       <th>Source</th>
-                                       <th>Runs on</th>
-                                   </tr>";
+                            for($j=0;$j<6;$j++){
+                            $tname[j]=array("MAJN_CSMT_EXP_12134");}
+
                                     echo '<tr>
                                            <td>'.$tname.'</td>
                                            <td><a href="../trains/MAJN_CSMT_EXP.jpg">Train Schedule</a></td>
                                            <td>' . $de . '</td>
                                            <td>' . $sr. ' </td>
-                                           <td>'. date("h:i d-m-y",$d). '</td> 
-                                           <td><button ><a href="deletefood.php?C_ID='.$username.'"> Select</a></button></td>
+                                           <td>MON, TUE, WED, THURS, FRI, SAT, SUN</td> 
                                    </tr>';
+                            }
 
                         }
-                        if (array_key_exists($source, $MANGLADWEEP_EXP) and array_key_exists($dest, $MANGLADWEEP_EXP)) {
+                        if (in_array($source, $MANGLADWEEP_EXP) and in_array($dest, $MANGLADWEEP_EXP)) {
                             $sr="(ERS)ERNAKULAM JN";
                             $de="(NZM)H NIZAMUDDIN";
-                            $tname="MANGLADWEEP_EXP_12617";
-                            echo"
-                                    <tr>
-                                       <th>Train</th>
-                                       <th>Schedule</th>
-                                       <th>Destination</th>
-                                       <th>Source</th> 
-                                       <th>Runs On</th>
-                                   </tr>";
+                            for($i=0;$i<6;$i++)
+                            $tname[i]="MANGLADWEEP_EXP_12617";
+
                                     echo '<tr>
                                            <td>'.$tname.'</td>
                                            <td><a href="../trains/MANGLADWEEP_EXP.jpg">Train Schedule</a></td>
@@ -100,18 +108,12 @@
                                    </tr>';
 
                         }
-                        if (array_key_exists($source, $MATSYAGANDHA_EXP) and array_key_exists($dest, $MATSYAGANDHA_EXP)) {
+                        if (in_array($source, $MATSYAGANDHA_EXP) and in_array($dest, $MATSYAGANDHA_EXP)) {
                             $sr="(MAQ)MANGALURU CNTL";
                             $de="(LTT)LOKMANYATILAK T";
-                            $tname="MATSYAGANDHA_EXP_12620";
-                            echo"
-                                    <tr>
-                                       <th>Train</th>
-                                       <th>Schedule</th>
-                                       <th>Destination</th>
-                                       <th>Source</th>
-                                       <th>Runs On</th>
-                                   </tr>";
+                            for($i=0;$i<6;$i++)
+                            $tname[i]="MATSYAGANDHA_EXP_12620";
+
                                     echo '<tr>
                                            <td>'.$tname.'</td>
                                            <td><a href="../trains/MATSYAGANDHA_EXP.jpg">Train Schedule</a></td>
@@ -121,18 +123,11 @@
                                    </tr>';
 
                         }
-                        if (array_key_exists($source, $NETHRAWATHI_EXP) and array_key_exists($dest, $NETHRAWATHI_EXP)) {
+                        if (in_array($source, $NETHRAWATHI_EXP) and in_array($dest, $NETHRAWATHI_EXP)) {
                             $sr="(TVC)TRIVANDRUM CNTL";
                             $de="(LTT)LOKMANYATILAK T";
-                            $tname="NETHRAWATHI_EXP_16346";
-                            echo"
-                                    <tr>
-                                       <th>Train</th>
-                                       <th>Schedule</th>
-                                       <th>Destination</th>
-                                       <th>Source</th>
-                                       <th>Runs On</th>
-                                   </tr>";
+                            for($i=0;$i<6;$i++)
+                            $tname[i]="NETHRAWATHI_EXP_16346";
                                     echo '<tr>
                                            <td>'.$tname.'</td>
                                            <td><a href="../trains/NETHRAWATHI_EXP.jpg">Train Schedule</a></td>
@@ -142,18 +137,13 @@
                                    </tr>';
 
                         }
-                        if (array_key_exists($source, $RAJDHANI_EXP) and array_key_exists($dest, $RAJDHANI_EXP)) {
+                        if (in_array($source, $RAJDHANI_EXP) and in_array($dest, $RAJDHANI_EXP)) {
                             $sr="(TVC)TRIVANDRUM CNTL";
                             $de="(NZM)H NIZAMUDDIN";
-                            $tname="RAJDHANI_EXP_12431";
+                            for($i=0;$i<6;$i++)
+                            $tname[i]="RAJDHANI_EXP_12431";
                             echo"
-                                    <tr>
-                                       <th>Train</th>
-                                       <th>Schedule</th>
-                                       <th>Destination</th>
-                                       <th>Source</th>
-                                       <th>Runs On</th>
-                                   </tr>";
+                                    ";
                                     echo '<tr>
                                            <td>'.$tname.'</td>
                                            <td><a><img src="../trains/RAJDHANI_EXP.jpg">Train Schedule</a></td>
@@ -164,8 +154,9 @@
                                    </tr>';
                         }
                      
-                             
+                             $conn->close();
                         ?>
+              </table>
 
                        <script src="" async defer></script>
                    </body>
@@ -178,7 +169,6 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Ticket Booking</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://kit.fontawesome.com/608539d5a6.js" crossorigin="anonymous"></script>
@@ -207,6 +197,32 @@
       <h3 class="text-2xl font-bold text-center">Book your ticket here</h3>
       <form action="tickets.php" method="post">
           <div class="mt-4">
+
+          <div class="mt-4">
+                  <label class="block">Select the Coach Class</label>
+                  <select class="form-select form-select-lg mt-4
+                    appearance-none
+                    block
+                    w-full
+                    px-4
+                    py-2
+                    text-xl
+                    font-normal
+                    text-gray-700
+                    bg-white bg-clip-padding bg-no-repeat
+                    border border-solid border-gray-300
+                    rounded
+                    transition
+                    ease-in-out
+                    m-0
+                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label=".form-select-lg example" id="coach_type" name="train">
+                      <option selected>--Train--</option>
+                      foreach($tname as $i){
+                        echo "<option value='$i' name='i'>$i</option>";
+                      }
+                    </select>
+                  </div>
+
               <div>
                   <label class="block" for="Name">Enter Your Name<label>
                           <input type="text" placeholder="Name"

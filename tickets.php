@@ -30,25 +30,11 @@ include "ticketbooking.php";
         $ti_type="TICKET";
         $count1;
         $count2;
-        $stations=array("(MAQ)MANGALURU CNTL","(SL)SURATHKAL","(MULK)MULKI","(UD)UDUPI","(KUDA)KUNDAPURA","(BYNR)MOOKAMBIKA ROAD","(BTJL)BHATKAL","(MRDW)MURDESHWAR","(HNA)HONNAVAR","(KT)KUMTA","(GOK)GOKARNA ROAD","(ANKL)ANKOLA","(KAWR)KARWAR","(MAO)MADGAON","(KUDL)KUDAL","(RN)RATNAGIRI","(CHI)CHIPLUN","(PNVL)PANVEL","(TNA)THANE","(LTT)LOKMANYATILAK T","(TVC)TRIVANDRUM CNTL","(QLN)KOLLAM JN","(ALLP)ALLEPPEY","(ERS)ERNAKULAM JN","(TCR)THRISUR","(SRR)SHORANUR JN","(CLT)KOZHIKKODE","(CAN)KANNUR","(KGQ)KASARAGOD","(MAJN)MANGALURU JN","(BSR)VASAI ROAD","(BRC)VADODARA JN","(KOTA)KOTA JN","(NZM)H NIZAMUDDIN","(VAK)VARKALASIVAGIRI","(KPY)KARUNAGAPALLI","(KYJ)KAYANKULAM JN","(HAD)HARIPPAD","(AMPA)AMBALAPPUZHA","(SRTL)CHERTHALA","(AWY)ALUVA","(KTU)KUTTIPPURAM","(TIR)TIRUR","(PGI)PARPANANGADI","(BDJ)VADAKARA","(KRMI)KARMALI","(KKW)KANKAVALI","(CSMT)C SHIVAJI MAH T","(PTB)PATTAMBI","(FK)FEROK","(QLD)QUILANDI","(TLY)THALASSERY","(PAZ)PAYANGADI","(NLE)NILESHWAR","(KZE)KANHANGAD");
+    
+   
 
-        //options for dropdown for source and destination
-      
-
-        //to calculate price of the ticket
-        //for loops gets the indexes of source and destination, which then is subtracted and then multipliedwith 50(fixed station price)
-        for($i=0;$i<count($stations);$i++) {
-            if($stations[$i]==$src or $stations[$i]==$dest){
-                $count1=$i;
-                break;
-            }
-        }
-        for($i=count($stations);$i>0;$i--) {
-            if($stations[$i]==$src or $stations[$i]==$dest){
-                $count2=$i;
-                break;
-            }
-        }
+        //to calculate price of the ticket ,only coach price
+        
         $tot_price=(($count2-$count1)*50)+$coach_price;
 
         $coach_no;
@@ -79,6 +65,44 @@ include "ticketbooking.php";
             break;
 
             }
+
+            //for loops for calculating the price of stations and travelling
+            //for loops gets the indexes of source and destination, which then is subtracted and then multipliedwith 50(fixed station price)
+        for($i=0;$i<count($stations);$i++) {
+            if($stations[$i]==$src or $stations[$i]==$dest){
+                $count1=$i;
+                break;
+            }
+        }
+        for($i=count($stations);$i>0;$i--) {
+            if($stations[$i]==$src or $stations[$i]==$dest){
+                $count2=$i;
+                break;
+            }
+        }
+        
+        //sets the toal price including coach and travel
+        $tot_price=(($count2-$count1)*50)+$coach_price;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
          //queries
     //insert into ticket table

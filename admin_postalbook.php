@@ -24,7 +24,7 @@
           <span class="ml-3 text-xl">Railway Management Admin Console</span>
           </a>
           <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
-            <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="loginadmin.php">Admin Login</a>
+            <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="loginadmin.php">Admin Logout</a>
             </button>
           </div>
         </div>
@@ -81,8 +81,12 @@
            
         </table>
         <br><br><br><br><br><br><br>
-        <button type="submit" ><a href="deletepostal.php">Delete</a></button>
-       <a href="update_postal.php">Update postal </a>
+        <div class="flex mx-96 flex-col justify-center">
+                  <button type="submit" name="submit" class="w-fit px-6 py-2 mt-8 text-white bg-blue-600 rounded-lg hover:bg-blue-900 flex-justify-content: center " value="submit"><a href="deletepostal.php">Delete </a></button>
+        </div>
+        <div class="flex mx-96 flex-col justify-center">
+                  <button type="submit" name="submit" class="w-fit px-6 py-2 mt-8 text-white bg-blue-600 rounded-lg hover:bg-blue-900 flex-col justify-center" value="submit"><a href="update_postal.php">Update </a></button>
+        </div>
        
 </body>
 </html>
