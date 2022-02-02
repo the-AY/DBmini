@@ -54,7 +54,31 @@ $sql="INSERT INTO `tablename` (`Column`, `Column`, `Column`)  VALUES
                <option value="VADODARA JN-BRC ">VADODARA JN-BRC </option> 
                <option value="KOTA JN-KOTA  ">KOTA JN-KOTA  </option>
                <option value="H NIZAMUDDIN-NZM ">H NIZAMUDDIN-NZM </option> 
+            
                 </select>
+
+                /**
+ * Set minimum number of characters
+ *
+ * @link https://wpforms.com/developers/how-to-set-a-minimum-number-of-characters-on-a-text-form-field/
+ *
+ */
+ 
+ 
+function wpf_dev_char_min() {
+    ?>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            jQuery('.wpf-char-min input').prop('minLength', 8);
+            jQuery('.wpf-char-min textarea').prop('minLength', 20);
+            jQuery.extend(jQuery.validator.messages, {
+                minlength: jQuery.validator.format("Please enter at least {0} characters"),
+            });
+ });
+    </script>
+    <?php
+}
+add_action( 'wpforms_wp_footer_end', 'wpf_dev_char_min' );
 
 
 TRIVANDRUM CNTL-TVC 
