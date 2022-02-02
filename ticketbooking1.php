@@ -80,8 +80,7 @@
                             if (in_array($dest, $MAJN_CSMT_EXP)) {
                             $sr="(MAJN)MANGALURU JN";
                             $de="(CSMT)C SHIVAJI MAH T";
-                            for($j=0;$j<6;$j++){
-                            $tname[j]=array("MAJN_CSMT_EXP_12134");}
+                            $tname="MAJN_CSMT_EXP_12134";
 
                                     echo '<tr>
                                            <td>'.$tname.'</td>
@@ -96,8 +95,8 @@
                         if (in_array($source, $MANGLADWEEP_EXP) and in_array($dest, $MANGLADWEEP_EXP)) {
                             $sr="(ERS)ERNAKULAM JN";
                             $de="(NZM)H NIZAMUDDIN";
-                            for($i=0;$i<6;$i++)
-                            $tname[i]="MANGLADWEEP_EXP_12617";
+
+                            $tname="MANGLADWEEP_EXP_12617";
 
                                     echo '<tr>
                                            <td>'.$tname.'</td>
@@ -111,8 +110,7 @@
                         if (in_array($source, $MATSYAGANDHA_EXP) and in_array($dest, $MATSYAGANDHA_EXP)) {
                             $sr="(MAQ)MANGALURU CNTL";
                             $de="(LTT)LOKMANYATILAK T";
-                            for($i=0;$i<6;$i++)
-                            $tname[i]="MATSYAGANDHA_EXP_12620";
+                            $tname="MATSYAGANDHA_EXP_12620";
 
                                     echo '<tr>
                                            <td>'.$tname.'</td>
@@ -127,7 +125,7 @@
                             $sr="(TVC)TRIVANDRUM CNTL";
                             $de="(LTT)LOKMANYATILAK T";
                             for($i=0;$i<6;$i++)
-                            $tname[i]="NETHRAWATHI_EXP_16346";
+                            $tname[$i]="NETHRAWATHI_EXP_16346";
                                     echo '<tr>
                                            <td>'.$tname.'</td>
                                            <td><a href="../trains/NETHRAWATHI_EXP.jpg">Train Schedule</a></td>
@@ -141,7 +139,7 @@
                             $sr="(TVC)TRIVANDRUM CNTL";
                             $de="(NZM)H NIZAMUDDIN";
                             for($i=0;$i<6;$i++)
-                            $tname[i]="RAJDHANI_EXP_12431";
+                            $tname[$i]="RAJDHANI_EXP_12431";
                             echo"
                                     ";
                                     echo '<tr>
@@ -217,9 +215,9 @@
                     m-0
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label=".form-select-lg example" id="coach_type" name="train">
                       <option selected>--Train--</option>
-                      foreach($tname as $i){
-                        echo "<option value='$i' name='i'>$i</option>";
-                      }
+                      <?php
+                        echo "<option value='$tname' name='i'>$tname</option>";
+                      ?>
                     </select>
                   </div>
 
