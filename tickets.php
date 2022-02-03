@@ -103,7 +103,8 @@ include "config.php";
 
          //queries
     //insert into ticket table
-    $query="INSERT INTO TICKET(`C_NAME`,`C_ID`,`TI_TYPE`,`SRC`,`DEST`,`COACH_NO`,`DOJ`,`PRICE`) VALUES ('$name','$username','$ti_type','$src','$dest','$coach_no','$doj','$tot_price')";
+    // $query="INSERT INTO TICKET(`C_NAME`,`C_ID`,`TI_TYPE`,`SRC`,`DEST`,`COACH_NO`,`DOJ`,`PRICE`) VALUES ('$name','$username','$ti_type','$src','$dest','$coach_no','$doj','$tot_price')";
+    $query="INSERT INTO TICKET(`C_NAME`,`C_ID`,`TI_TYPE`,`SRC`,`DEST`,`COACH_NO`,`DOJ`,`PRICE`) VALUES ('$name','$username','$ti_type','$DEP','$DES','$coach_no','$doj','$tot_price')";
     $query1="INSERT INTO TICKET_HOLDER(`TIH_NAME`,`AGE`,`ADDRESS`,`C_ID`) VALUES ('$pname1','$age1','$address1','$username')";
     $query2="INSERT INTO TICKET_HOLDER(`TIH_NAME`,`AGE`,`ADDRESS`,`C_ID`) VALUES ('$pname2','$age2','$address2','$username')";
     $query2="INSERT INTO TICKET_HOLDER(`TIH_NAME`,`AGE`,`ADDRESS`,`C_ID`) VALUES ('$pname3','$age3','$address3','$username')";
