@@ -3,14 +3,14 @@
 <?php
 
 include "config.php";
-
+session_start();
+$username = $_SESSION["username"];
 
 if(isset($_POST['submit'])) {
 
     //get the details from postbooking.html
 
     $name=$_POST['name'];
-    $c_id=$_POST['c_id'];
     $src=$_POST['src'];
     $dest=$_POST['dest'];
     $ti_type="POSTAL";
@@ -36,13 +36,13 @@ if(isset($_POST['submit'])) {
     
     //queries
     //insert into ticket table
-    $query="INSERT INTO TICKET(`C_NAME`,`C_ID`,`TI_TYPE`,`SRC`,`DEST`,`PRICE`) VALUES ('$name','$c_id','$ti_type','$src','$dest','$price')";
+    $query="INSERT INTO TICKET(`C_NAME`,`C_ID`,`TI_TYPE`,`SRC`,`DEST`,`PRICE`) VALUES ('$name','$username','$ti_type','$src','$dest','$price')";
     
     $run=mysqli_query($conn,$query) or die("connection failed");
 
 
     if($run) {
-        echo '<script>alert("Your Price is". $price")</script>';
+        echo '<script>alert("Your Price is : '. $price.'")</script>';
         echo '<script> alert("Your Post has been successfully booked")</script>';  //not showing an alert box.
         header('Refresh: 1; URL = home.html');
       

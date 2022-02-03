@@ -212,7 +212,7 @@
                     ease-in-out
                     m-0
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label=".form-select-lg example" id="coach_type" name="train">
-                      <option selected>--Train--</option>
+                      <option selected disabled>--Train--</option>
                       <?php
                       for($i=0;$i<count($tname);$i++) {
                         echo "<option value='$tname[$i]' name='i'>$tname[$i]</option>";
@@ -271,6 +271,7 @@
                       </select>
                     </div>
                   </div>
+                  
               <div>
               
                   <label class="block" for="Name">Enter Your Name<label>

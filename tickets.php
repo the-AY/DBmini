@@ -29,6 +29,8 @@ include "config.php";
         $count1=0;
         $count2=0;
         $train=$_POST['train'];
+        $doj=strtotime($_POST["doj"]);
+        $doj = date('m-d-y', $doj);
     
         $stations=array("(MAQ)MANGALURU CNTL","(SL)SURATHKAL","(MULK)MULKI","(UD)UDUPI","(KUDA)KUNDAPURA","(BYNR)MOOKAMBIKA ROAD","(BTJL)BHATKAL","(MRDW)MURDESHWAR","(HNA)HONNAVAR","(KT)KUMTA","(GOK)GOKARNA ROAD","(ANKL)ANKOLA","(KAWR)KARWAR","(MAO)MADGAON","(KUDL)KUDAL","(RN)RATNAGIRI","(CHI)CHIPLUN","(PNVL)PANVEL","(TNA)THANE","(LTT)LOKMANYATILAK T","(TVC)TRIVANDRUM CNTL","(QLN)KOLLAM JN","(ALLP)ALLEPPEY","(ERS)ERNAKULAM JN","(TCR)THRISUR","(SRR)SHORANUR JN","(CLT)KOZHIKKODE","(CAN)KANNUR","(KGQ)KASARAGOD","(MAJN)MANGALURU JN","(BSR)VASAI ROAD","(BRC)VADODARA JN","(KOTA)KOTA JN","(NZM)H NIZAMUDDIN","(VAK)VARKALASIVAGIRI","(KPY)KARUNAGAPALLI","(KYJ)KAYANKULAM JN","(HAD)HARIPPAD","(AMPA)AMBALAPPUZHA","(SRTL)CHERTHALA","(AWY)ALUVA","(KTU)KUTTIPPURAM","(TIR)TIRUR","(PGI)PARPANANGADI","(BDJ)VADAKARA","(KRMI)KARMALI","(KKW)KANKAVALI","(CSMT)C SHIVAJI MAH T","(PTB)PATTAMBI","(FK)FEROK","(QLD)QUILANDI","(TLY)THALASSERY","(PAZ)PAYANGADI","(NLE)NILESHWAR","(KZE)KANHANGAD");
 
@@ -102,7 +104,7 @@ include "config.php";
 
          //queries
     //insert into ticket table
-    $query="INSERT INTO TICKET(`C_NAME`,`C_ID`,`TI_TYPE`,`SRC`,`DEST`,`COACH_NO`,`PRICE`,`TRAIN`) VALUES ('$name','$username','$ti_type','$src','$dest','$coach_no','$tot_price','$train')";
+    $query="INSERT INTO TICKET(`C_NAME`,`C_ID`,`TI_TYPE`,`SRC`,`DEST`,`COACH_NO`,`PRICE`,`TRAIN`,`DOJ`) VALUES ('$name','$username','$ti_type','$src','$dest','$coach_no','$tot_price','$train','$doj')";
     $query1="INSERT INTO TICKET_HOLDER(`TIH_NAME`,`AGE`,`ADDRESS`,`C_ID`) VALUES ('$pname1','$age1','$address1','$username')";
     $query2="INSERT INTO TICKET_HOLDER(`TIH_NAME`,`AGE`,`ADDRESS`,`C_ID`) VALUES ('$pname2','$age2','$address2','$username')";
     $query2="INSERT INTO TICKET_HOLDER(`TIH_NAME`,`AGE`,`ADDRESS`,`C_ID`) VALUES ('$pname3','$age3','$address3','$username')";
