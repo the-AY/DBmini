@@ -191,7 +191,10 @@
           </svg>
       </div>
       <h3 class="text-2xl font-bold text-center">Book your ticket here</h3>
+
+      <!-- form action -->
       <form action="tickets.php" method="post">
+
           <div class="mt-4">
 
           <div class="mt-4">
