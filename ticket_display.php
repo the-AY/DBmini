@@ -96,7 +96,7 @@
        <tr>
                <th>PNR</th>
                <th>USERNAME</th>
-               <th>PASSENGER NAME</th>
+               <th>TRAIN</th>
                <th>CUSTOMER NAME</th>
                <th>COACH</th>
                <!-- <th>SEAT NUMBER</th> -->
@@ -122,11 +122,12 @@
                 $dest= $row['DEST'];
                 $city=$row["ADDRESS"];
                 $coach_no=$row["COACH_NO"];
+                $train=$row['TRAIN'];
                 
 
                    echo "<tr><td>" .$pnr. "</td>
                    <td>" . $username. " </td>
-                   <td>" . $c_name. " </td>
+                   <td>" . $train. " </td>
                    <td>" . $row["TIH_NAME"]. " </td>
 
                    <td>" .$coach_no. "</td>
