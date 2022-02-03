@@ -6,11 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/608539d5a6.js" crossorigin="anonymous"></script>
+    @link https://wpforms.com/developers/how-to-set-a-minimum-number-of-characters-on-a-text-form-field/
     <title>Create a New account</title>
 </head>
 
+function wpf_dev_char_min() {
+  
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            jQuery('.wpf-char-min input').prop('minLength', 8);
+            jQuery('.wpf-char-min textarea').prop('minLength', 20);
+            jQuery.extend(jQuery.validator.messages, {
+                minlength: jQuery.validator.format("Please enter at least {0} characters"),
+            });
+ });
+    </script>
+  
+}
+
 <?php
 include "config.php";
+
+add_action( 'wpforms_wp_footer_end', 'wpf_dev_char_min' );
+
 
 if(isset($_POST['submit'])) {
 
