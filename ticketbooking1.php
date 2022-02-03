@@ -271,7 +271,34 @@
                       </select>
                     </div>
                   </div>
-                  
+                  <label class="block" for="dest">Enter Date of Departure</label></div>
+                <!-- <input type="date" placeholder="Select date"
+                class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="doj" name="doj" /> -->
+                
+                <div class="relative">
+                <select class="form-select
+                        appearance-none
+                        block
+                        w-full
+                        px-3
+                        py-1.5
+                        text-base
+                        font-normal
+                        text-gray-700
+                        bg-white bg-clip-padding bg-no-repeat
+                        border border-solid border-gray-300
+                        rounded
+                        transition
+                        ease-in-out
+                        m-0
+                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" name="dest" aria-label="Disabled select example" >
+            
+        
+                  <?php
+                  echo "<option value ='$doj'>$doj</option>";
+                  ?>
+                  </select>
+                  </div>
               <div>
               
                   <label class="block" for="Name">Enter Your Name<label>
