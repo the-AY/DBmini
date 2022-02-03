@@ -13,7 +13,7 @@ include "config.php";
 
         $name=$_POST['name'];
         $coach_type=$_POST['coach_type'];
-        $src=$_POST['source'];
+        $src=$_POST['src'];
         $dest=$_POST["dest"];
         $pname1=$_POST['pname1'];
         $pname2=$_POST['pname2'];
@@ -24,11 +24,12 @@ include "config.php";
         $address1=$_POST['address1'];
         $address2=$_POST['address2'];
         $address3=$_POST['address3'];
-        $doj=$_POST['doj'];
         $coach_price=0;
         $ti_type="TICKET";
-        $count1;
-        $count2;
+        $count1=0;
+        $count2=0;
+        $train=$_POST['train'];
+        $doj=$_POST['doj'];
     
         $stations=array("(MAQ)MANGALURU CNTL","(SL)SURATHKAL","(MULK)MULKI","(UD)UDUPI","(KUDA)KUNDAPURA","(BYNR)MOOKAMBIKA ROAD","(BTJL)BHATKAL","(MRDW)MURDESHWAR","(HNA)HONNAVAR","(KT)KUMTA","(GOK)GOKARNA ROAD","(ANKL)ANKOLA","(KAWR)KARWAR","(MAO)MADGAON","(KUDL)KUDAL","(RN)RATNAGIRI","(CHI)CHIPLUN","(PNVL)PANVEL","(TNA)THANE","(LTT)LOKMANYATILAK T","(TVC)TRIVANDRUM CNTL","(QLN)KOLLAM JN","(ALLP)ALLEPPEY","(ERS)ERNAKULAM JN","(TCR)THRISUR","(SRR)SHORANUR JN","(CLT)KOZHIKKODE","(CAN)KANNUR","(KGQ)KASARAGOD","(MAJN)MANGALURU JN","(BSR)VASAI ROAD","(BRC)VADODARA JN","(KOTA)KOTA JN","(NZM)H NIZAMUDDIN","(VAK)VARKALASIVAGIRI","(KPY)KARUNAGAPALLI","(KYJ)KAYANKULAM JN","(HAD)HARIPPAD","(AMPA)AMBALAPPUZHA","(SRTL)CHERTHALA","(AWY)ALUVA","(KTU)KUTTIPPURAM","(TIR)TIRUR","(PGI)PARPANANGADI","(BDJ)VADAKARA","(KRMI)KARMALI","(KKW)KANKAVALI","(CSMT)C SHIVAJI MAH T","(PTB)PATTAMBI","(FK)FEROK","(QLD)QUILANDI","(TLY)THALASSERY","(PAZ)PAYANGADI","(NLE)NILESHWAR","(KZE)KANHANGAD");
 
@@ -62,7 +63,6 @@ include "config.php";
             break;
 
             }
-                echo count($stations);
             //for loops for calculating the price of stations and travelling
             //for loops gets the indexes of source and destination, which then is subtracted and then multipliedwith 50(fixed station price)
         for($i=0;$i<count($stations);$i++) {
@@ -71,10 +71,10 @@ include "config.php";
                 break;
             }
         }
-        for($i=count($stations);$i>0;$i--) {
+        for($i=count($stations);$i>=0;$i--) {
             if($stations[$i]==$src or $stations[$i]==$dest){
                 $count2=$i;
-                break;
+                break;  
             }
         }
         
@@ -103,8 +103,7 @@ include "config.php";
 
          //queries
     //insert into ticket table
-    // $query="INSERT INTO TICKET(`C_NAME`,`C_ID`,`TI_TYPE`,`SRC`,`DEST`,`COACH_NO`,`DOJ`,`PRICE`) VALUES ('$name','$username','$ti_type','$src','$dest','$coach_no','$doj','$tot_price')";
-    $query="INSERT INTO TICKET(`C_NAME`,`C_ID`,`TI_TYPE`,`SRC`,`DEST`,`COACH_NO`,`DOJ`,`PRICE`) VALUES ('$name','$username','$ti_type','$DEP','$DES','$coach_no','$doj','$tot_price')";
+    $query="INSERT INTO TICKET(`C_NAME`,`C_ID`,`TI_TYPE`,`SRC`,`DEST`,`COACH_NO`,`PRICE`,`TRAIN`,`DOJ`) VALUES ('$name','$username','$ti_type','$src','$dest','$coach_no','$tot_price','$train','$doj')";
     $query1="INSERT INTO TICKET_HOLDER(`TIH_NAME`,`AGE`,`ADDRESS`,`C_ID`) VALUES ('$pname1','$age1','$address1','$username')";
     $query2="INSERT INTO TICKET_HOLDER(`TIH_NAME`,`AGE`,`ADDRESS`,`C_ID`) VALUES ('$pname2','$age2','$address2','$username')";
     $query2="INSERT INTO TICKET_HOLDER(`TIH_NAME`,`AGE`,`ADDRESS`,`C_ID`) VALUES ('$pname3','$age3','$address3','$username')";

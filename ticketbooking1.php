@@ -67,6 +67,7 @@
                             $tname=array();
                             $source=$_POST['src'];
                             $dest=$_POST['dest'];
+                            $doj=$_POST['doj'];
                          // all the trains have been sorted into array, with elements being the stations they pass through
                         $MAJN_CSMT_EXP=array("(MAJN)MANGALURU JN","(SL)SURATHKAL","(UD)UDUPI","(KUDA)KUNDAPURA","(BYNR)MOOKAMBIKA ROAD","(BTJL)BHATKAL","(KT)KUMTA","(KAWR)KARWAR","(MAO)MADGAON","(KRMI)KARMALI","(KKW)KANKAVALI","(RN)RATNAGIRI","(PNVL)PANVEL","(TNA)THANE","(CSMT)C SHIVAJI MAH T");
                         $MANGLADWEEP_EXP=array("(ERS)ERNAKULAM JN","(AWY)ALUVA","(TCR)THRISUR","(SRR)SHORANUR JN","(PTB)PATTAMBI","(KTU)KUTTIPPURAM","(TIR)TIRUR","(PGI)PARPANANGADI","(FK)FEROK","(CLT)KOZHIKKODE","(QLD)QUILANDI","(BDJ)VADAKARA","(TLY)THALASSERY","(CAN)KANNUR","(PAZ)PAYANGADI","(NLE)NILESHWAR","(KZE)KANHANGAD","(KGQ)KASARAGOD","(NZM)H NIZAMUDDIN");
@@ -80,10 +81,10 @@
                             if (in_array($dest, $MAJN_CSMT_EXP)) {
                             $sr="(MAJN)MANGALURU JN";
                             $de="(CSMT)C SHIVAJI MAH T";
-                            $tname="MAJN_CSMT_EXP_12134";
+                            array_push($tname,"MAJN_CSMT_EXP_12134") ;
 
                                     echo '<tr>
-                                           <td>'.$tname.'</td>
+                                           <td>MAJN_CSMT_EXP_12134</td>
                                            <td><a href="../trains/MAJN_CSMT_EXP.jpg">Train Schedule</a></td>
                                            <td>' . $de . '</td>
                                            <td>' . $sr. ' </td>
@@ -95,11 +96,10 @@
                         if (in_array($source, $MANGLADWEEP_EXP) and in_array($dest, $MANGLADWEEP_EXP)) {
                             $sr="(ERS)ERNAKULAM JN";
                             $de="(NZM)H NIZAMUDDIN";
-
-                            $tname="MANGLADWEEP_EXP_12617";
+                            array_push($tname,"MANGLADWEEP_EXP_12617");
 
                                     echo '<tr>
-                                           <td>'.$tname.'</td>
+                                           <td>MANGLADWEEP_EXP_12617</td>
                                            <td><a href="../trains/MANGLADWEEP_EXP.jpg">Train Schedule</a></td>
                                            <td>' . $de . '</td>
                                            <td>'. $sr. ' </td>
@@ -110,10 +110,10 @@
                         if (in_array($source, $MATSYAGANDHA_EXP) and in_array($dest, $MATSYAGANDHA_EXP)) {
                             $sr="(MAQ)MANGALURU CNTL";
                             $de="(LTT)LOKMANYATILAK T";
-                            $tname="MATSYAGANDHA_EXP_12620";
+                            array_push($tname,"MATSYAGANDHA_EXP_12620");
 
                                     echo '<tr>
-                                           <td>'.$tname.'</td>
+                                           <td>MATSYAGANDHA_EXP_12620</td>
                                            <td><a href="../trains/MATSYAGANDHA_EXP.jpg">Train Schedule</a></td>
                                            <td>' . $de . '</td>
                                            <td>' . $sr. ' </td>
@@ -124,10 +124,9 @@
                         if (in_array($source, $NETHRAWATHI_EXP) and in_array($dest, $NETHRAWATHI_EXP)) {
                             $sr="(TVC)TRIVANDRUM CNTL";
                             $de="(LTT)LOKMANYATILAK T";
-                            for($i=0;$i<6;$i++)
-                            $tname[$i]="NETHRAWATHI_EXP_16346";
+                            array_push($tname,"NETHRAWATHI_EXP_16346");
                                     echo '<tr>
-                                           <td>'.$tname.'</td>
+                                           <td>NETHRAWATHI_EXP_16346</td>
                                            <td><a href="../trains/NETHRAWATHI_EXP.jpg">Train Schedule</a></td>
                                            <td>' . $de . '</td>
                                            <td>' . $sr. ' </td>
@@ -138,13 +137,12 @@
                         if (in_array($source, $RAJDHANI_EXP) and in_array($dest, $RAJDHANI_EXP)) {
                             $sr="(TVC)TRIVANDRUM CNTL";
                             $de="(NZM)H NIZAMUDDIN";
-                            for($i=0;$i<6;$i++)
-                            $tname[$i]="RAJDHANI_EXP_12431";
+                            array_push($tname,"RAJDHANI_EXP_12431");
                             echo"
                                     ";
                                     echo '<tr>
-                                           <td>'.$tname.'</td>
-                                           <td><a><img src="../trains/RAJDHANI_EXP.jpg">Train Schedule</a></td>
+                                           <td>RAJDHANI_EXP_12431</td>
+                                           <td><a href="../trains/RAJDHANI_EXP.jpg">Train Schedule</a></td>
                                            <td>' . $de . '</td>
                                            <td>' . $sr. ' </td>
                                     
@@ -200,7 +198,7 @@
           <div class="mt-4">
 
           <div class="mt-4">
-                  <label class="block">Select the Coach Class</label>
+                  <label class="block">Select the Train</label>
                   <select class="form-select form-select-lg mt-4
                     appearance-none
                     block
@@ -217,14 +215,95 @@
                     ease-in-out
                     m-0
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label=".form-select-lg example" id="coach_type" name="train">
-                      <option selected>--Train--</option>
+                      <option selected disabled>--Train--</option>
                       <?php
-                        echo "<option value='$tname' name='i'>$tname</option>";
+                      for($i=0;$i<count($tname);$i++) {
+                        echo "<option value='$tname[$i]' name='i'>$tname[$i]</option>";
+                      }
                       ?>
                     </select>
                   </div>
-
+                  <label class="block">Departure Staion</label>
+    
+                  <div class="flex justify-center">
+                    <div class="mb-3 xl:w-96">
+                      <select class="form-select
+                        appearance-none
+                        block
+                        w-full
+                        px-3
+                        py-1.5
+                        text-base
+                        font-normal
+                        text-gray-700
+                        bg-white bg-clip-padding bg-no-repeat
+                        border border-solid border-gray-300
+                        rounded
+                        transition
+                        ease-in-out
+                        m-0
+                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" name="src" aria-label="Disabled select example">
+                      <?php
+                      echo "<option value='$source'>$source</option>";
+                      ?>
+                      </select>
+                    </div>
+                  </div>
+                  <label class="block">Destination</label>
+                  <div class="flex justify-center">
+                    <div class="mb-3 xl:w-96">
+                      <select class="form-select
+                        appearance-none
+                        block
+                        w-full
+                        px-3
+                        py-1.5
+                        text-base
+                        font-normal
+                        text-gray-700
+                        bg-white bg-clip-padding bg-no-repeat
+                        border border-solid border-gray-300
+                        rounded
+                        transition
+                        ease-in-out
+                        m-0
+                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" name="dest" aria-label="Disabled select example" >
+                        <?php
+                      echo "<option value='$dest'>$dest</option>";
+                      ?>
+                      </select>
+                    </div>
+                  </div>
+                  <label class="block" for="dest">Enter Date of Departure</label></div>
+                <!-- <input type="date" placeholder="Select date"
+                class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="doj" name="doj" /> -->
+                
+                <div class="relative">
+                <select class="form-select
+                        appearance-none
+                        block
+                        w-full
+                        px-3
+                        py-1.5
+                        text-base
+                        font-normal
+                        text-gray-700
+                        bg-white bg-clip-padding bg-no-repeat
+                        border border-solid border-gray-300
+                        rounded
+                        transition
+                        ease-in-out
+                        m-0
+                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" name="dest" aria-label="Disabled select example" >
+            
+        
+                  <?php
+                  echo "<option value ='$doj'>$doj</option>";
+                  ?>
+                  </select>
+                  </div>
               <div>
+              
                   <label class="block" for="Name">Enter Your Name<label>
                           <input type="text" placeholder="Name"
                               class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="name" name="name">
