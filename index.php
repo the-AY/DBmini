@@ -23,7 +23,8 @@ if(isset($_POST['login']))
 { 
 $username = $_POST['username']; 
 $password = $_POST['password'];
-$_SESSION["username"] = $username;
+ $_SESSION["username"] = $username;
+// $username =$_SESSION["username"];
 $sql="SELECT * FROM `customer` WHERE `C_ID`='$username' and `PASSWORD` = '$password';";
 $result=mysqli_query($conn, $sql); 
 $check=mysqli_fetch_array($result);

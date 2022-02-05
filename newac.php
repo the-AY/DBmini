@@ -6,28 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/608539d5a6.js" crossorigin="anonymous"></script>
-    @link https://wpforms.com/developers/how-to-set-a-minimum-number-of-characters-on-a-text-form-field/
+    
     <title>Create a New account</title>
 </head>
 
-function wpf_dev_char_min() {
-  
-    <script type="text/javascript">
-        jQuery(document).ready(function ($) {
-            jQuery('.wpf-char-min input').prop('minLength', 8);
-            jQuery('.wpf-char-min textarea').prop('minLength', 20);
-            jQuery.extend(jQuery.validator.messages, {
-                minlength: jQuery.validator.format("Please enter at least {0} characters"),
-            });
- });
-    </script>
-  
-}
+
 
 <?php
 include "config.php";
 
-add_action( 'wpforms_wp_footer_end', 'wpf_dev_char_min' );
+
 
 
 if(isset($_POST['submit'])) {
@@ -131,7 +119,7 @@ $C_ID=$_POST['username'];
               </div>
             <div class="relative mb-4">
               <label for="password" class="leading-7 text-sm text-gray-600">Password</label>
-              <input type="password" id="password" name="password" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              <input type="password" min="4" max="8" title="Password should contain 4-8 characters only" id="password" name="password" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
             </div>
             <button type="submit" value="submit" name="submit" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Create Account </button>
             <button type="reset" value="submit" name="submit">Reset Values </button>

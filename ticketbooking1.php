@@ -114,7 +114,7 @@
 
                                     echo '<tr>
                                            <td>MATSYAGANDHA_EXP_12620</td>
-                                           <td><a href="../trains/MATSYAGANDHA_EXP.jpg">Train Schedule</a></td>
+                                           <td><a href="trains\MATSYAGANDHA_EXP.jpg">Train Schedule</a></td>
                                            <td>' . $de . '</td>
                                            <td>' . $sr. ' </td>
                                            <td>MON, TUE, WED, THURS, FRI, SAT, SUN</td>

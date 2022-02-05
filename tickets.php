@@ -106,13 +106,13 @@ include "config.php";
     $query="INSERT INTO TICKET(`C_NAME`,`C_ID`,`TI_TYPE`,`SRC`,`DEST`,`COACH_NO`,`PRICE`,`TRAIN`,`DOJ`) VALUES ('$name','$username','$ti_type','$src','$dest','$coach_no','$tot_price','$train','$doj')";
     $query1="INSERT INTO TICKET_HOLDER(`TIH_NAME`,`AGE`,`ADDRESS`,`C_ID`) VALUES ('$pname1','$age1','$address1','$username')";
     $query2="INSERT INTO TICKET_HOLDER(`TIH_NAME`,`AGE`,`ADDRESS`,`C_ID`) VALUES ('$pname2','$age2','$address2','$username')";
-    $query2="INSERT INTO TICKET_HOLDER(`TIH_NAME`,`AGE`,`ADDRESS`,`C_ID`) VALUES ('$pname3','$age3','$address3','$username')";
+    $query3="INSERT INTO TICKET_HOLDER(`TIH_NAME`,`AGE`,`ADDRESS`,`C_ID`) VALUES ('$pname3','$age3','$address3','$username')";
 
     $run=mysqli_query($conn,$query) or die("connection failed");
     $run1=mysqli_query($conn,$query1) or die("connection failed");
     $run2=mysqli_query($conn,$query2) or die("connection failed");
 
-
+         error_reporting(E_ERROR | E_PARSE);
 
     if($run and $run1 and $run2) {
         // if($run)

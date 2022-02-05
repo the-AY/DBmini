@@ -105,18 +105,22 @@
                <th>DESTINATION</th>
            </tr>
            <?php
+            
+
            include "config.php";
            session_start();
-           $username = $_SESSION["username"];
+        
+
            if(isset($_POST['submit'])) {
-        //    $C_ID=$_POST['username'];
-           $sql="SELECT A.*,B.* FROM TICKET A, TICKET_HOLDER B WHERE TI_TYPE='TICKET' and A.C_ID='$username' ";
+           $C_ID=$_POST['username'];
+          $username = $_SESSION["username"];
+           $sql="SELECT A.*,B.* FROM TICKET A, TICKET_HOLDER B WHERE TI_TYPE='TICKET' and A.C_ID='$C_ID' ";
            $result= mysqli_query($conn, $sql);
 
            if($result) {
                while ($row =mysqli_fetch_assoc($result)) {
                 $pnr= $row['PNR'] ;
-                $c_name=$row['C_NAME'];
+                // $c_name=$row['C_NAME'];
                 $price=$row['PRICE'];
                 $src= $row['SRC'];
                 $dest= $row['DEST'];
@@ -129,7 +133,6 @@
                    <td>" . $username. " </td>
                    <td>" . $train. " </td>
                    <td>" . $row["TIH_NAME"]. " </td>
-
                    <td>" .$coach_no. "</td>
                    <td>" .$price. "</td>
                    <td>" .$src. "</td>
