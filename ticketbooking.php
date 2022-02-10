@@ -10,6 +10,7 @@
         <script src="https://unpkg.com/@themesberg/flowbite@1.3.0/dist/datepicker.bundle.js"></script>
         <script src="../path/to/@themesberg/flowbite/dist/datepicker.bundle.js"></script>
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         
     </head>
     <body>
@@ -113,11 +114,27 @@
                 <!-- <input type="date" placeholder="Select date"
                 class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="doj" name="doj" /> -->
                 
-                <div class="relative">
+               
                   
-            
-        
-                  <input  name="doj"  type="date" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" placeholder="Select date">
+                  <script>
+                    /* date objects are created with the new date() const*/
+                    $(document).ready(function(){
+                      $(function() {
+                        var dttoday= new Date();
+                        var month=dttoday.getMonth()+1;
+                        var day=dttoday.getDate();
+                        var year=dttoday.getFullYear();
+                        if(month< 10)
+                          month='0'+month.toString();
+                        if(day< 10)
+                          day='0' +day.toString();
+                        var maxdate = year + '-' + month + '-' + day;
+                        $('#datehold').attr('min',maxdate);
+                      });
+                    })
+                  </script>
+                   <div class="relative">
+                  <input  name="doj"  type="date" id="datehold" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" placeholder="Select date">
                   </div>
 
               <div class="flex">
