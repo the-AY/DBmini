@@ -1,4 +1,4 @@
-aA<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,13 +24,17 @@ aA<!DOCTYPE html>
           <span class="ml-3 text-xl">Railway Management Admin Console</span>
           </a>
           <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
-            <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="logout.php" Admin Logout</a>
+            <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" ><a href="logoutadmin.php">Admin Logout </a>
             </button>
           </div>
         </div>
       </header>
       <h1>ADMIN CONSOLE Food Orders</h1>
-      <a href="adminfoodupdate.php">Update food</a>    
+      <div>
+        <br>
+      <button id="button1" ><a href="adminfoodupdate.php"> Update food </a> </button>
+       </div>
+       <br>
       <table id="DisplayTable">
         <tr>
           <th>Food_id</th>

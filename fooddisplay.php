@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="assets\favicon.jpg">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <link href="404style.css" rel="stylesheet">
@@ -90,7 +91,7 @@
          
       </table>
       
-
-      <button onclick="window.print()">Print </button>
+     <br><br>
+      <button id="button1" onclick="window.print()">Print </button>
 </body>
 </html>

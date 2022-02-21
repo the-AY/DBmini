@@ -100,9 +100,13 @@ if(isset($_POST['Submit']))
       break;
     }
 
-      $sql="INSERT INTO `food` (`C_ID`, `ITEMS`, `QUANTITY`, `PRICE`, `F_ID`,`TOTAL_PRICE`) VALUES ('$username', '$ITEMS', '$QUANTITY', '$price', '$F_ID','$tot_price') ";
+      $sql="INSERT INTO `food` (`C_ID`, `ITEMS`, `QUANTITY`, `PRICE`, `F_ID`, `STATUS`, `DOD`, `TOTAL_PRICE`) VALUES ('$username', '$ITEMS', '$QUANTITY', '$price', '$F_ID','NULL', current_timestamp(), '$tot_price') ";
+     
       $result=mysqli_query($conn,$sql);
+
+       // INSERT INTO `food` (`C_ID`, `ITEMS`, `QUANTITY`, `PRICE`, `F_ID`,`TOTAL_PRICE`) VALUES ('$username', '$ITEMS', '$QUANTITY', '$price', '$F_ID','$tot_price') ";
       // $var="SELECT `PRICE` FROM `food` WHERE `C_ID`='$username';";
+      // INSERT INTO `food` (`C_ID`, `ITEMS`, `QUANTITY`, `PRICE`, `F_ID`, `STATUS`, `DOD`, `TOTAL_PRICE`) VALUES ('$username', '$ITEMS', '$QUANTITY', '$price', '$F_ID', current_timestamp(), '$tot_price') ";
       //   $tp= $var*(5/100); 
       //   $new="INSERT INTO `orders` (`DOORDER`, `C_ID`, `F_ID`, `TOTAL PRICE`) VALUES (current_timestamp(), '$username', '$F_ID', '$tp'): ";
       //   $result1= mysqli_query($conn,$var);
