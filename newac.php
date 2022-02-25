@@ -207,7 +207,7 @@ myInput.onkeyup = function() {
 </html>
 <!-- trigger in php my admin 
 INSERT INTO console (`C_NO`, `C_ID`, `DATE`, `ACTION`) VALUES (NULL, '$C_ID', current_timestamp(), 'Account Created') -->
-include "config.php";
+<!-- include "config.php"; -->
 <!-- 
  session_start();
  $username=$_SESSION["username"];
