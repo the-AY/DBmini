@@ -62,7 +62,7 @@
         <div><a href="mailto:techapp4ucustomerservice@gmail.com"> 
           <button class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" >Email us</button>
           </a></div>
-          <p class="text-xs text-gray-500 mt-3">" "</p>
+         
         </div>
       </div>
     </section>
