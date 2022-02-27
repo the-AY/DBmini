@@ -100,8 +100,8 @@ if(isset($_POST['Submit']))
       break;
     }
 
-      $sql="INSERT INTO `food` (`C_ID`, `ITEMS`, `QUANTITY`, `PRICE`, `F_ID`, `STATUS`, `DOD`, `TOTAL_PRICE`) VALUES ('$username', '$ITEMS', '$QUANTITY', '$price', '$F_ID',NULL, current_timestamp(), '$tot_price') ";
-     
+      $sql="INSERT INTO `food` (`C_ID`, `ITEMS`, `QUANTITY`, `PRICE`, `F_ID`, `DOD`, `TOTAL_PRICE`) VALUES ('$username', '$ITEMS', '$QUANTITY', '$price', '$F_ID', current_timestamp(), '$tot_price') ";
+      echo "Ordered ";
       $result=mysqli_query($conn,$sql);
 
        // INSERT INTO `food` (`C_ID`, `ITEMS`, `QUANTITY`, `PRICE`, `F_ID`,`TOTAL_PRICE`) VALUES ('$username', '$ITEMS', '$QUANTITY', '$price', '$F_ID','$tot_price') ";
