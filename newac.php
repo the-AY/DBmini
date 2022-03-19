@@ -119,8 +119,8 @@ $C_ID=$_POST['username'];
               </div>
             <div class="relative mb-4">
               <label for="password" class="leading-7 text-sm text-gray-600">Password</label>
-              <input type="password" min="4" max="8" title="Password should contain 4-8 characters only" id="password" name="password"
-              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required
+              <input type="password" min="4" max="8" title=" Password Should contain:-  4-8 characters  one lowercase  one uppercase  one number" id="password" name="password"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="   Password Should contain:-  8 characters  one lowercase  one uppercase  one number" required
                class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
             </div>
 
@@ -197,7 +197,7 @@ myInput.onkeyup = function() {
             <button type="submit" value="submit" name="submit" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Create Account </button>
             <button type="reset" value="submit" name="submit">Reset Values </button>
            <p>Already Have an Account?? <a href="index.php" style="color: blue;">Return to login</a></p>
-            //send credentials to the database to create a new account to the user
+            Password Should contain:- <br> 4-8 characters <br> one lowercase <br> one uppercase <br> one number
             <p class="text-xs text-gray-500 mt-3"></p>
           </div>
         </div>
