@@ -17,7 +17,8 @@ $cid = $_POST['username'];
 $password = $_POST['password'];
 $action ="Account Deleted";
 $sql="SELECT * FROM `customer` WHERE `C_ID`='$username' and `PASSWORD` = '$password';";
-$del="DELETE FROM customer WHERE customer .`C_ID` ='$username';";
+
+$del="DELETE FROM customer WHERE `C_ID` ='$username';";
 $tri="CREATE TRIGGER condel BEFORE DELETE ON customer FOR EACH ROW INSERT INTO console (`C_ID`, `DATE`, `ACTION`) VALUES ('$cid', current_timestamp(), 'Account Deleted');";
 $result=mysqli_query($conn, $sql); 
 $check=mysqli_fetch_array($result);
@@ -55,7 +56,6 @@ echo "<script>alert('Incorrect Username or password try again')</script>";
       </div>
     </div>
   </header>
-  
     <section class="text-gray-600 body-font">
     <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
       <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
@@ -89,4 +89,4 @@ echo "<script>alert('Incorrect Username or password try again')</script>";
     </div>
   </section>
 </body>
-</html>
+</html> 
