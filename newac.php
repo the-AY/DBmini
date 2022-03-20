@@ -15,9 +15,6 @@
 <?php
 include "config.php";
 
-
-
-
 if(isset($_POST['submit'])) {
 
 $C_ID=$_POST['username'];

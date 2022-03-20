@@ -12,13 +12,13 @@
  session_start();
 if(isset($_POST['login']))
 { 
-$username = $_SESSION["username"];
-$username = $_POST['username']; 
+$username = $_SESSION['username'];
+$cid = $_POST['username']; 
 $password = $_POST['password'];
 $action ="Account Deleted";
 $sql="SELECT * FROM `customer` WHERE `C_ID`='$username' and `PASSWORD` = '$password';";
 $del="DELETE FROM customer WHERE customer .`C_ID` ='$username';";
-$tri="CREATE TRIGGER condel BEFORE DELETE ON customer FOR EACH ROW INSERT INTO console (`LOG_NO`, `C_ID`, `DATE`, `ACTION`) VALUES (NULL, '$username', current_timestamp(), 'Account Deleted');";
+$tri="CREATE TRIGGER condel BEFORE DELETE ON customer FOR EACH ROW INSERT INTO console (`LOG_NO`, `C_ID`, `DATE`, `ACTION`) VALUES (NULL, '$cid', current_timestamp(), 'Account Deleted');";
 $result=mysqli_query($conn, $sql); 
 $check=mysqli_fetch_array($result);
 if(isset($check))
