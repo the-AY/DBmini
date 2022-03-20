@@ -25,7 +25,7 @@ $C_ID=$_POST['username'];
   $CONTACT=$_POST['contact'];
   $PASSWORD=$_POST['password'];                                   
 	 $query="INSERT INTO customer (`C_ID`, `C_NAME`, `AGE`, `ADDRESS`, `GENDER`, `CONTACT`, `PASSWORD`) VALUES ('$C_ID', '$C_NAME', '$AGE', '$ADDRESS', '$GENDER', '$CONTACT', '$PASSWORD') ";
-   $sql ="CREATE TRIGGER console AFTER INSERT ON customer FOR EACH ROW INSERT INTO console (`C_ID`, `DATE`, `ACTION`) VALUES ( '$C_ID', current_timestamp(), 'Account Created')";
+   $sql ="CREATE TRIGGER console AFTER INSERT ON customer FOR EACH ROW INSERT INTO console (`C_ID`, `DATE`, `ACTION`) VALUES ('$C_ID', current_timestamp(), 'Account Created')";
   
    $run=mysqli_query($conn,$query) or die("connection failed|Username or Password Error");
    $new=mysqli_query($conn,$sql);
