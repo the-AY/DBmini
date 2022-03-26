@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+      <link href="style.css" rel="stylesheet">
+    <link href="404style.css" rel="stylesheet">
     <title> Food on Rails</title>
 </head>
 <header class="text-gray-600 body-font">
@@ -101,7 +103,7 @@ if(isset($_POST['Submit']))
     }
 
       $sql="INSERT INTO `food` (`C_ID`, `ITEMS`, `QUANTITY`, `PRICE`, `F_ID`, `DOD`, `TOTAL_PRICE`) VALUES ('$username', '$ITEMS', '$QUANTITY', '$price', '$F_ID', current_timestamp(), '$tot_price') ";
-      echo "Ordered ";
+    
       $result=mysqli_query($conn,$sql);
 
        // INSERT INTO `food` (`C_ID`, `ITEMS`, `QUANTITY`, `PRICE`, `F_ID`,`TOTAL_PRICE`) VALUES ('$username', '$ITEMS', '$QUANTITY', '$price', '$F_ID','$tot_price') ";
@@ -114,7 +116,7 @@ if(isset($_POST['Submit']))
       if($result)
       {
       echo "<script>alert('Ordered food successfully');</script>";
-      echo "Ordered sucessfully Redirecting...";
+     
       header('Refresh: 2; URL = home.html');
       die;
       }
@@ -125,9 +127,55 @@ if(isset($_POST['Submit']))
     
   } 
   ?>  
-  <span class="ml-3 text-xl">Food Menu</span>
+   <form action="foodorder.php" method="post">
+        
+        <table id="DisplayTable">
+            <tr>
+              <th>ITEMS</th>
+              <th>QUANTITY</th>
+              <th>ACTION</th>
+              
+             
+            </tr>
+    
+            <tr>
+                        <td>  <label for="item"></label>
+            <select name="item" id="item">
+              <option value="1">None</option>
+              <option value="2">Masala Dosa</option>
+              <option value="3">Idli vada</option>
+              <option value="4">South Indian Thali</option>
+              <option value="5">North Indian Thali</option>
+              <option value="6">Onion Pokoda </option>
+              <option value="7">Samosa</option>
+              <option value="8">Gulab Jamun</option>
+              <option value="9">Tea</option>
+            </select>
+            <br><br></td>
+                        <td><label for="quantity"></label>
+              <select name="quantity" id="quantity">
+                <option value="None">0</option>
+                <option value="1">1</option> 
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <br><br>
+            </td>
+                        <td><button>
+            <input type="Submit" value="Submit" name="Submit" class="inline-flex items-center bg-gray-100 border-0 py-2 px-5 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" >
+            </button></td>
+                        
+              </tr>
+  <span class="ml-3 text-xl">                                             Food Menu</span>
     <section class="text-gray-600 body-font">
-        <div class="container px-5 py-24 mx-auto">
+       
           <div class="flex flex-wrap -m-4">
             <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
               <a class="block relative h-48 rounded overflow-hidden">
@@ -215,47 +263,20 @@ if(isset($_POST['Submit']))
       </section>
       <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
 
-      <form action="foodorder.php" method="post">
+     
 
       <!-- <div class="relative mb-4"> -->
           <!-- <label for="username" class="leading-7 text-sm text-gray-600">Username</label> -->
           <!-- <input type="username" id="username" name="username" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"> -->
         <!-- </div> -->
-        <label for="item">Item:</label>
-        <select name="item" id="item">
-          <option value="1">None</option>
-          <option value="2">Masala Dosa</option>
-          <option value="3">Idli vada</option>
-          <option value="4">South Indian Thali</option>
-          <option value="5">North Indian Thali</option>
-          <option value="6">Onion Pokoda </option>
-          <option value="7">Samosa</option>
-          <option value="8">Gulab Jamun</option>
-          <option value="9">Tea</option>
-        </select>
-        <br><br>
+      
        
-          <label for="quantity">Quantity:</label>
-          <select name="quantity" id="quantity">
-            <option value="None">0</option>
-            <option value="1">1</option> 
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-          </select>
-          <br><br>
+          
         
         
-        <button>
-        <input type="Submit" value="Submit" name="Submit" class="inline-flex items-center bg-gray-100 border-0 py-2 px-5 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" >
-        </button>
       </form>
+  
+
       
 </body>
 </html> 
