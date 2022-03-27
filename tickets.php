@@ -14,7 +14,7 @@ include "config.php";
         $name=$_POST['name'];
         $coach_type=$_POST['coach_type'];
         $src=$_POST['src'];
-        $dest=$_POST["dest"];
+        $dest=$_POST['dest'];
         $pname1=$_POST['pname1'];
         $pname2=$_POST['pname2'];
         $pname3=$_POST['pname3'];
