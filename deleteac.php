@@ -42,7 +42,7 @@ echo "<script>alert('Incorrect Username or password try again')</script>";
       <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
         <a class="mr-5 hover:text-gray-900" href="index.php">Home</a>
         <a class="mr-5 hover:text-gray-900" href="index.php"> Trains </a>
-        <a class="mr-5 hover:text-gray-900" href="contactus.html">Contact us</a> 
+        <a class="mr-5 hover:text-gray-900" href="contactus.php">Contact us</a> 
         <a class="mr-5 hover:text-gray-900" href="aboutus.html" >About us</a>
         <a class="mr-5 hover:text-gray-900" href="index.php">PNR Status</a>
        
@@ -59,7 +59,7 @@ echo "<script>alert('Incorrect Username or password try again')</script>";
     <section class="text-gray-600 body-font">
     <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
       <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
-        <h1 class="title-font font-medium text-3xl text-gray-900">Its Login time!</h1>
+        <h1 class="title-font font-medium text-3xl text-gray-900">Sorry to see you go :-( ,Its Login time!</h1>
         <p class="leading-relaxed mt-4">A user needs to login to delete an account. </p>
 
 
@@ -81,6 +81,9 @@ echo "<script>alert('Incorrect Username or password try again')</script>";
         <button>
           <input type="Submit" value="Delete account" name="login" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"> 
         </button>
+        <p>User Login <a href="index.php" style="color: blue">Login</a></p>
+        <p>Don't have one?? <a href="newac.php" style="color: blue"> Create new account</a></p>
+        <p> Are you an admin?? <a href="loginadmin.php" style="color: blue">Login here</a></p>
       </form>
 
         <p class="text-xs text-gray-500 mt-3"></p>

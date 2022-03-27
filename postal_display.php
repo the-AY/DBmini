@@ -34,7 +34,7 @@
       <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
         <a class="mr-5 hover:text-gray-900" href="home.html">Home</a>
         <a class="mr-5 hover:text-gray-900" href="https://www.railyatri.in/train-ticket?utm_source=ET277dweb&gclid=EAIaIQobChMI8ZHZt7yu9QIV1wkrCh2OFw96EAAYASAAEgLFRfD_BwE"> Trains </a>
-        <a class="mr-5 hover:text-gray-900" href="contactus.html">Contact us</a> </a>
+        <a class="mr-5 hover:text-gray-900" href="contactus.php">Contact us</a> </a>
         <a class="mr-5 hover:text-gray-900" href="aboutus.html" >About us</a>
       </nav>
       <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
