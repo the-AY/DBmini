@@ -87,7 +87,7 @@ echo "<script>alert('Incorrect Username or password try again')</script>";
       </form>
        <p>Don't have one?? <a href="newac.php" style="color: blue"> Create new account</a></p>
         <p> Are you an admin?? <a href="loginadmin.php" style="color: blue">Login here</a></p>
-    
+        <p> Delete your account  <a href="deleteac.php" style="color: blue">Delete an account</a></p>
         <p class="text-xs text-gray-500 mt-3"></p>
       
 
