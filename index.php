@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="404style.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/608539d5a6.js" crossorigin="anonymous"></script>
     <title>Login/sign up</title>
 </head>
@@ -45,7 +46,7 @@ echo "<script>alert('Incorrect Username or password try again')</script>";
       <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
         <a class="mr-5 hover:text-gray-900" href="index.php"><i class="fas fa-home"></i> Home</a>
         <a class="mr-5 hover:text-gray-900" href="index.php"><i class="fas fa-train"></i> Trains </a>
-        <a class="mr-5 hover:text-gray-900" href="contactus.html"><i class="fas fa-address-book"></i> Contact us</a> 
+        <a class="mr-5 hover:text-gray-900" href="contactus.php"><i class="fas fa-address-book"></i> Contact us</a> 
         <a class="mr-5 hover:text-gray-900" href="aboutus.html" ><i class="fas fa-address-card"></i> About us</a>
         <!-- <a class="mr-5 hover:text-gray-900" href="zdeleteac.php">#TEST FILE delete ac</a> -->
       </nav>
