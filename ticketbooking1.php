@@ -153,6 +153,7 @@
                              $conn->close();
                         ?>
               </table>
+              
 
                        <script src="" async defer></script>
                    </body>
@@ -195,7 +196,7 @@
       <!-- form action -->
       <form action="tickets.php" method="post">
 
-          <div class="mt-4">
+          < class="mt-4">
 
           <div class="mt-4">
                   <label class="block">Select the Train</label>
@@ -274,7 +275,7 @@
                       </select>
                     </div>
                   </div>
-                  <label class="block" for="dest">Enter Date of Departure</label></div>
+                  <label class="block">Date of Departure</label>
                 <!-- <input type="date" placeholder="Select date"
                 class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="doj" name="doj" /> -->
                 
@@ -294,7 +295,7 @@
                         transition
                         ease-in-out
                         m-0
-                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" name="dest" aria-label="Disabled select example" >
+                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" name="doj" aria-label="Disabled select example" >
             
         
                   <?php

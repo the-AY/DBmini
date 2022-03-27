@@ -110,7 +110,7 @@
               </div>
               <div>
 
-              <label class="block" for="dest">Enter Date of Departure</label></div>
+              <label class="block" for="doj">Enter Date of Departure</label></div>
                 <!-- <input type="date" placeholder="Select date"
                 class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" id="doj" name="doj" /> -->
                 
