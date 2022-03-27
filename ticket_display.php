@@ -104,6 +104,7 @@
                <th>PRICE</th>
                <th>DEPARTING FROM</th>
                <th>DESTINATION</th>
+               <th>DATE OF JORNEY </th>
            </tr>
            <?php
             
@@ -128,6 +129,7 @@
                 $city=$row["ADDRESS"];
                 $coach_no=$row["COACH_NO"];
                 $train=$row['TRAIN'];
+                $DOJ=$row["DOJ"];
                 
 
                    echo "<tr><td>" .$pnr. "</td>
@@ -138,6 +140,7 @@
                    <td>" .$price. "</td>
                    <td>" .$src. "</td>
                    <td>" .$dest. "</td>
+                   <td>" .$DOJ. "</td>
                    
                    </tr>";
                }

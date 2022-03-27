@@ -115,7 +115,7 @@ if(isset($_POST['Submit']))
       if($result)
       {
       echo "<script>alert('Ordered food successfully');</script>";
-     
+      echo '<script>alert("Your Price is : '. $tot_price.'")</script>';
       header('Refresh: 2; URL = home.html');
       die;
       }
